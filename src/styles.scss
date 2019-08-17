@@ -1,1 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+$text_main: #e8e8e8;
+$text_alt: rgb(116, 245, 234);
+
+$padding-sm: 40px;
+$padding-lg: 50px;
+$padding-xl:250px;
+
+$lg-text: 2.3em;
+$mgl-text: 1.6em;
+$md-text: 1.0em;
+$sm-text: 0.5em;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+body {
+    background-image:url('assets/img/bg-gry.png');
+}
+h2 {
+    color:$text_main;
+}
+
+#projects {
+    // display:none;
+}
+#certs {
+    display:none;
+}
+
+#resume {
+    display:none;
+}
+
+.logo {
+    color:$text_main;
+    padding-left:$padding-xl;
+    padding-top:$padding-sm; 
+    font-size:$lg-text;
+    background-image:url('assets/img/logo-hl-blue.png');
+    background-repeat:no-repeat;
+}
+
+.nav-text {
+    text-align:center;
+    color:$text_alt;
+    font-size:$md-text;
+    padding-right:$padding-sm;
+    padding-top:$padding-lg;
+}
+
+.intro {
+    font-size: $sm-text;
+}
+
+.main-body {
+    margin-top:45px;
+}
+
+.headers {
+    height:90%;
+    width:90%;
+    background-image:url('assets/img/bg-gry.png');
+    background-repeat:no-repeat;
+}
+
+.add-grad {
+    padding-bottom: 3px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin:auto auto;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 88%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 88%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 88%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+
+.pri-txt {
+    color:$text_main;
+    font-size:2rem;
+}
+.pri-txt:hover {
+    color:$text_alt;
+    cursor:pointer;
+}
+
+.heading-1 {
+
+}
+.heading-2 {
+    text-align:center;
+}
+.heading-3 {
+    text-align:right;
+}
+
+.p-item {
+    font-size:$mgl-text;
+    color:aliceblue;
+    padding:5px;
+    min-height:100px;
+    margin-left:10px;
+}
+
+.p-desc {
+    max-height:100px;
+    color:$text_alt;
+    padding:7px;
+}
+
+.dd{
+
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 100%;
+    height: 500px;
+    // display: none;
+    min-height: 350px;
+    background: rgba(255, 255, 255, 0.4);
+
+}
+
+.closure {
+    height: 400px;
+    width: 87%;
+    background: url('assets/img/body-hl.png');
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.arrow {
+    width: 0; 
+    height: 0; 
+    position: relative;
+    margin:5px 0px 5px 0px;
+    transform:rotate(135deg);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 1080px) {
+
+    .pri-txt {
+        font-size:1.0rem;
+    }
+
+}
