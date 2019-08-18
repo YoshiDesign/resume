@@ -42,11 +42,17 @@ h2 {
 .inline {
     display:inline;
 }
+.lg-view {
+    display:block;
+}
 .xs-text {
     font-size:$sm-text;
 }
 .tp {
     padding-top:5px;
+}
+.sm-view {
+    display:none;
 }
 .logo {
     color: #e8e8e8;
@@ -78,10 +84,10 @@ h2 {
 .img-header {
     background-image: url('assets/img/logo-hl-blue.png');
     width: 581px;
-    margin-left:13%;
+    margin-left:12%;
     display:inline-block;
     position: relative;
-    bottom: 34px;
+    bottom: 37px;
 }
 
 .hdr-img {
@@ -108,6 +114,14 @@ h2 {
     height:100px;
     width:200px;
 }
+#ng {
+    height:25px;
+    width:25px;
+}
+.footer {
+    color:white;
+    padding:10px;
+}
 .uni-img {
     width:50px;
     height:50px;
@@ -121,6 +135,7 @@ h2 {
 
 .main-body {
     margin-top:45px;
+    height:675px;
 }
 
 .headers {
@@ -172,10 +187,12 @@ h2 {
 }
 
 .p-desc {
-
     min-height:140px;
     color:$text_alt;
     padding:7px;
+}
+.p-desc-sm {
+    display:none;
 }
 
 .dd{
@@ -213,7 +230,7 @@ h2 {
 }
 #resume {
     height:auto;
-    max-height:650px;
+    max-height:588px;
     overflow-y:scroll;
 }
 
@@ -221,10 +238,21 @@ h2 {
     width: 100%;
     margin-left:15px;
 }
-
+@media (max-width : 1217px) {
+    .img-header{
+        // background:none;
+        margin-left:115px;
+    }
+    .tear-down-L1 {
+        display:none;
+    }
+}
 @media (max-width : $screen-xl) {
 
-    
+    .main-body {
+        height:845px;
+    }
+
 
     .logo {
         display:block;
@@ -260,13 +288,10 @@ h2 {
         min-height:160px;
     }
     .img-header {
-        background-image: none;
-        margin:45px 0px 15px 0px;
+        margin:0px 0px 15px -33px;
+        width:545px;
     }
 
-    .tear-down-L1 {
-        display:none;
-    }
     .market {
         width:70px;
         position:absolute;
@@ -282,11 +307,16 @@ h2 {
 
 @media (max-width : $screen-lg) {
 
+    .main-body {
+        height:845px;
+    }
+
     .intro-div {
         width:425px;
     }
     .pri-txt {
-        font-size:1.0rem;
+        font-size:1.5rem;
+        margin-left:25px;
     } 
     .logo {
         padding-left:41px;
@@ -294,7 +324,7 @@ h2 {
     }
     .img-header {
         background-image: url('assets/img/logo-hl-blue.png');
-        width: 581px;
+        width: 545px;
         margin: 15px 15px 15px 15px;
         align-items: center;
         position: relative;
@@ -329,6 +359,7 @@ h2 {
     // }
     .dd {
         width:100%;
+        margin-bottom:25px;
     }
 
     .add-grad {
@@ -339,8 +370,13 @@ h2 {
 
 @media (max-width : $screen-md) {
 
+
+    .main-body {
+        height:870px;
+    }
+
     .pri-txt {
-        font-size:1.0rem;
+        font-size:1.3rem;
     } 
 
 
@@ -375,6 +411,7 @@ h2 {
     }
     .dd {
         width: 65%;
+      
     }
 
     .headers{
@@ -390,15 +427,28 @@ h2 {
     }
 
     .intro-div {
-        padding-left:124px;
+        padding-left:15px;
+    }
+
+    .p-desc {
+        display:none;
+    }
+    .p-desc-sm {
+        display:block;
+    }
+    
+
+    .sm-view {
+        display:block;
+    }
+    .lg-view{
+        display:none;
     }
 
 }
 
-@media (max-width : $screen-sm) { 
-
-    .img-header {
-
+@media (max-height : $screen-sm) {
+    .intro-div {
+        padding-left:10px;
     }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Skillet from '../data/Skillet';
 
 @Component({
 selector: 'app-detail-window',
@@ -27,9 +28,10 @@ export class DetailWindowComponent implements OnInit {
         this.cHide = true;
         this.rHide = true;
 
-        this.resumeDetails = document.getElementById('resume');
-
+        this.resumeDetails = document.getElementById('resume'); 
+         
     }
+    
 
     /* *
     *   Display F'ns
