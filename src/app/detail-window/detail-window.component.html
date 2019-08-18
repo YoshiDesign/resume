@@ -1,25 +1,26 @@
 <div class="primary-ctr">
     <div class="col-md-12 add-grad">
         <div class="row col-md-12 row  headers">
-            <div class="col-md-4 heading-1"><span class="pri-txt">Projects</span>
+            <div  class="col-md-4 heading-1"><span (click)="showProjects()" id="pHead" class="pri-txt">Projects</span>
 
             </div>
-            <div class="col-md-4 heading-2"><span class="pri-txt">Certification</span>
+            <div class="col-md-4 heading-2"><span (click)="showCerts()" id="cHead" class="pri-txt">Certification</span>
 
             </div>
-            <div class="col-md-4 heading-3"><span class="pri-txt">Resume</span>
+            <div class="col-md-4 heading-3"><span (click)="showResume()" id="rHead" class="pri-txt">Resume</span>
 
             </div>
             <div class="dd">
                 <div id="arrow_" class="arrow"></div>
 
                 <!-- <Projects> -->
-                <div id="projects" class="row col-md-12">
+                <div id="projects"[class]="pHide == false ? 'row col-md-12' : 'hidden'">
                     <div class="col-md-5">
                         <p class="p-item">Personal API</p>
+
                         <p class="p-item">OpenCV &amp; Robotics</p>
                         <p class="p-item">Personal Space Invaders</p>
-                        <p class="p-item">Steganography Web-App (CS50 Final)</p>
+                        <p class="p-item last-item"><a href="https://www.youtube.com/watch?v=45ANv3yhFAs">Steganography Web-App <br> (CS50 Final)</a></p>
                     </div>
                     <div class="col-md-7">
                         <p class="p-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aspernatur qui voluptas asperiores autem accusantium aliquam debitis iure odio mollitia, enim, illo voluptatum pariatur maxime omnis sunt incidunt sequi molestiae.</p>
@@ -31,12 +32,12 @@
                 <!-- </Projects> -->
 
                 <!-- <Certification> -->
-                <div id="certs" class="row col-md-12">
+                <div id="certs" [class]="cHide == false ? 'row col-md-12' : 'hidden'">
                     <div class="col-md-5">
                         <p class="p-item">CompTIA A+</p>
                         <p class="p-item">CompTIA CySA+</p>
                         <p class="p-item">Harvard CS50: Introduction to Computer Science</p>
-                        <p class="p-item">Harvard CS50B: Computer Science for Business Professionals</p>
+                        <p class="p-item last-item">Harvard CS50B: Computer Science for Business Professionals</p>
                     </div>
                     <div class="col-md-7">
                         <p class="p-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aspernatur qui voluptas asperiores autem accusantium aliquam debitis iure odio mollitia, enim, illo voluptatum pariatur maxime omnis sunt incidunt sequi molestiae.</p>
@@ -49,8 +50,8 @@
 
                 <!-- <Resume> -->
 
-                <div id="resume" class="row col-md-12">
-
+                <div (click)="showResume()" id="resume" [class]="rHide == false ? 'row col-md-12' : 'hidden'">
+                    <img class="res-frame" src="assets/img/bigassresume.png" />
                 </div>
 
                 <!-- </Resume> -->

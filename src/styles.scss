@@ -33,27 +33,23 @@ body {
 h2 {
     color:$text_main;
 }
-
-#projects {
-    // display:none;
-}
-#certs {
-    display:none;
-}
-
-#resume {
+.hidden {
     display:none;
 }
 
 .logo {
-    color:$text_main;
-    padding-left:$padding-xl;
-    padding-top:$padding-sm; 
-    font-size:$lg-text;
-    background-image:url('assets/img/logo-hl-blue.png');
-    background-repeat:no-repeat;
+    color: #e8e8e8;
+    padding-right: 0;
+    padding-left: 170px;
+    padding-top: 8px;
+    font-size: 2.3em;
+    background-image: url('assets/img/logo-hl-blue.png');
+    background-repeat: no-repeat;
 }
+.market {
+    display:inline-block;
 
+}
 .nav-text {
     text-align:center;
     color:$text_alt;
@@ -61,7 +57,48 @@ h2 {
     padding-right:$padding-sm;
     padding-top:$padding-lg;
 }
+.nav-text2 {
+    font-size:0.35em;
+}
 
+.hdr-gallery {
+    display:inline-block;
+}
+.img-header {
+    background-image: url('assets/img/logo-hl-blue.png');
+    width: 581px;
+    margin-left:13%;
+    display:inline-block;
+    position: relative;
+    bottom: 34px;
+}
+
+.hdr-img {
+    display:inline-block;
+    margin-left:5px;
+}
+
+#im1 {
+    height: 102px;
+    width: 109px;
+    position: relative;
+    top: 2px;
+}
+#im2 {
+    height:150px;
+    width:150px;
+}
+#im3 {
+    height:100px;
+    width:200px;
+}
+.uni-img {
+    width:50px;
+    height:50px;
+}
+.intro-div {
+    display:inline-block;
+}
 .intro {
     font-size: $sm-text;
 }
@@ -92,6 +129,7 @@ h2 {
 .pri-txt {
     color:$text_main;
     font-size:2rem;
+    text-decoration: none !important;
 }
 .pri-txt:hover {
     color:$text_alt;
@@ -114,6 +152,11 @@ h2 {
     padding:5px;
     min-height:100px;
     margin-left:10px;
+    border-bottom: 1px solid #ebc1d9;
+}
+
+.last-item {
+    border-bottom: none !important;
 }
 
 .p-desc {
@@ -125,12 +168,13 @@ h2 {
 .dd{
 
     position: absolute;
-    top: 50px;
+    top: 51px;
     left: 10px;
     width: 100%;
-    height: 500px;
+    height: auto;
     // display: none;
-    min-height: 350px;
+    max-height:700px;
+    min-height: 500px;
     background: rgba(255, 255, 255, 0.4);
 
 }
@@ -147,13 +191,22 @@ h2 {
     width: 0; 
     height: 0; 
     position: relative;
+    top: 12px;
     margin:5px 0px 5px 0px;
     transform:rotate(135deg);
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 15px solid rgba(255, 255, 255, 1);
 }
-
+#resume {
+    height:auto;
+    max-height:650px;
+    overflow-y:scroll;
+}
+.res-frame {
+    width: 100%;
+    margin-left:15px;
+}
 @media (max-width: 1080px) {
 
     .pri-txt {
