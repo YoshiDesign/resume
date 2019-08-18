@@ -1,49 +1,53 @@
 <div class="primary-ctr">
     <div class="col-md-12 add-grad">
         <div class="row col-md-12 row  headers">
-            <div  class="col-md-4 heading-1"><span (click)="showProjects()" id="pHead" class="pri-txt">Projects</span>
+            <div class="test">
+            <div  class="col-md-4 inline"><span (click)="showProjects()" id="pHead" class="pri-txt">Projects</span>
 
             </div>
-            <div class="col-md-4 heading-2"><span (click)="showCerts()" id="cHead" class="pri-txt">Certification</span>
+            <div class="col-md-4 inline center"><span (click)="showCerts()" id="cHead" class="pri-txt">Certification</span>
 
             </div>
-            <div class="col-md-4 heading-3"><span (click)="showResume()" id="rHead" class="pri-txt">Resume</span>
+            <div class="col-md-4 inline r-txt"><span (click)="showResume()" id="rHead" class="pri-txt">Resume</span>
 
             </div>
-            <div class="dd">
+            </div>
+           
+        </div>
+        <div class="dd">
                 <div id="arrow_" class="arrow"></div>
 
                 <!-- <Projects> -->
-                <div id="projects"[class]="pHide == false ? 'row col-md-12' : 'hidden'">
+                <div  id="projects"[class]="pHide == false ? 'row col-md-12 tp' : 'hidden'">
                     <div class="col-md-5">
                         <p class="p-item">Personal API</p>
 
                         <p class="p-item">OpenCV &amp; Robotics</p>
                         <p class="p-item">Personal Space Invaders</p>
-                        <p class="p-item last-item"><a href="https://www.youtube.com/watch?v=45ANv3yhFAs">Steganography Web-App <br> (CS50 Final)</a></p>
+                        <p class="p-item last-item">Steganography Web-App <br> (CS50 Final)) <br><span class="xs-text">See it here</span></p>
                     </div>
                     <div class="col-md-7">
-                        <p class="p-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aspernatur qui voluptas asperiores autem accusantium aliquam debitis iure odio mollitia, enim, illo voluptatum pariatur maxime omnis sunt incidunt sequi molestiae.</p>
-                        <p class="p-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae totam sint eveniet voluptate expedita quibusdam distinctio laborum error. Recusandae nostrum quo impedit temporibus velit neque perferendis expedita commodi debitis!</p>
-                        <p class="p-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis fuga cum rerum placeat necessitatibus, quasi voluptates. Numquam ipsum magni, commodi esse dicta dolor asperiores architecto, vero rem eveniet, neque nihil.</p>
-                        <p class="p-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis quia dolor magni quasi similique, et voluptate omnis, officia provident mollitia hic, expedita commodi fuga. Consequatur a reprehenderit assumenda ipsum quisquam.m</p>
+                        <p class="p-desc">I use Heroku to host a Python web server. It is a Flask installation that is currently being used to service any means of data transfer I require from 3rd part API's to database stores. An ever expanding asset.</p>
+                        <p class="p-desc">I've always wanted to dive head-first into robotics and electrical engineering. Click here to see my robot buddy. It can see you too!</p>
+                        <p class="p-desc">This one is quite hard to explain. Essentially, I analyze tweet timelines through sentiment analysis and turn them into a game of Space Invaders. See it in action here.</p>
+                        <p class="p-desc">A web application and learning tool that I built using Python. It is your conventional steganographic image processor. Conceal text, encrypted messages, love letters and the like. The CLI version is available on github, which also offers the "inspector" switch.</p>
                     </div>
                 </div>
                 <!-- </Projects> -->
 
                 <!-- <Certification> -->
-                <div id="certs" [class]="cHide == false ? 'row col-md-12' : 'hidden'">
+                <div  id="certs" [class]="cHide == false ? 'row col-md-12 tp' : 'hidden'">
                     <div class="col-md-5">
                         <p class="p-item">CompTIA A+</p>
                         <p class="p-item">CompTIA CySA+</p>
-                        <p class="p-item">Harvard CS50: Introduction to Computer Science</p>
-                        <p class="p-item last-item">Harvard CS50B: Computer Science for Business Professionals</p>
+                        <p class="p-item">Harvard CS50x</p>
+                        <p class="p-item last-item">Harvard CS50B</p>
                     </div>
                     <div class="col-md-7">
-                        <p class="p-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aspernatur qui voluptas asperiores autem accusantium aliquam debitis iure odio mollitia, enim, illo voluptatum pariatur maxime omnis sunt incidunt sequi molestiae.</p>
-                        <p class="p-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae totam sint eveniet voluptate expedita quibusdam distinctio laborum error. Recusandae nostrum quo impedit temporibus velit neque perferendis expedita commodi debitis!</p>
-                        <p class="p-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis fuga cum rerum placeat necessitatibus, quasi voluptates. Numquam ipsum magni, commodi esse dicta dolor asperiores architecto, vero rem eveniet, neque nihil.</p>
-                        <p class="p-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis quia dolor magni quasi similique, et voluptate omnis, officia provident mollitia hic, expedita commodi fuga. Consequatur a reprehenderit assumenda ipsum quisquam.m</p>
+                        <p class="p-desc">Certifies general knowledge &amp; practices in hardware, networking and software in the field of Information Technology.</p>
+                        <p class="p-desc">A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.</p>
+                        <p class="p-desc">Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress site.</p>
+                        <p class="p-desc">Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.</p>
                     </div>
                 </div>
                 <!-- </Certification> -->
@@ -57,7 +61,6 @@
                 <!-- </Resume> -->
 
             </div>
-        </div>
     </div>
     <div class="closure">
         

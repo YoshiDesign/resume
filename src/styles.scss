@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 html {
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width:98%;
 }
-
+.test {
+    display:inline-block;
+}
 $text_main: #e8e8e8;
 $text_alt: rgb(116, 245, 234);
 
@@ -13,19 +16,19 @@ $padding-xl:250px;
 $lg-text: 2.3em;
 $mgl-text: 1.6em;
 $md-text: 1.0em;
-$sm-text: 0.5em;
+$sm-text: 0.6em;
 
 // Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
+$screen-sm: 576px;
 
 // Small tablets (portrait view)
-$screen-md-min: 768px;
+$screen-md: 768px;
 
 // Tablets and small desktops
-$screen-lg-min: 992px;
+$screen-lg: 992px;
 
 // Large tablets and desktops
-$screen-xl-min: 1200px;
+$screen-xl: 1200px;
 
 body {
     background-image:url('assets/img/bg-gry.png');
@@ -36,7 +39,15 @@ h2 {
 .hidden {
     display:none;
 }
-
+.inline {
+    display:inline;
+}
+.xs-text {
+    font-size:$sm-text;
+}
+.tp {
+    padding-top:5px;
+}
 .logo {
     color: #e8e8e8;
     padding-right: 0;
@@ -77,7 +88,12 @@ h2 {
     display:inline-block;
     margin-left:5px;
 }
-
+.r-txt {
+    text-align:right;
+}
+.center {
+    text-align:center;
+}
 #im1 {
     height: 102px;
     width: 109px;
@@ -109,9 +125,13 @@ h2 {
 
 .headers {
     height:90%;
-    width:90%;
+    width:100%;
     background-image:url('assets/img/bg-gry.png');
     background-repeat:no-repeat;
+}
+.primary-ctr {
+    height: auto;
+    width: 111%;
 }
 
 .add-grad {
@@ -120,9 +140,9 @@ h2 {
     padding-left: 0px;
     margin:auto auto;
     background: rgb(255,255,255);
-    background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 88%);
-    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 88%);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 41%, rgba(255,255,255,0) 88%);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(255,255,255,1) 54%, rgba(255,255,255,0) 80%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(255,255,255,1) 54%, rgba(255,255,255,0) 80%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(255,255,255,1) 54%, rgba(255,255,255,0) 80%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 }
 
@@ -136,23 +156,15 @@ h2 {
     cursor:pointer;
 }
 
-.heading-1 {
-
-}
-.heading-2 {
-    text-align:center;
-}
-.heading-3 {
-    text-align:right;
-}
-
 .p-item {
     font-size:$mgl-text;
     color:aliceblue;
     padding:5px;
-    min-height:100px;
+    min-height:140px;
+    height: auto;
     margin-left:10px;
     border-bottom: 1px solid #ebc1d9;
+    padding-top:15px;
 }
 
 .last-item {
@@ -160,7 +172,8 @@ h2 {
 }
 
 .p-desc {
-    max-height:100px;
+
+    min-height:140px;
     color:$text_alt;
     padding:7px;
 }
@@ -170,20 +183,20 @@ h2 {
     position: absolute;
     top: 51px;
     left: 10px;
-    width: 100%;
-    height: auto;
-    // display: none;
-    max-height:700px;
+    width: 1080px;
+    height: 620px;
+    max-height:800px;
     min-height: 500px;
     background: rgba(255, 255, 255, 0.4);
+    padding-bottom:50px;
 
 }
 
 .closure {
     height: 400px;
-    width: 87%;
+    width: 83%;
     background: url('assets/img/body-hl.png');
-    background-position:top center;
+    background-position: calc(100% - 20px) calc(0px);
     background-repeat:no-repeat;
 }
 
@@ -203,14 +216,189 @@ h2 {
     max-height:650px;
     overflow-y:scroll;
 }
+
 .res-frame {
     width: 100%;
     margin-left:15px;
 }
-@media (max-width: 1080px) {
+
+@media (max-width : $screen-xl) {
+
+    
+
+    .logo {
+        display:block;
+        padding-left:25px;
+    }
+
+	.dd {		
+        position:relative;
+		width:99%;
+        height:auto;
+        top: -5px;
+        left:0px;
+	}
+
+	.add-grad {
+        // width:940px;
+        height:50px;
+	}
+	
+	.headers {
+	    height: auto;
+	    // width: 837px;
+    }
+    
+    .intro-div {
+        width:425px;
+    }
+
+    .p-desc {
+        min-height:160px;
+    }
+    .p-item {
+        min-height:160px;
+    }
+    .img-header {
+        background-image: none;
+        margin:45px 0px 15px 0px;
+    }
+
+    .tear-down-L1 {
+        display:none;
+    }
+    .market {
+        width:70px;
+        position:absolute;
+        right:3px;
+        top:5px;
+    }
+
+    .primary-ctr {
+         width: 160%;
+    }
+
+}
+
+@media (max-width : $screen-lg) {
+
+    .intro-div {
+        width:425px;
+    }
+    .pri-txt {
+        font-size:1.0rem;
+    } 
+    .logo {
+        padding-left:41px;
+        align-items: center;
+    }
+    .img-header {
+        background-image: url('assets/img/logo-hl-blue.png');
+        width: 581px;
+        margin: 15px 15px 15px 15px;
+        align-items: center;
+        position: relative;
+        bottom: 23px;
+        padding-top: 27px;
+        display: inline-flex;
+        align-content: center;
+    }
+    
+    .hdr-img {
+        display: block;
+        margin-left: 5px;
+        margin-bottom: 15px;
+        flex: 3;
+        /* width: 100px; */
+        /* margin: 0; */
+    }
+    
+    .img-header {
+        background-image: none;
+        margin: 0;
+        width: 600px;
+        display: inline-flex;
+    }
+    
+    // .market {
+    //     display: inline-block;
+    //     float: right;
+    //     margin-right: 10%;
+    //     position: relative;
+    //     bottom: 129px;
+    // }
+    .dd {
+        width:100%;
+    }
+
+    .add-grad {
+        height:25px;
+    }
+
+}
+
+@media (max-width : $screen-md) {
 
     .pri-txt {
         font-size:1.0rem;
+    } 
+
+
+    .intro-div {
+        padding-left:25%;
+    }
+
+    .r-text {
+        width: 200px;
+    }
+    
+    .n-text {
+        width: 168px;
+    }
+    
+    .add-grad {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 28%, rgba(255, 255, 255, 0) 66%);
+    }
+    
+    #im2 {
+        margin-right: 15px;
+    }
+
+    #im3 {
+        height:50px;
+        width:110px;
+    }
+    
+    .img-header {
+        margin-right: 15px;
+        width:525px;
+    }
+    .dd {
+        width: 65%;
+    }
+
+    .headers{
+        display:inline-block;
+    }
+
+    .intro-div, .headers, .primary-ctr, .dd {
+        width:100%;
+    }
+
+    .img-header {
+        width:80%;
+    }
+
+    .intro-div {
+        padding-left:124px;
+    }
+
+}
+
+@media (max-width : $screen-sm) { 
+
+    .img-header {
+
     }
 
 }
