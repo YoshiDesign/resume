@@ -51,7 +51,7 @@ a:hover {
     display:inline;
 }
 .lg-view {
-    display:block;
+    display:inline-block;
 }
 .xs-text {
     font-size:$sm-text;
@@ -143,8 +143,10 @@ a:hover {
 }
 .footer {
     color:white;
-    padding:10px;
-    margin-top:50px;
+    position: absolute;
+    top: 100%;
+    margin-top: 219px;
+    margin-left: 25px;
 }
 .uni-img {
     width:50px;
@@ -240,11 +242,11 @@ a:hover {
     top: 51px;
     left: 10px;
     width: 1080px;
-    height: 620px;;
-    max-height:800px;
+    height: auto;
+    // max-height:800px;
     min-height: 500px;
     background: rgba(255, 255, 255, 0.4);
-    padding-bottom:50px;
+    // padding-bottom:50px;
 
 }
 
@@ -407,6 +409,10 @@ a:hover {
     .add-grad {
         height:25px;
     }
+   
+    .footer{
+        margin-top:280px;
+    }
 
 }
 
@@ -491,15 +497,15 @@ a:hover {
         max-height:none;
     }
 
-    .footer {
-        margin-right: 35%;
+    .footer{
+        margin-top:440px;
     }
-
-
+    
 }
 
 @media (max-height : $screen-sm) {
     .intro-div {
         padding-left:10px;
     }
+   
 }
