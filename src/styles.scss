@@ -36,6 +36,14 @@ body {
 h2 {
     color:$text_main;
 }
+a {
+    color:$text_main;
+}
+a:hover {
+    color:orange;
+    text-decoration:none;
+}
+
 .hidden {
     display:none;
 }
@@ -51,8 +59,12 @@ h2 {
 .tp {
     padding-top:5px;
 }
+.tear-down-L1 {
+    z-index:-10;
+}
 .sm-view {
     display:none;
+    padding-left:25px;
 }
 .logo {
     color: #e8e8e8;
@@ -89,6 +101,17 @@ h2 {
     position: relative;
     bottom: 37px;
 }
+.inner-img {
+    position:absolute;
+    opacity:0.1;
+    bottom:50px;
+    right:0;
+}
+.inner-img > img {
+    width:180px;
+    height:180px;
+    margin-left:40px;
+}
 
 .hdr-img {
     display:inline-block;
@@ -121,6 +144,7 @@ h2 {
 .footer {
     color:white;
     padding:10px;
+    margin-top:50px;
 }
 .uni-img {
     width:50px;
@@ -143,6 +167,17 @@ h2 {
     width:100%;
     background-image:url('assets/img/bg-gry.png');
     background-repeat:no-repeat;
+}
+.more {
+    display: inline;
+    color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.more:hover {
+    cursor:pointer;
+    color:orange;
 }
 .primary-ctr {
     height: auto;
@@ -193,6 +228,10 @@ h2 {
 }
 .p-desc-sm {
     display:none;
+    color:$text_alt;
+}
+.sm-h3 {
+    color:white;
 }
 
 .dd{
@@ -201,7 +240,7 @@ h2 {
     top: 51px;
     left: 10px;
     width: 1080px;
-    height: 620px;
+    height: 620px;;
     max-height:800px;
     min-height: 500px;
     background: rgba(255, 255, 255, 0.4);
@@ -313,6 +352,9 @@ h2 {
 
     .intro-div {
         width:425px;
+    }
+    .inner-img > img {
+        margin-left:20px;
     }
     .pri-txt {
         font-size:1.5rem;
@@ -444,6 +486,15 @@ h2 {
     .lg-view{
         display:none;
     }
+
+    .dd {
+        max-height:none;
+    }
+
+    .footer {
+        margin-right: 35%;
+    }
+
 
 }
 
