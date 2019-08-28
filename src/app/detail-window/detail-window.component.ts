@@ -32,7 +32,6 @@ export class DetailWindowComponent implements OnInit {
          
     }
     
-
     /* *
     *   Display F'ns
     * */
