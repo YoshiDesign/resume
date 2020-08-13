@@ -34,8 +34,9 @@
 @font-face {
     font-family: 'Inter var';
     src: url('assets/fonts/Inter.var.woff2');
-    }
+}
 body {
+    font-family: 'Inter var';
     background-image:url('assets/img/bg-gry.png');
 }
 #navi {
@@ -208,22 +209,17 @@ body {
 
 .l-cog-pl {position:relative; animation:linear 2s infinite spin;}
 .r-cog-pl {position:relative; animation:linear 2s infinite spinr;}
-@keyframes spin {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-@keyframes spinr {0%{transform:rotate(0deg);}100%{transform:rotate(-360deg);}}
 
-@keyframes spint {0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(360deg); right:1000px;}100%{transform:rotate(0deg); top:1000px; opacity:0; right:490px;}}
-@keyframes spintr{0%{transform:rotate(0deg); left:70px;}50%{transform:rotate(-360deg); left:870px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:220px;}}
-@keyframes spinto{0%{transform:rotate(0deg); left:60px;}50%{transform:rotate(-360deg); left:420px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:350px;}}
-@keyframes spinte{0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(-360deg); right:1080px;}100%{transform:rotate(0deg); top:1000px; right:80px; opacity:0;}}
-
-@keyframes glow {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}} 
-@keyframes glow2 {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}}
-@keyframes bluish {0%{color:ghostwhite;} 100%{color: var(--color-turq);}}
 .stop-anim {animation:none; opacity:1.0;}
 .grid {
     display:flex;
 }
-
+.test {
+    border-left:1px solid var(--color-turq); min-height:50px;
+    border-right:1px solid var(--color-turq); min-height:50px;
+    border-top:1px solid ghostwhite; min-height:50px;
+    border-bottom:1px solid ghostwhite; min-height:50px;
+}
 .list-norm {
     height:100%;
     padding:0 0 0 15px;
@@ -234,7 +230,7 @@ body {
 }
 .sm-mg {
     margin-left:15px;
-    
+
 }
 .ctr-items {
     align-items: center !important;
@@ -247,6 +243,9 @@ body {
     color:rgb(207, 195, 192) !important;
     /* background:tomato !important; */
     /* fill:tomato !important; */
+}
+.badges {
+    margin-top:10px;
 }
 .err {
     font-family:Consolas;
@@ -266,102 +265,148 @@ body {
 @keyframes e2 {0%{left:300px;} 100%{left:0;}}
 @keyframes e3 {0%{left:300px;} 100%{left:0;}}
 @keyframes e4 {0%{left:300px;} 100%{left:0;}} */
+.br-tb {border-top:1px solid ghostwhite; border-bottom:1px solid ghostwhite;}
+.br-t {border-top:1px solid ghostwhite;}
+.br-b {border-bottom:1px solid ghostwhite;}
+.imgs{ width:90%; margin:auto; width:360px;}
+.imgs img {margin: auto; }
+.sm-img {
+    width:50px;
+    height:50px;
+}
+.l-side {
+    display:inline-block;
+    justify-content:space-around;
+    width:40%;
+} 
+.aside {
+    display:inline-block;
+    margin:15px 0 5px 25px;
+    width:10%;
+}
+.m {
+    
+}
+.m p {
+    color:rgba(255, 255, 255, 0.747);
+    padding:5px;
+    width:auto;
+    text-align:center;
+    float:right;
+    margin:15px 15px 15px 0;
+    position:relative;
+    top:5px;
+}
+.md {
+    padding:25px;
+    width:100%;
+    display:inline-block;
+    box-sizing:border-box;
+}
+.md-1 {
+    width:100%;
+}
+.md-4 {
+    background:var(--color-dark-focus);
+}
+.imBox {
+    display:inline-block;
+    height:180px;
+    width:180px;
+}
+.imBox img{
+    margin:0 !important;
+}
+.badge-container {
+    display:flex; 
+    width:100%;
+    padding-bottom:5px;
+    justify-content: space-around;
+}
+.badge-container img {
+    height:100%;
+    width:100%;
+    margin:5px 10px;
+}
 
+.md-8 {
+    display:inline-block;
+    width: 58%;
+    margin:auto;
+    float:right;
+}
 
-@media (max-width: 720px) {
-    .explode-1 {
-        animation:linear 1s 1 spint !important;
-        top:0;
-        right:0;
-        opacity:0;
+.section{cursor:pointer;}
+.section:hover {background:rgb(69, 69, 95);}
+.r-side {
+    margin-bottom:1px;
+    background:var(--color-dark-focus);
+}
+
+@keyframes spin {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes spinr {0%{transform:rotate(0deg);}100%{transform:rotate(-360deg);}}
+@keyframes spint {0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(360deg); right:1000px;}100%{transform:rotate(0deg); top:1000px; opacity:0; right:490px;}}
+@keyframes spintr{0%{transform:rotate(0deg); left:70px;}50%{transform:rotate(-360deg); left:870px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:220px;}}
+@keyframes spinto{0%{transform:rotate(0deg); left:60px;}50%{transform:rotate(-360deg); left:420px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:350px;}}
+@keyframes spinte{0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(-360deg); right:1080px;}100%{transform:rotate(0deg); top:1000px; right:80px; opacity:0;}}
+@keyframes glow {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}} 
+@keyframes glow2 {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}}
+@keyframes bluish {0%{color:ghostwhite;} 100%{color: var(--color-turq);}}
+
+@media (max-width: 973px) {
+    .md {
+        min-width:490px;
     }
-    .explode-2 {
-        animation:linear 1s 1 spintr !important;
-        top:0;
-        left:0;
-        opacity:0;
+    .m p {
+        float:right;
+        width:40%;
     }
-    .explode-3 {
-        animation:linear 1s 1 spinto !important;
-        top:0;
-        left:0;
-        opacity:0;
+
+    .l-side {
+        width:100%;
+        display:flex;
     }
-    .explode-4 {
-        animation:linear 1s 1 spinte !important;
-        top:0;
-        right:0;
-        opacity:0;
+    .r-side {
+        
+        margin-top:20px;
     }
-    @keyframes spint {0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(360deg); right:720px;}100%{transform:rotate(0deg); top:1000px; opacity:0; right:490px;}}
-    @keyframes spintr{0%{transform:rotate(0deg); left:70px;}50%{transform:rotate(-360deg); left:720px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:-100px;}}
-    @keyframes spinto{0%{transform:rotate(0deg); left:60px;}50%{transform:rotate(-360deg); left:720px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:350px;}}
-    @keyframes spinte{0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(-360deg); right:720px;}100%{transform:rotate(0deg); top:1000px; right:80px; opacity:0;}}
+    .md-4 {
+        width:100%;
+    }
+    .md-8 {
+        width:100%;
+        float:none;
+    }
+    .imgs {
+        display:inline-block;
+        width:180px;
+        margin-right:0;
+        margin-left:0;
+    }
+    .proPic {
+        width:180px;
+        height:240px;
+    }
+    .md-1 {
+        display:inline-block;
+    }
+    .section {
+        height:100px;
+    }
+    .br-t {
+        border:none;
+    }
     
 }
 
-
-@media (max-width: 560px) {
-    .explode-1 {
-        animation:linear 1s 1 spint !important;
-        top:0;
-        right:0;
-        opacity:0;
+@media (max-width: 670px) {
+    .imBox {
+        height: 120px;
+        width: 120px;
     }
-    .explode-2 {
-        animation:linear 1s 1 spintr !important;
-        top:0;
-        left:0;
-        opacity:0;
-    }
-    .explode-3 {
-        animation:linear 1s 1 spinto !important;
-        top:0;
-        left:0;
-        opacity:0;
-    }
-    .explode-4 {
-        animation:linear 1s 1 spinte !important;
-        top:0;
-        right:0;
-        opacity:0;
-    }
-    @keyframes spint {0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(360deg); right:560px;}100%{transform:rotate(0deg); top:1000px; opacity:0; right:490px;}}
-    @keyframes spintr{0%{transform:rotate(0deg); left:70px;}50%{transform:rotate(-360deg); left:560px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:220px;}}
-    @keyframes spinto{0%{transform:rotate(0deg); left:60px;}50%{transform:rotate(-360deg); left:560px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:350px;}}
-    @keyframes spinte{0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(-360deg); right:560px;}100%{transform:rotate(0deg); top:1000px; right:80px; opacity:0;}}
-
 }
 
 
 @media (max-width: 420px) {
-    .explode-1 {
-        animation:linear 1s 1 spint !important;
-        top:0;
-        right:0;
-        opacity:0;
-    }
-    .explode-2 {
-        animation:linear 1s 1 spintr !important;
-        top:0;
-        left:0;
-        opacity:0;
-    }
-    .explode-3 {
-        animation:linear 1s 1 spinto !important;
-        top:0;
-        left:0;
-        opacity:0;
-    }
-    .explode-4 {
-        animation:linear 1s 1 spinte !important;
-        top:0;
-        right:0;
-        opacity:0;
-    }
-    @keyframes spint {0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(360deg); right:420px;}100%{transform:rotate(0deg); top:1000px; opacity:0; right:490px;}}
-    @keyframes spintr{0%{transform:rotate(0deg); left:70px;}50%{transform:rotate(-360deg); left:420px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:220px;}}
-    @keyframes spinto{0%{transform:rotate(0deg); left:60px;}50%{transform:rotate(-360deg); left:420px;}100%{transform:rotate(0deg); top:1000px; opacity:0; left:350px;}}
-    @keyframes spinte{0%{transform:rotate(0deg); right:10px;}50%{transform:rotate(-360deg); right:420px;}100%{transform:rotate(0deg); top:1000px; right:80px; opacity:0;}}
 
 }
