@@ -66,7 +66,53 @@ export class AppComponent implements OnInit {
                     el.classList.remove('no-op')
                 })
                 splodes.forEach(el => {
-                    
+                    // Blow up the header
+                    let mod = Math.random() * 100
+                    if (mod > 50) {
+                        if (mod < 77) {
+                            el.classList.add('explode-1')
+                            el.classList.add('end')
+                        } else {
+                            el.classList.add('explode-2')
+                            el.classList.add('end')
+                        }
+                            
+                    } else {
+                        if (mod < 27) {
+                            el.classList.add('explode-3')
+                            el.classList.add('end')
+                        } else {
+                            el.classList.add('explode-4')
+                            el.classList.add('end')
+                        }
+
+                    }
+                    setTimeout(function(){
+
+                        el.classList.add('hide-me')
+
+                        document.getElementById('togg').style.display = "none";
+                        document.getElementById('im').style.display = "none";
+                        document.getElementById('error').classList.remove('hide-me')
+                        document.getElementById('nb').classList.remove('auto-mg')
+                        document.getElementById('nb').classList.add('sm-mg')
+
+
+                        setTimeout(function(){
+                            document.getElementById('m1').classList.add('m1')
+                        }, 1000)
+                        setTimeout(function(){
+                            document.getElementById('m2').classList.add('m2')
+                        }, 1500)
+                        setTimeout(function() {
+                            document.getElementById('m3').classList.add('m3')
+                        }, 2000)
+                        setTimeout(function() {
+                            document.getElementById('m4').classList.add('m4')
+                        }, 2500)
+
+                    }, 600)
+
                 })
                 break
         }
