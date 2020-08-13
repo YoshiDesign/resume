@@ -41,7 +41,7 @@ body {
 #navi {
     display:flex;
     width: 100%;
-    z-index:5500;
+    /* z-index:5500; */
     box-sizing:border-box;
     background-color: var(--color-dark-focus);
     transition: box-shadow cubic-bezier(.165, .84, .44, 1) .25s;
@@ -79,6 +79,7 @@ body {
 .ml {
     list-style:none;
     color:ghostwhite;
+    animation:linear 2s infinite bluish;
 }
 .cog {
     width: 35px;
@@ -88,51 +89,102 @@ body {
 .blight {
     position:absolute;
     height:100%;
-    width:100%;
+    width:83%;
     background-image:url('assets/img/logo-hl-blue.png');
     background-size:cover;
-    background-position-x: 55px;
-    animation:ease-in-out 2s infinite glow2;
+    background-position-x: 80px;
+    animation:step-end 2s infinite glow2;
 }
 .switch{
     display:flex;
     width:50px;
     height:10px;
     border-radius: 10px;
-    border:1px solid black;
+    border:1px solid #a1a1a1;
+    z-index:100;
+    cursor:pointer;
+    background:dimgrey;
+    position:relative;
+    left:2px;
 }
-.n2 {
-    padding:2px 5px;
-    width:5px;
-    background: var(--color-turq);
-    border-radius: 10px;
-}
+
 .cirq {
     position:absolute;
-    bottom:0;
-    left:33.5px;
-    width:200px;
-    height:5px;
+    bottom:1px;
+    left:34px;
+    width:191px;
+    height:3px;
     border-bottom:3px solid var(--color-fturq);
     border-left:3px solid var(--color-fturq);
     animation:ease-in-out 2s infinite glow;
 
 }
+.cirq2 {
+    position:absolute;
+    right: 62px;
+    bottom: 6px;
+    width: 13px;
+    transform:rotate(90deg);
+    height:5px;
+    border-bottom:4px solid var(--color-fturq);
+    /* border-left:3px solid var(--color-fturq); */
+    animation:ease-in-out 2s infinite glow;
+
+}
+.cirq3 {
+    position:absolute;
+    bottom:0;
+    right:53px;
+    bottom:20px;
+    width:12px;
+    height:5px;
+    border-bottom:4px solid var(--color-fturq);
+    animation:ease-in-out 2s infinite glow;
+
+}
+.cirq4 {
+    position:absolute;
+    bottom:0;
+    right:77px;
+    bottom:20px;
+    width:12px;
+    height:5px;
+    border-bottom:4px solid var(--color-fturq);
+    animation:ease-in-out 2s infinite glow;
+}
 .n {
     position:absolute;
-    bottom: 10px;
-    left: 31px;
+    bottom: 9px;
+    left: 32px;
+    border-radius:100%;
+    border:3px solid var(--color-fturq);
+}
+.n2 {
+    padding:2px 5px 2px 5px;
+    position:relative;
+    left:1px;
+    transition:left ease 100ms;
+    width:5px;
+    background: var(--color-turq);
+    border-radius: 10px;
+}
+
+.n3 {
+    position:absolute;
+    bottom: 19px;
+    right: 68px;
     border-radius:100%;
     border:3px solid var(--color-fturq);
 }
 
-.l-cog-pl {position:relative; animation:ease-in-out 2s infinite spin;}
-.r-cog-pl {position:relative; animation:ease-in-out 2s infinite spinr;}
+.l-cog-pl {position:relative; animation:linear 2s infinite spin;}
+.r-cog-pl {position:relative; animation:linear 2s infinite spinr;}
 @keyframes spin {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 @keyframes spinr {0%{transform:rotate(0deg);}100%{transform:rotate(-360deg);}}
-@keyframes glow {0%{opacity:0;} 77%{opacity:1.0;} 100%{opacity:0;}} 
-@keyframes glow2 {0%{opacity:0;} 90%{opacity:1.0;} 100%{opacity:0;}} 
-
+@keyframes glow {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}} 
+@keyframes glow2 {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}}
+@keyframes bluish {0%{color:ghostwhite;} 100%{color: var(--color-turq);}}
+.stop-anim {animation:none; opacity:1.0;}
 .grid {
     display:flex;
 }
@@ -147,4 +199,13 @@ body {
 }
 .ctr-items {
     align-items: center !important;
+}
+.no-op {
+    opacity:0;
+}
+.reds {
+    border-color:tomato !important;
+    color:tomato !important;
+    /* background:tomato !important; */
+    /* fill:tomato !important; */
 }
