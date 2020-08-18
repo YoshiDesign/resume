@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ClassProvider } from '@angular/core';
+import { ResumeService } from '../services/ResumeService'
 
 @Component({
   selector: 'app-project-view',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectViewComponent implements OnInit {
 
-  constructor() { }
+    rService : ResumeService
 
-  ngOnInit() {
-  }
+    constructor(
+        rService : ResumeService
+    ) { 
+        this.rService = rService
+    }
+
+    ngOnInit() {
+
+    }
 
 }
