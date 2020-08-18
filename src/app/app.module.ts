@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 // My service for servicing
 import {ResumeService} from './services/ResumeService'
+import Skillet from './data/Skillet'
 
 import { AppComponent } from './app.component';
 import { SocialViewComponent } from './social-view/social-view.component';
@@ -20,7 +21,8 @@ import { BadgeComponentComponent } from './badge-component/badge-component.compo
     BrowserModule
   ],
   providers: [
-      ResumeService
+      ResumeService,
+      Skillet
   ],
   bootstrap: [AppComponent]
 })

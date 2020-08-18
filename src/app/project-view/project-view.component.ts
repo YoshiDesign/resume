@@ -17,7 +17,7 @@ export class ProjectViewComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        console.log("derp")
     }
 
 }

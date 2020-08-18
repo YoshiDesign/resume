@@ -1,72 +1,56 @@
 import { Injectable } from '@angular/core';
+import Skillet from '../data/Skillet'
 
 @Injectable()
-export class ResumeService {
+export class ResumeService  {
     
-    proDetail : object
+    public linguaDetail : object    = []
+    public frameworkDetail : object = []
+    public libraryDetail : object   = []
+    public otherDetail : object    = []
+    public iotDetail : object       = []
 
-    constructor () {
-        this.proDetail = {}
+    /**
+     * An object containing the data that we'll need 
+     * in order to populate my (enviable?) proficiencies
+     */
+    private skillet : Skillet
+
+    constructor (
+        skillet : Skillet
+    ) {
+        this.skillet = skillet
+        this.setupProjects()
     }
-    
+
+    /**
+     * Build the iterable containing the details 
+     * for each row under project proficiencies.
+     */
     setupProjects () {
 
-        const P = {
-            dtb: 1,
-            ww: 2,
-            resume: 3,
-            opencv: 4,
-            robo: 5,
-            cs50 : 6,
-            utaust : 7,
-            steg : 8,
-            psi : 9,
-            dform : 10,
-            wsg : 11,
-            gameng : 12,
-            p5js : 13,
-            errata : 14
-        }
-
-        this.proDetail = {
-
-            // Lingua
-            'js' : [P.steg, P.ww,  P.dform, P.resume, P.cs50, P.dtb],
-            'py' : [],
-            'cpp' : [],
-            'ts' : [],
-            'php' : [],
-            'bash' : [],
-            'lua' : [],
-            'csharp' : [],
-
-            // Frameworks
-            'node' : [],
-            'react' : [],
-            'lara' : [],
-            'anglr' : [],
-            'flask' : [],
-
-            //Libs
-            'gql' : [],
-            'ossl' : [],
-            'ocv' : [],
-            'd3' : [],
-            'pgame' : [],
-            
-            // Sys
-            'rds' : [],
-            'mysql' : [],
-            'mgo' : [],
-            'linx' : [],
-
-            // Electro
-            'ardno' : [],
-            'rpi' : [],
-            'lnch' : [],
-
+        for (let item in this.skillet.details) {
 
         }
+
+
+
+        // 'js'][1] = [this.P.steg, this.P.ww,  this.P.dform, this.P.resume, this.P.cs50, this.P.dtbs
+        this.linguaDetail = [
+            []
+        ]
+        this.frameworkDetail = [
+            []
+        ]
+        this.libraryDetail = [
+            []
+        ]
+        this.otherDetail = [
+            []
+        ]
+        this.iotDetail = [
+            []
+        ]
     }
 
 };

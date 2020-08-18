@@ -1,55 +1,78 @@
+import { Injectable } from '@angular/core';
+import { DH_UNABLE_TO_CHECK_GENERATOR } from 'constants';
+
+/**
+ * Notes:
+ * WP, LNX and NO have their own displays
+ * due to a lack of any concise manner for
+ * which to explain my experience with w each across projects.
+ */
+
+@Injectable()
 export default class Skillet {
 
-    public data : Object;
+    public details: {}
 
-    constructor(){ // "Database"
-        this.data =  {
-            "Projects" : [
-                {
-                    "title" : "Personal API",
-                    "desc"  : "I use Heroku to host a Python web server. It is a Flask installation that is currently being used to service any means of data transfer I require from 3rd part API's to database stores. An ever expanding asset.",
-                    "alt_title" : 0
-                },
-                {
-                    "title" : "OpenCV &amp; Robotics",
-                    "desc"  : "I've always wanted to dive head-first into robotics and electrical engineering. Click here to see my robot buddy. It can see you too!",
-                    "alt_title" : 0
-                },
-                {
-                    "title" : "Personal Space Invaders",
-                    "desc"  : "This one is quite hard to explain. Essentially, I analyze tweet timelines through sentiment analysis and turn them into a game of Space Invaders. See it in action here.",
-                    "alt_title" : 0
-                },
-                {
-                    "title" : "Steganography (CS50 Final)",
-                    "desc"  : "A web application and learning tool that I built using Python. It is your conventional steganographic image processor. Conceal text, encrypted messages, love letters and the like. The CLI version is available on github, which also offers the\"inspector\" switch.",
-                    "alt_title" : "steganography"
-                }
-            ]
-        },
-        {
-            "Certification" : [
-                {
-                    "title" : "CompTIA A+",
-                    "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
-                    "alt_title" : 0
-                },
-                {
-                    "title" : "CompTIA CySA+",
-                    "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
-                    "alt_title" : 0
-                },
-                {
-                    "title" : "Harvard CS50x",
-                    "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress site.",
-                    "alt_title" : 0
-                },
-                { 
-                    "title" : "Harvard CS50B",
-                    "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.",
-                    "alt_title" : "steganography"
-                }
-            ]
+    constructor () { // "Database"
+
+        // A unique identity for each of my projects, 1 indexed
+        enum P {
+            DTB = 1,WW,RES,OCV,ROBO,
+            CS50,CS50AI,CS50G,UTAUST,STEG,
+            PSI,DFORM,WSG,GAME,P5,ERRA,API,LNX,WP,NO
+        }
+
+        /** Project details : Primary data structure to feed frontend factories
+            "row" : {
+                element_id : icon-src [project, project]
+                element_id : icon-src [project, project]
+                element_id : icon-src [project, project]
+            } ...
+            Keep your filenames close, and your extensions closer....
+         */
+        this.details = {
+            "lingua" : {
+                'js' :["cjs.png",   [P.DTB,P.WW,P.RES,P.CS50,P.DFORM,P.P5,P.ERRA]],
+                'py' :["py.png",    [P.PSI,P.STEG,P.CS50,P.CS50AI,P.WW]],
+                'cpp' :["cpp.png",  [P.ROBO,P.OCV,P.GAME]],
+                'ts' :["ts.png",    [P.RES,P.WW,P.DFORM,P.WSG,P.ERRA]],
+                'php' :["php.png",  [P.DTB,P.ERRA]],
+                'bash' :["sheb.png",[P.WW,P.DTB,P.ERRA]],
+                'lua' :["lua.png",  [P.CS50G]],
+                'csharp' :["cs.png",[P.ROBO, P.OCV]]
+            },
+
+            "frameworks" : {
+                'nodejs' :["nodejs.png",[P.WW]],
+                'react' :["react.png",  [P.WW]],
+                'lara' :["lara.png",    [P.DTB]],
+                'ang' :["ang.png",      [P.DFORM, P.ERRA, P.RES, P.WSG]],
+                'flask' :["flask.png",  [P.STEG, P.API]]
+            },
+
+            "libraries" : {
+                "gql" :["gql.png",  [P.WW]],
+                "ossl" :["ossl.png",[P.NO]],
+                "ocv" :["ocv.png",  [P.ROBO, P.OCV]],
+                "d3" :["d3.png",    [P.DTB, P.WW]],
+                "pgame" :["pgame.png",[P.PSI]],
+            },
+
+            "other" : {
+                "rds" :["rds.png",      [P.API]],
+                "mysql" :["mysql.png",  [P.DTB, P.CS50, P.ERRA]],
+                "pgsql" : ["pgsql.png", [P.API]],
+                "mgo" : ["mgo.png",     [P.WW, P.API]],
+                "lnx" : ["ln.png",      [P.LNX]],
+                "hku" : ["hku.png",     [P.PSI,P.API,P.STEG]],
+                "wp" : ["wp.png",       [P.WP]]
+            },
+
+            "iot" : {
+                "ardno" :["ard.png",[P.ROBO, P.OCV]],
+                "rpi" :  ["rpi.png", [P.ROBO]],
+                "lnch" : ["tva.png", [P.UTAUST]]
+            }
         }
     }
 }
