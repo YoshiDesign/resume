@@ -233,6 +233,9 @@ h2 {color:white;}
     margin-left:15px;
 
 }
+.no-evt {
+    pointer-events: none !important;
+}
 .ctr-items {
     align-items: center !important;
 }
@@ -285,8 +288,8 @@ h2 {color:white;}
     margin:15px 0 5px 25px;
     width:10%;
 }
-.m {
-    
+.dim {
+    opacity:0.2
 }
 .m p {
     color:rgba(255, 255, 255, 0.747);
@@ -308,6 +311,7 @@ h2 {color:white;}
     width:100%;
 }
 .md-4 {
+    position:realative;
     background:var(--color-dark-focus);
 }
 .imBox {
@@ -417,9 +421,10 @@ h2 {color:white;}
         height: 120px;
         width: 120px;
     }
+    .err {font-size:16px;}
 }
 
 
-@media (max-width: 420px) {
-
+@media (max-width: 560px) {
+    .err {font-size:12px;}
 }

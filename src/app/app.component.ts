@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
                         el.classList.remove('reds')
                 })
                 break
+                
             case 1 :
                 // Move switch
                 document.getElementById('snode').style.left = "16px"
@@ -54,19 +55,27 @@ export class AppComponent implements OnInit {
                     el.classList.add('no-op')
                 })
                 break
+
             case 2 :
                 // Move switch
                 document.getElementById('snode').style.left = "32px"
                 modes.forEach(el => {
                     if (!el.classList.contains('reds'))
                         el.classList.add('reds')
+
                 })
+
+                // Translates NodeList into array of elements so we can use forEach
                 let s = Array.from(document.getElementsByClassName('no-op'))
                 s.forEach(el => {
+                    // set opacity to 1
                     el.classList.remove('no-op')
+
                 })
+
+                // Blow up the header
                 splodes.forEach(el => {
-                    // Blow up the header
+                    // Randomly assign 1 of any 4 directions to the exploding item
                     let mod = Math.random() * 100
                     if (mod > 50) {
                         if (mod < 77) {
@@ -76,7 +85,7 @@ export class AppComponent implements OnInit {
                             el.classList.add('explode-2')
                             el.classList.add('end')
                         }
-                            
+
                     } else {
                         if (mod < 27) {
                             el.classList.add('explode-3')
@@ -87,29 +96,18 @@ export class AppComponent implements OnInit {
                         }
 
                     }
+
+                    // Clean up the header
                     setTimeout(function(){
 
                         el.classList.add('hide-me')
 
                         document.getElementById('togg').style.display = "none";
+                        document.getElementById('nb').style.display = "none";
                         document.getElementById('im').style.display = "none";
                         document.getElementById('error').classList.remove('hide-me')
                         document.getElementById('nb').classList.remove('auto-mg')
                         document.getElementById('nb').classList.add('sm-mg')
-
-
-                        setTimeout(function(){
-                            document.getElementById('m1').classList.add('m1')
-                        }, 1000)
-                        setTimeout(function(){
-                            document.getElementById('m2').classList.add('m2')
-                        }, 1500)
-                        setTimeout(function() {
-                            document.getElementById('m3').classList.add('m3')
-                        }, 2000)
-                        setTimeout(function() {
-                            document.getElementById('m4').classList.add('m4')
-                        }, 2500)
 
                     }, 600)
 

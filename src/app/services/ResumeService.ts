@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import Skillet from '../data/Skillet'
+import Skillet from '../repo/Skillet'
 
-@Injectable()
+@Injectable() // Injected into project-view.component.ts
 export class ResumeService  {
     
     public linguaDetail : object    = []
     public frameworkDetail : object = []
     public libraryDetail : object   = []
-    public otherDetail : object    = []
+    public otherDetail : object     = []
     public iotDetail : object       = []
+    public buffer : object = []
 
     /**
      * An object containing the data that we'll need 
@@ -20,37 +21,22 @@ export class ResumeService  {
         skillet : Skillet
     ) {
         this.skillet = skillet
-        this.setupProjects()
+        this.buffer = this.setupProjects()
     }
 
     /**
-     * Build the iterable containing the details 
-     * for each row under project proficiencies.
+     * Build the iterables containing our details.
+     * Each iterable describes a row beneath "Proficiencies"
      */
     setupProjects () {
 
-        for (let item in this.skillet.details) {
+        let buffer = []
 
+        for (let item in this.skillet.details) {
+            buffer.push(this.skillet.details[item])
         }
 
+        return buffer
 
-
-        // 'js'][1] = [this.P.steg, this.P.ww,  this.P.dform, this.P.resume, this.P.cs50, this.P.dtbs
-        this.linguaDetail = [
-            []
-        ]
-        this.frameworkDetail = [
-            []
-        ]
-        this.libraryDetail = [
-            []
-        ]
-        this.otherDetail = [
-            []
-        ]
-        this.iotDetail = [
-            []
-        ]
     }
-
-};
+}
