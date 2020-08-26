@@ -7,6 +7,12 @@ import { Injectable } from '@angular/core';
  * which to explain my experience with w each across projects.
  */
 
+ /**
+  * TODO
+  * IoT Core / Azure
+  * Git
+  */
+
 @Injectable()   //Injected into ResumeService.ts
 export default class Skillet {
 
