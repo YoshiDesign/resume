@@ -3,7 +3,6 @@
     --secondary-background: #f8f8ff;
     --primary-background: #211f35;
     --primary-dark: #000d20;
-    /* --primary-background: #000131; */
     --tert-background:#feedad;
     --color-turq:#5ac8c8;
     --color-fturq:#81eded;
@@ -212,8 +211,14 @@ h2 {color:white;}
     display:none !important;
 }
 
-.l-cog-pl {position:relative; animation:linear 2s infinite spin;}
-.r-cog-pl {position:relative; animation:linear 2s infinite spinr;}
+.l-cog-pl {
+    position:relative; 
+    animation:linear 2s infinite spin;
+}
+.r-cog-pl {
+    position:relative; 
+    animation:linear 2s infinite spinr;
+}
 
 .stop-anim {animation:none; opacity:1.0;}
 .grid {
