@@ -64,7 +64,7 @@ export default class Skillet {
                 ['react',  "react.png", [P.WW]],
                 ['lara',   "lara.png",  [P.DTB]],
                 ['ang',    "ang.png",   [P.DFORM, P.ERRA, P.RES, P.WSG]],
-                ['flask',  "flask.png", [P.STEG, P.API]]
+                ['flask',  "flask.png", [P.STEG, P.API]],
             ],
 
             libraries : [
@@ -82,7 +82,8 @@ export default class Skillet {
                 ["mgo",   "mgo.png",    [P.WW, P.API]],
                 ["lnx",   "ln.png",     [P.LNX]],
                 ["hku",   "hku.png",    [P.PSI,P.API,P.STEG]],
-                ["wp",    "wp.png",     [P.WP]]
+                ["wp",    "wp.png",     [P.WP]],
+                ["apache", "apache.png", [P.DTB]]
             ],
 
             iot : [
