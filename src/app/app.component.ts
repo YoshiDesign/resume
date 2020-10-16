@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
         this.switchPos = 0
     }
 
+    // Activate the switch modes
     switchLed () : void {
 
         if (this.switchPos == 2)
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit {
         let shows = Array.from(document.querySelectorAll('[data-show]'))
         let splodes = Array.from(document.getElementsByClassName('splodes'))
 
+        // Determine the interactive switch's effect
         switch (this.switchPos) {
             case 0 :
                 // Move switch
@@ -45,7 +47,7 @@ export class AppComponent implements OnInit {
                 break
                 
             case 1 :
-                // Move switch
+                // Stop the gears
                 document.getElementById('snode').style.left = "16px"
                 nodes.forEach(el => {
                     if (!el.classList.contains("stop-anim"))
@@ -57,7 +59,7 @@ export class AppComponent implements OnInit {
                 break
 
             case 2 :
-                // Move switch
+                // Blow up the circuit
                 document.getElementById('snode').style.left = "32px"
                 modes.forEach(el => {
                     if (!el.classList.contains('reds'))
@@ -75,7 +77,7 @@ export class AppComponent implements OnInit {
 
                 // Blow up the header
                 splodes.forEach(el => {
-                    // Randomly assign 1 of any 4 directions to the exploding item
+                    // Randomly assign 1 of any 4 randomly determined directions each animated class
                     let mod = Math.random() * 100
                     if (mod > 50) {
                         if (mod < 77) {

@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
     --secondary-background: #f8f8ff;
     --primary-background: #211f35;
@@ -51,7 +50,7 @@ h2 {color:white;}
     background-color: var(--color-dark-focus);
     transition: box-shadow cubic-bezier(.165, .84, .44, 1) .25s;
     height: 50px;
-    min-width:320px;
+    min-width:auto;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
     border-top:5px solid var(--color-fturq);
 }
@@ -187,24 +186,28 @@ h2 {color:white;}
     top:0;
     right:0;
     opacity:0;
+    z-index:999;
 }
 .explode-2 {
     animation:linear 1s 1 spintr !important;
     top:0;
     left:0;
     opacity:0;
+    z-index:999;
 }
 .explode-3 {
     animation:linear 1s 1 spinto !important;
     top:0;
     left:0;
     opacity:0;
+    z-index:999;
 }
 .explode-4 {
     animation:linear 1s 1 spinte !important;
     top:0;
     right:0;
     opacity:0;
+    z-index:999;
 }
 
 .hide-me {
@@ -225,10 +228,10 @@ h2 {color:white;}
     display:flex;
 }
 .test {
-    border-left:1px solid var(--color-turq); min-height:50px;
-    border-right:1px solid var(--color-turq); min-height:50px;
-    border-top:1px solid ghostwhite; min-height:50px;
-    border-bottom:1px solid ghostwhite; min-height:50px;
+    border-left:1px solid var(--color-turq);
+    border-right:1px solid var(--color-turq);
+    border-top:1px solid ghostwhite;
+    border-bottom:1px solid ghostwhite;
 }
 .list-norm {
     height:100%;
@@ -370,23 +373,27 @@ h2 {color:white;}
   }
 
 .imBox {
-    display:inline-block;
+    /* display:inline-block; */
     height:180px;
     width:180px;
+    margin-top:53px;
 }
 .imBox img{
     margin:0 !important;
+    width:136px;
 }
 .badge-container {
     display:flex; 
     width:100%;
+    height:239px;
     padding-bottom:5px;
     justify-content: space-around;
 }
 .badge-container img {
-    height:100%;
-    width:100%;
-    margin:5px 10px;
+    justify-content: space-evenly;
+    height:70%;
+    width: 70%;
+    padding-left: 10px;
 }
 
 .md-8 {
@@ -400,14 +407,19 @@ h2 {color:white;}
 .section:hover {background:rgb(69, 69, 95);}
 .section-alt {
     width:100%;
+    min-height:60px;
     display:flex;
     flex-flow:row wrap;
     justify-content:space-evenly;
+    box-sizing: content-box;
+    padding:2px 0 0 0 ;
 }
 
 .imBox-sm img {
     width: 50px;
     height: 50px;
+    padding:2px;
+    box-sizing: border-box;
 }
 
 .r-side {
@@ -426,8 +438,12 @@ h2 {color:white;}
 @keyframes bluish {0%{color:ghostwhite;} 100%{color: var(--color-turq);}}
 
 @media (max-width: 973px) {
+    #navi {
+        flex-direction:column-reverse;
+        height: 99px;
+    }
     .md {
-        min-width:490px;
+        min-width:auto;
     }
     .m p {
         float:right;
@@ -469,9 +485,6 @@ h2 {color:white;}
         width: 220px;
         height: 280px;
     }
-    .md-1 {
-        display:inline-block;
-    }
     .section {
         height:100px;
     }
@@ -480,13 +493,18 @@ h2 {color:white;}
     }
 
     .rm, .lm {display:none;}
+    .badge-container {height: 126px; }
+    .badge-container img {
+        width: auto;
+    }
+    .imBox {margin-top:0;}
     
 }
 
 @media (max-width: 670px) {
     .imBox {
-        height: 120px;
-        width: 120px;
+        height: 160px;
+        width: 160px;
     }
     .err {font-size:16px;}
 }
@@ -494,4 +512,23 @@ h2 {color:white;}
 
 @media (max-width: 560px) {
     .err {font-size:12px;}
+    .social-p {font-size:12px; position:relative; top:10px;}
+    .imgs {padding-right:0; padding-left:3px;}
+    .badge-container img {height:75%; width: auto;}
+    .test.r-side.r {background: none; border:none;}
+    .imBox {
+        height: 120px;
+        width: 120px;
+    }
+}
+@media (max-width: 490px) {
+    .md {padding:0;}
+    .social-p {font-size:9px;}
+    .imBox {
+        height: 90px;
+        width: 90px;
+    }
+}
+@media (max-width: 420px) {
+    .social-p {display:none;}
 }
