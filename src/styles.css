@@ -5,6 +5,7 @@
     --tert-background:#feedad;
     --color-turq:#5ac8c8;
     --color-fturq:#81eded;
+    --color-mag: #f844ff;
     --color-lights:ghostwhite;
     --color-alt-text: #86b1ea;
     --color-lightgreen:#d1f1a8;
@@ -111,7 +112,12 @@ h2 {color:white;}
     position:relative;
     left:2px;
 }
-
+.slt {
+    border :2px solid var(--color-mag);
+}
+.hlt {
+    border:2px solid var(--color-turq)
+}
 .cirq {
     position:absolute;
     bottom:1px;

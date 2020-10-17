@@ -50,11 +50,11 @@ export default class Skillet {
 
             lingua : [
                 ['js', "cjs.png",   [P.DTB,P.WW,P.RES,P.CS50,P.DFORM,P.P5,P.ERRA]],
-                ['py',  "py.png",   [P.PSI,P.STEG,P.CS50,P.CS50AI,P.WW]],
+                ['py',  "py.png",   [P.PSI,P.STEG,P.CS50,P.CS50AI]],
                 ['cpp', "cpp.png",  [P.ROBO,P.OCV,P.GAME]],
                 ['ts',  "ts.png",   [P.RES,P.WW,P.DFORM,P.WSG,P.ERRA]],
                 ['php', "php.png",  [P.DTB,P.ERRA]],
-                ['bash',"sheb.png", [P.WW,P.DTB,P.ERRA]],
+                ['bash',"sheb.png", [P.WW,P.DTB]],
                 ['lua', "lua.png",  [P.CS50G]],
                 ['csharp', "cs.png",[P.ROBO, P.OCV]]
             ],
@@ -63,30 +63,31 @@ export default class Skillet {
                 ['nodejs', "nodejs.png",[P.WW]],
                 ['react',  "react.png", [P.WW]],
                 ['lara',   "lara.png",  [P.DTB]],
-                ['ang',    "ang.png",   [P.DFORM, P.ERRA, P.RES, P.WSG]],
+                ['ang',    "ang.png",   [P.DFORM, P.ERRA, P.RES, P.WSG, P.DTB]],
                 ['flask',  "flask.png", [P.STEG, P.API]],
             ],
 
             libraries : [
                 ["gql",  "gql.png",     [P.WW]],
-                ["ossl", "ossl.png",    [P.NO]],
+                ["ossl", "ossl.png",    [P.DTB, P.WP]],
                 ["ocv",  "ocv.png",     [P.ROBO, P.OCV]],
-                ["d3",   "d3.png",      [P.DTB, P.WW]],
+                ["d3",   "d3.png",      [P.WW]],
                 ["pgame","pgame.png",   [P.PSI]],
             ],
 
             other : [
-                ["rds",    "rds.png",   [P.API]],
+                ["rds",    "rds.png",   [P.API, P.WW]],
                 ["mysql",  "mysql.png", [P.DTB, P.CS50, P.ERRA]],
                 ["pgsql", "pgsql.png",  [P.API]],
                 ["mgo",   "mgo.png",    [P.WW, P.API]],
-                ["lnx",   "ln.png",     [P.LNX]],
+                ["lnx",   "ln.png",     [P.LNX, P.PSI, P.API, P.DTB]],
                 ["hku",   "hku.png",    [P.PSI,P.API,P.STEG]],
-                ["wp",    "wp.png",     [P.WP]],
+                ["wp",    "wp.png",     [P.WP, P.DTB]],
                 ["apache", "apache.png", [P.DTB]]
             ],
 
             iot : [
+                ["vs", "vs.png", [P.OCV, P.ROBO]],
                 ["ardno", "ard.png",    [P.ROBO, P.OCV]],
                 ["rpi",   "rpi.png",    [P.ROBO]],
                 ["lnch",  "tva.png",    [P.UTAUST]]
