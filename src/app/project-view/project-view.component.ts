@@ -1,5 +1,6 @@
 import { Component, OnInit, ClassProvider } from '@angular/core';
 import { ResumeService } from '../services/ResumeService'
+import { connect } from 'http2';
 
 @Component({
   selector: 'app-project-view',
@@ -49,7 +50,10 @@ export class ProjectViewComponent implements OnInit {
 
     // Blur tech item
     unhighlight(e) {
-
+        for (let p of this.linked) {
+            document.getElementById(p).classList.remove('slt')
+        }
+        document.getElementById(e.target.id).classList.remove('hlt')
     }
 
     // Connect related tech images
@@ -89,16 +93,19 @@ export class ProjectViewComponent implements OnInit {
             for (let item of type) {
                 // We found that which should have been randomly accessible as a dict key
                 if (item[0] == _id) {
-                    document.getElementById(_id).style.border = "1px solid white"
+                    document.getElementById(_id).classList.add('hlt')
                     // Get this item's related projects
                     projects = item[2]
                 }
 
             }
         }
+        
+        // Get an array of all image id's which share this projects tech
+        this.linked = this.connectProjects(projects)
 
-        for ( let item_id in projects ) {
-            
+        for (let p of this.linked) {
+            document.getElementById(p).classList.add('slt')
         }
 
         // Using a natural for - so we can reset i
@@ -126,6 +133,25 @@ export class ProjectViewComponent implements OnInit {
         //         }
         //     }
         // }
+    }
+
+    // Get an array of projects with similar tech
+    connectProjects(projects) {
+
+        let all_shared = [];
+
+        for (let category of this.buffer) {
+
+            for (let item of category) {
+                let cur_id = item[0]
+                let found = projects.some(r => item[2].includes(r))
+                if (found) {
+                    all_shared.push(cur_id)
+                }
+            }
+        }
+        return all_shared
+
     }
 
 }
