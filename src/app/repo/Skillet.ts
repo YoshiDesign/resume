@@ -80,7 +80,6 @@ export default class Skillet {
                 ["mysql",  "mysql.png", [P.DTB, P.CS50, P.ERRA]],
                 ["pgsql", "pgsql.png",  [P.API]],
                 ["mgo",   "mgo.png",    [P.WW, P.API]],
-                ["lnx",   "ln.png",     [P.LNX, P.PSI, P.API, P.DTB]],
                 ["hku",   "hku.png",    [P.PSI,P.API,P.STEG]],
                 ["wp",    "wp.png",     [P.WP, P.DTB]],
                 ["apache", "apache.png", [P.DTB]]
@@ -91,6 +90,15 @@ export default class Skillet {
                 ["ardno", "ard.png",    [P.ROBO, P.OCV]],
                 ["rpi",   "rpi.png",    [P.ROBO]],
                 ["lnch",  "tva.png",    [P.UTAUST]]
+            ],
+
+            sys : [
+                ["lnx",   "ln.png",     [P.LNX, P.PSI, P.API, P.DTB, P.ROBO, P.OCV]],
+                ["arm", "arm.png", [P.OCV, P.ROBO]],
+                ["cmake", "cmake.png", [P.OCV, P.ROBO]],
+                ["vim", "vim2.png", [P.OCV, P.ROBO]],
+                ["gnu", "gnu.png", [P.OCV, P.ROBO]]
+
             ]
         }
     }

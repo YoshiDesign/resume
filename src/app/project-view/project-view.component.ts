@@ -1,6 +1,5 @@
 import { Component, OnInit, ClassProvider } from '@angular/core';
 import { ResumeService } from '../services/ResumeService'
-import { connect } from 'http2';
 
 @Component({
   selector: 'app-project-view',
