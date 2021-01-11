@@ -28,7 +28,7 @@ export default class Skillet {
         enum P {
             DTB = 1,WW,RES,OCV,ROBO,
             CS50,CS50AI,CS50G,UTAUST,STEG,
-            PSI,DFORM,WSG,GAME,P5,ERRA,API,LNX,WP,NO
+            PSI,DFORM,WSG,GAME,P5,ERRA,API,LNX,WP,NO,EMB
         }
 
         /** Project details : Primary data structure to feed frontend factories
@@ -86,7 +86,7 @@ export default class Skillet {
             ],
 
             iot : [
-                ["vs", "vs.png", [P.OCV, P.ROBO]],
+                ["vs", "vs.png", [P.OCV, P.ROBO, P.UTAUST]],
                 ["ardno", "ard.png",    [P.ROBO, P.OCV]],
                 ["rpi",   "rpi.png",    [P.ROBO]],
                 ["lnch",  "tva.png",    [P.UTAUST]]
@@ -94,9 +94,9 @@ export default class Skillet {
 
             sys : [
                 ["lnx",   "ln.png",     [P.LNX, P.PSI, P.API, P.DTB, P.ROBO, P.OCV]],
-                ["arm", "arm.png", [P.OCV, P.ROBO]],
+                ["arm", "arm.png", [P.OCV, P.ROBO, P.UTAUST]],
                 ["cmake", "cmake.png", [P.OCV, P.ROBO]],
-                ["vim", "vim2.png", [P.OCV, P.ROBO]],
+                ["vim", "vim2.png", [P.OCV, P.ROBO, P.UTAUST]],
                 ["gnu", "gnu.png", [P.OCV, P.ROBO]]
 
             ]
