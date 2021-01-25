@@ -10,6 +10,7 @@ export class ProjectViewComponent implements OnInit {
 
     rService : ResumeService
     imgAssets : string
+
     /**
      * Dev's Note:
      * Arguably, the only way you should ever have to silence the 
@@ -19,7 +20,7 @@ export class ProjectViewComponent implements OnInit {
     public buffer   : any    = []   // Constructs the frontend icons
     private linked  : any    = []   // Array of currently linked icons
     public projTree : object = {}
-    private anchored : boolean
+    private curHighlight : boolean
 
     constructor(
         rService : ResumeService
@@ -27,6 +28,7 @@ export class ProjectViewComponent implements OnInit {
         this.rService = rService
         this.imgAssets = "assets/img/"
         this.linked = null
+        this.curHighlight = null
     }
 
     ngOnInit() {
@@ -35,20 +37,21 @@ export class ProjectViewComponent implements OnInit {
     }
 
     // Clicked on tech item
-    test(e) {
+    test(e) :void {
         console.log("test@")
         this.linker(e.target)
         // DISPLAY INFO
     }
 
     // Hovering over tech item
-    highlighter (e) {
-        console.log(e.target.id)
+    highlighter (e) :void {
         this.linker(e.target.id)
+        this.curHighlight = e.target.id
+        console.log(`Cur Highlight: ${this.curHighlight}`)
     }
 
     // Blur tech item
-    unhighlight(e) {
+    unhighlight(e) :void {
         for (let p of this.linked) {
             document.getElementById(p).classList.remove('slt')
         }
@@ -56,13 +59,13 @@ export class ProjectViewComponent implements OnInit {
     }
 
     // Connect related tech images
-    linker (_id) {
+    linker (_id) :void {
 
         this.linked = null
 
         /**
          * Note to self: Why did you use nested arrays?
-         * Now nothing is randomly accessible by _id.
+         * Now nothing is randomly accessible by _id. Try an assoc. obj instead!
          * Not to worry, but it's not scalable!
          * Ya dingus
          */
@@ -90,7 +93,7 @@ export class ProjectViewComponent implements OnInit {
         // which are living in the same array as the given id
         for (let type of this.buffer) {
             for (let item of type) {
-                // We found that which should have been randomly accessible as a dict key
+                // We found the id which should have been randomly accessible as a dict key
                 if (item[0] == _id) {
                     document.getElementById(_id).classList.add('hlt')
                     // Get this item's related projects
@@ -100,42 +103,21 @@ export class ProjectViewComponent implements OnInit {
             }
         }
         
-        // Get an array of all image id's which share this projects tech
+        // Get an array of all image id's which share this tech's projects
         this.linked = this.connectProjects(projects)
 
         for (let p of this.linked) {
             document.getElementById(p).classList.add('slt')
         }
+    }
 
-        // Using a natural for - so we can reset i
-        // for (let i = 0; i < this.buffer.length ; i++) {
-        //     for (let j = 0 ; j < this.buffer[i].length ; j++) {
-        //         // console.log(`LINKED : ${this.linked}`)
-        //         // Get the array of project ids used by this tech-icon
-        //         if (this.linked == null) {
-        //             if (this.buffer[i][j][0] == _id) {
-        //                 this.linked = this.buffer[i][j][2]
-        //                 // console.log(`Acquired Link: ${this.linked}`)
-        //                 // console.log(this.linked)
-        //                 i = 0 // Reset
-        //                 break // Now we can determine which icons should be highlighted
-        //             }
-
-        //         } else {
-
-        //             // Find all technologies used in projects that include this tech-icons projects
-        //             let pass = this.linked.some( // (Ed. ES7)
-        //                 (arr) => this.buffer[i][j][2].includes(arr)
-        //             )
-                    
-        //             console.log(`?? ${pass}`)
-        //         }
-        //     }
-        // }
+    loadTech(e) :void {
+        console.log("click")
+        
     }
 
     // Get an array of projects with similar tech
-    connectProjects(projects) {
+    connectProjects(projects) :Array<number> {
 
         let all_shared = [];
 

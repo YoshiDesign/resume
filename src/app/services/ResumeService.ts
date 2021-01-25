@@ -4,12 +4,9 @@ import Skillet from '../repo/Skillet'
 @Injectable() // Injected into project-view.component.ts
 export class ResumeService  {
     
-    public linguaDetail : object    = []
-    public frameworkDetail : object = []
-    public libraryDetail : object   = []
-    public otherDetail : object     = []
-    public iotDetail : object       = []
     public buffer : object = []
+
+    public panes = {}
 
     /**
      * An object containing the data that we'll need 
