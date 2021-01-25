@@ -270,7 +270,7 @@ h2 {color:white;}
     margin-top:10px;
 }
 .err {
-    font-family:Consolas;
+    /* font-family:Consolas; */
     font-size:22px;
     color:ghostwhite;
     margin:auto auto;
@@ -398,7 +398,7 @@ h2 {color:white;}
 .badge-container img {
     justify-content: space-evenly;
     height:70%;
-    width: 70%;
+    min-width: 70%;
     padding-left: 10px;
 }
 
