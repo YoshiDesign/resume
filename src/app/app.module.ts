@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { SocialViewComponent } from './social-view/social-view.component';
 import { ProjectViewComponent } from './project-view/project-view.component';
 import { BadgeComponentComponent } from './badge-component/badge-component.component';
+import { TheaterComponentComponent } from './theater-component/theater-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SocialViewComponent,
     ProjectViewComponent,
-    BadgeComponentComponent
+    BadgeComponentComponent,
+    TheaterComponentComponent,
   ],
   imports: [
     BrowserModule
