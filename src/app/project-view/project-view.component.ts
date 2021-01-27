@@ -8,31 +8,25 @@ import { ResumeService } from '../services/ResumeService'
 })
 export class ProjectViewComponent implements OnInit {
 
-    rService : ResumeService
+    ResumeService : ResumeService
     imgAssets : string
 
-    /**
-     * Dev's Note:
-     * Arguably, the only way you should ever have to silence the 
-     * TS typesystem is to cast variable to type "any".
-     * Type inference shouldn't be omitted for perfect type safety.
-     */
     public buffer   : any    = []   // Constructs the frontend icons
     private linked  : any    = []   // Array of currently linked icons
     public projTree : object = {}
     private curHighlight : boolean
 
     constructor(
-        rService : ResumeService
+        ResumeService : ResumeService
     ) { 
-        this.rService = rService
+        this.ResumeService = ResumeService
         this.imgAssets = "assets/img/"
         this.linked = null
         this.curHighlight = null
     }
 
     ngOnInit() {
-        this.buffer = this.rService.buffer
+        this.buffer = this.ResumeService.buffer
         console.log(this.buffer)
     }
 
@@ -131,6 +125,7 @@ export class ProjectViewComponent implements OnInit {
                 }
             }
         }
+        
         return all_shared
 
     }
