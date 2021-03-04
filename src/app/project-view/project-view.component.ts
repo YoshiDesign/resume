@@ -1,40 +1,46 @@
 import { Component, OnInit, ClassProvider } from '@angular/core';
 import { ResumeService } from '../services/ResumeService'
+import { PreviewService } from '../services/PreviewService'
 
 @Component({
   selector: 'app-project-view',
   templateUrl: './project-view.component.html',
-  styleUrls: ['./project-view.component.css']
+  styleUrls: ['./project-view.component.css'],
+  providers: [ResumeService, PreviewService]
 })
 export class ProjectViewComponent implements OnInit {
 
     ResumeService : ResumeService
+    PreviewService : PreviewService
     imgAssets : string
 
     public buffer   : any    = []   // Constructs the frontend icons
-    private linked  : any    = []   // Array of currently linked icons
     public projTree : object = {}
-    private curHighlight : boolean
-
+    public projects 
+    
+    private anchored : boolean
+    private linked  : any    = []   // Array of currently linked icons
+    private curHighlight : string
+    private curSelection : string
+    
     constructor(
-        ResumeService : ResumeService
+        ResumeService : ResumeService,
+        PreviewService : PreviewService
     ) { 
+        // A project was selected
+        this.anchored = false
+
         this.ResumeService = ResumeService
+        this.PreviewService = PreviewService
         this.imgAssets = "assets/img/"
         this.linked = null
         this.curHighlight = null
+        this.curSelection = null
     }
 
     ngOnInit() {
-        this.buffer = this.ResumeService.buffer
+        this.buffer = this.ResumeService.skillet_buffer
         console.log(this.buffer)
-    }
-
-    // Clicked on tech item
-    test(e) :void {
-        console.log("test@")
-        this.linker(e.target)
-        // DISPLAY INFO
     }
 
     // Hovering over tech item
@@ -56,44 +62,25 @@ export class ProjectViewComponent implements OnInit {
     linker (_id) :void {
 
         this.linked = null
-
-        /**
-         * Note to self: Why did you use nested arrays?
-         * Now nothing is randomly accessible by _id. Try an assoc. obj instead!
-         * Not to worry, but it's not scalable!
-         * Ya dingus
-         */
-
-        /**
-         *  buffer =
-         *  [
-         *      // Category // e.g. "Languages"
-         *      [0] : [ // Items in category
-         *          [ "item", "item.png", [P1,P2,P3] ],
-         *          [...],
-         *          [...]
-         *      ],
-         *      [1] : ... // Frameworks,
-         *      [2] : ... // Libs,
-         *      [3] : ... // Other,
-         *      [4] : ... // IoT
-         * 
-         *  ]
-         */
-        
         let projects;
 
-        // Since I cant access by id... find the projects
-        // which are living in the same array as the given id
+        // Find the projects which are living in the same array as the given id
         for (let type of this.buffer) {
             for (let item of type) {
+
                 // We found the id which should have been randomly accessible as a dict key
                 if (item[0] == _id) {
+
                     document.getElementById(_id).classList.add('hlt')
+
                     // Get this item's related projects
                     projects = item[2]
-                }
 
+                    // Every project this technology is linked to
+                    if (!this.anchored)
+                        this.projects = projects
+
+                }
             }
         }
         
@@ -103,11 +90,27 @@ export class ProjectViewComponent implements OnInit {
         for (let p of this.linked) {
             document.getElementById(p).classList.add('slt')
         }
+
     }
 
     loadTech(e) :void {
         console.log("click")
+        console.log(this.linked)
+
+        // Mutex.lock() lol
+        this.anchored = true
+        this.curSelection = e.target.id;
+        let anchored_projects = [...this.projects]
+        // Mutex.unlock()
+        this.anchored = false
+        console.log(`Cur Selection : ${this.curSelection}`)
+        console.log(`Cur Projects : `)
+        console.log(this.projects)
+
+        // Expand this list of technologies into their individual projects
         
+
+        // Assign each project a list of its technologies
     }
 
     // Get an array of projects with similar tech
