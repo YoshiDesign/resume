@@ -1,30 +1,70 @@
 [
     {
-        "Projects" : [
+        "work" : [
             {
+                "id" : 11,
                 "title" : "Personal API",
-                "desc"  : "I use Heroku to host a Python web server. It is a Flask installation that is currently being used to service any means of data transfer I require from 3rd part API's to database stores. An ever expanding asset.",
-                "alt_title" : 0
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "I use Heroku to host a Python web server. It is a Flask installation that is currently being used to service any means of data transfer I require from 3rd part API's to database stores. An ever expanding asset."
+                    }    
+                ]
             },
             {
-                "title" : "OpenCV &amp; Robotics",
-                "desc"  : "I've always wanted to dive head-first into robotics and electrical engineering. Click here to see my robot buddy. It can see you too!",
-                "alt_title" : 0
+                "id" : 4,
+                "title" : "OpenCV &amp; Embedded Systems",
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "I've always wanted to dive head-first into robotics and electrical engineering. Click here to see my robot buddy. It can see you too!"
+                    }    
+                ]
             },
             {
+                "id" : 8,
                 "title" : "Personal Space Invaders",
-                "desc"  : "This one is quite hard to explain. Essentially, I analyze tweet timelines through sentiment analysis and turn them into a game of Space Invaders. See it in action here.",
-                "alt_title" : 0
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "This one is quite hard to explain. Essentially, I analyze tweet timelines through sentiment analysis and turn them, character by character, into a game of Space Invaders. Negative sentiments increase the difficulty of of the gameplay. This caused quite the stir on Reddit's game-dev forum. For legal reasons I never published the game."
+                    }    
+                ]
             },
             {
+                "id" : 7,
                 "title" : "Steganography (CS50 Final)",
-                "desc"  : "A web application and learning tool that I built using Python. It is your conventional steganographic image processor. Conceal text, encrypted messages, love letters and the like. The CLI version is available on github, which also offers the\"inspector\" switch.",
-                "alt_title" : "steganography"
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "A web application and learning tool that I built using Python. It is your conventional steganographic image processor. Conceal text, encrypted messages, love letters and the like. The CLI version is available on github, which also offers the\"inspector\" switch."
+                    }    
+                ]
+            },
+            {
+                "id" : 2,
+                "title" : "World-Works",
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "This project was a larger undertaking than I was prepared for. With a collection of data scraped from many different resources, I was able to build an interactive map that gives you a look at a vast array of cost of living and wage statistics for over 19,000 cities and 3,000 occupiation titles. It has been in development since April of 2020."
+                    }    
+                ]
+            },
+            {
+                "id" : 1,
+                "title" : "Web Developer at Demme Learning",
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "My first job as a developer had me thrusting through the responsibilities of a senior level developer. Becoming overqualified prior to my first career move was certainly justified. My first major success was designing and developing a fully custom single-sign-on surface for their primary domain. It features OpenSSL and required a deep dive into the mechanisms of RFC6265."
+                    }    
+                ]
             }
         ]
     },
     {
-        "Certification" : [
+        "cert" : [
             {
                 "title" : "CompTIA A+",
                 "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
@@ -36,14 +76,19 @@
                 "alt_title" : 0
             },
             {
-                "title" : "Harvard CS50x",
-                "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress site.",
+                "title" : "Harvard CS50-X",
+                "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress blog.",
                 "alt_title" : 0
             },
             { 
-                "title" : "Harvard CS50B",
+                "title" : "Harvard CS50-B",
                 "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.",
-                "alt_title" : "steganography"
+                "alt_title" : 0
+            },
+            { 
+                "title" : "Harvard CS50-AI",
+                "desc"  : "Introduction to Artificial Intelligence with Python. This course taught me the concepts and algorithms at the foundation of modern artificial intelligence. I took my education in AI 1 step further and began using Jupyter Labs as a platform for which to practice ML concepts.",
+                "alt_title" : 0
             }
         ]
     }

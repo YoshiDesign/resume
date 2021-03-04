@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PreviewService } from '../services/PreviewService'
 
 @Component({
   selector: 'app-social-view',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social-view.component.css']
 })
 export class SocialViewComponent implements OnInit {
+
+    public current_preview : number
+    
 
   constructor() { }
 

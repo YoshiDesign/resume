@@ -4,9 +4,7 @@ import Skillet from '../repo/Skillet'
 @Injectable() // Injected into project-view.component.ts
 export class ResumeService  {
     
-    public buffer : object = []
-
-    public panes = {}
+    public skillet_buffer : object = []
 
     /**
      * An object containing the data that we'll need 
@@ -18,22 +16,31 @@ export class ResumeService  {
         skillet : Skillet
     ) {
         this.skillet = skillet
-        this.buffer = this.setupProjects()
+        this.skillet_buffer = this.setupProjects()
     }
 
     /**
      * Build the iterables containing our details.
+     * 
+     * Skillet Buffer:
      * Each iterable describes a row beneath "Proficiencies"
+     * 
+     * Project Buffer:
+     * Projects and their associated technologies. Also maps each to the Descriptions.json object
      */
     setupProjects () {
 
-        let buffer = []
+        let skillet_buffer = []
 
         for (let item in this.skillet.details) {
-            buffer.push(this.skillet.details[item])
+            skillet_buffer.push(this.skillet.details[item])
         }
 
-        return buffer
+
+        
+
+
+        return skillet_buffer
 
     }
 }

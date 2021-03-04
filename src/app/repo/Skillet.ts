@@ -16,7 +16,8 @@ import { Injectable } from '@angular/core';
 @Injectable()   //Injected into ResumeService.ts
 export default class Skillet {
 
-    public details: {}
+    public details : object
+    public reference : object
 
     constructor () { // "Database"
 
@@ -26,9 +27,21 @@ export default class Skillet {
          * project they were involved in creating.
          */
         enum P {
-            DTB = 1,WW,RES,OCV,ROBO,
-            CS50,CS50AI,CS50G,UTAUST,STEG,
-            PSI,DFORM,WSG,GAME,ERRA,API
+            DEMME = 1,WW,RES,OCV,
+            CS50,UTAUST,STEG,
+            PSI,GAME,API
+        }
+
+        this.reference = {
+            'demme' : P.DEMME,
+            'ww' : P.WW,
+            'res' : P.RES,
+            'ocv' : P.OCV,
+            'cs50' : P.CS50,
+            'utaust' : P.UTAUST,
+            'steg' : P.STEG,
+            'psi' : P.PSI,
+            'api' : P.API
         }
 
         /** Project details : Primary data structure to feed frontend factories
@@ -49,55 +62,56 @@ export default class Skillet {
              */
 
             lingua : [
-                ['js', "cjs.png",   [P.DTB,P.WW,P.RES,P.CS50,P.DFORM,P.ERRA]],
-                ['py',  "py.png",   [P.PSI,P.STEG,P.CS50,P.CS50AI]],
-                ['cpp', "cpp.png",  [P.ROBO,P.OCV,P.GAME]],
-                ['ts',  "ts.png",   [P.RES,P.WW,P.DFORM,P.WSG,P.ERRA]],
-                ['php', "php.png",  [P.DTB,P.ERRA]],
-                ['bash',"sheb.png", [P.WW,P.DTB]],
-                ['lua', "lua.png",  [P.CS50G]],
-                ['csharp', "cs.png",[P.ROBO, P.OCV]]
+                ['js', "cjs.png",   [P.WW,P.RES,P.CS50,P.DEMME]],
+                ['py',  "py.png",   [P.PSI,P.STEG,P.CS50, P.API]],
+                ['cpp', "cpp.png",  [P.OCV,P.GAME]],
+                ['ts',  "ts.png",   [P.RES,P.WW,P.DEMME]],
+                ['php', "php.png",  [P.DEMME]],
+                ['bash',"sheb.png", [P.WW, P.DEMME]],
+                ['lua', "lua.png",  [P.CS50]],
+                ['csharp', "cs.png",[P.OCV, P.GAME]]
             ],
 
             frameworks : [
                 ['nodejs', "nodejs.png",[P.WW]],
                 ['react',  "react.png", [P.WW]],
-                ['lara',   "lara.png",  [P.DTB]],
-                ['ang',    "ang.png",   [P.DFORM, P.ERRA, P.RES, P.WSG]],
+                ['lara',   "lara.png",  [P.DEMME]],
+                ['ang',    "ang.png",   [P.DEMME, P.RES]],
                 ['flask',  "flask.png", [P.STEG, P.API]],
             ],
 
             libraries : [
                 ["gql",  "gql.png",     [P.WW]],
-                ["ossl", "ossl.png",    [P.DTB]],
-                ["ocv",  "ocv.png",     [P.ROBO, P.OCV]],
+                ["ossl", "ossl.png",    [P.DEMME]],
+                ["ocv",  "ocv.png",     [P.OCV]],
                 ["d3",   "d3.png",      [P.WW]],
                 ["pgame","pgame.png",   [P.PSI]],
             ],
 
             other : [
                 ["rds",    "rds.png",   [P.API, P.WW]],
-                ["mysql",  "mysql.png", [P.DTB, P.CS50, P.ERRA]],
+                ["mysql",  "mysql.png", [P.CS50, P.DEMME]],
                 ["pgsql", "pgsql.png",  [P.API]],
-                ["mgo",   "mgo.png",    [P.WW, P.API]],
+                ["mgo",   "mgo.png",    [P.WW]],
                 ["hku",   "hku.png",    [P.PSI,P.API,P.STEG]],
-                ["wp",    "wp.png",     [P.DTB]],
-                ["apache", "apache.png", [P.DTB]]
+                ["wp",    "wp.png",     [P.DEMME]],
+                ["apache", "apache.png", [P.DEMME]]
             ],
 
             iot : [
-                ["vs", "vs.png", [P.OCV, P.ROBO, P.UTAUST]],
-                ["ardno", "ard.png",    [P.ROBO, P.OCV]],
-                ["rpi",   "rpi.png",    [P.ROBO]],
+                ["vs", "vs.png", [P.OCV, P.UTAUST, P.GAME]],
+                ["ardno", "ard.png",    [P.OCV]],
+                ["rpi",   "rpi.png",    [P.OCV]],
+                ["unity", "unity.png", [P.GAME]],
                 ["lnch",  "tva.png",    [P.UTAUST]]
             ],
 
             sys : [
-                ["lnx",   "ln.png",     [P.PSI, P.API, P.DTB, P.ROBO, P.OCV]],
-                ["arm", "arm.png", [P.OCV, P.ROBO, P.UTAUST]],
-                ["cmake", "cmake.png", [P.OCV, P.ROBO]],
-                ["vim", "vim2.png", [P.OCV, P.ROBO, P.UTAUST]],
-                ["gnu", "gnu.png", [P.OCV, P.ROBO]]
+                ["lnx",   "ln.png",     [P.PSI, P.API, P.DEMME, P.OCV]],
+                ["arm", "arm.png", [P.OCV, P.UTAUST]],
+                ["cmake", "cmake.png", [P.OCV]],
+                ["vim", "vim2.png", [P.OCV, P.UTAUST]],
+                ["gnu", "gnu.png", [P.OCV]]
 
             ]
         }

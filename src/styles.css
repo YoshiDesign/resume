@@ -293,8 +293,11 @@ h2 {color:white;}
 .br-t {border-top:1px solid ghostwhite;}
 .br-b {border-bottom:1px solid ghostwhite;}
 .mdex {z-index: 150;}
-.imgs{ width:90%; margin:auto; width:360px; position:relative;}
-.imgs img {margin: auto; }
+.d-window{ position:relative; width:100%;}
+.d-window img { margin: auto auto; }
+.d-box {
+    height:50vh;
+}
 .sm-img {
     width:50px;
     height:50px;
@@ -480,7 +483,7 @@ h2 {color:white;}
         width:100%;
         float:none;
     }
-    .imgs {
+    .d-window {
         display:inline-block;
         width:330px;
         margin:0;
@@ -509,6 +512,25 @@ h2 {color:white;}
     
 }
 
+@media (max-width: 780px) {
+
+    body {
+        background:white;
+    }
+    .l-side {
+        flex-direction:column;
+    }
+    .d-window {
+        margin:auto auto;
+    }
+    .d-window > * {
+        margin:auto auto;
+    }
+    #social_box {height: 120vh; width:auto;}
+    .md {padding:0;}
+
+}
+
 @media (max-width: 670px) {
     .imBox {
         height: 160px;
@@ -521,7 +543,7 @@ h2 {color:white;}
 @media (max-width: 560px) {
     .err {font-size:12px;}
     .social-p {font-size:12px; position:relative; top:10px;}
-    .imgs {padding-right:0; padding-left:3px;}
+    .d-window {padding-right:0; padding-left:3px;}
     .badge-container img {height:75%; width: auto;}
     .test.r-side.r {background: none; border:none;}
     .imBox {
