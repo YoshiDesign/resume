@@ -35,11 +35,7 @@ export class ResumeService  {
         for (let item in this.skillet.details) {
             skillet_buffer.push(this.skillet.details[item])
         }
-
-
         
-
-
         return skillet_buffer
 
     }

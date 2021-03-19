@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
                 
             case 1 :
                 // Stop the gears
-                document.getElementById('snode').style.left = "16px"
+                document.getElementById('snode').style.left = "17px"
                 nodes.forEach(el => {
                     if (!el.classList.contains("stop-anim"))
                         el.classList.add("stop-anim")

@@ -1,17 +1,15 @@
 import { Component, OnInit, ClassProvider } from '@angular/core';
 import { ResumeService } from '../services/ResumeService'
-import { PreviewService } from '../services/PreviewService'
 
 @Component({
   selector: 'app-project-view',
   templateUrl: './project-view.component.html',
   styleUrls: ['./project-view.component.css'],
-  providers: [ResumeService, PreviewService]
+  providers: [ResumeService]
 })
 export class ProjectViewComponent implements OnInit {
 
     ResumeService : ResumeService
-    PreviewService : PreviewService
     imgAssets : string
 
     public buffer   : any    = []   // Constructs the frontend icons
@@ -25,13 +23,11 @@ export class ProjectViewComponent implements OnInit {
     
     constructor(
         ResumeService : ResumeService,
-        PreviewService : PreviewService
     ) { 
         // A project was selected
         this.anchored = false
 
         this.ResumeService = ResumeService
-        this.PreviewService = PreviewService
         this.imgAssets = "assets/img/"
         this.linked = null
         this.curHighlight = null
@@ -40,16 +36,15 @@ export class ProjectViewComponent implements OnInit {
 
     ngOnInit() {
         this.buffer = this.ResumeService.skillet_buffer
-        console.log(this.buffer)
     }
 
     // Hovering over tech item
     highlighter (e) :void {
         this.linker(e.target.id)
         this.curHighlight = e.target.id
-        console.log(`Cur Highlight: ${this.curHighlight}`)
-        console.log(`Cur hover Projects:`)
-        console.log(this.projects)
+        // console.log(`Cur Highlight: ${this.curHighlight}`)
+        // console.log(`Cur hover Projects:`)
+        // console.log(this.projects)
     }
 
     // Blur tech item
@@ -93,28 +88,6 @@ export class ProjectViewComponent implements OnInit {
             document.getElementById(p).classList.add('slt')
         }
 
-    }
-
-    loadTech(e) :void {
-        console.log("click")
-        console.log(this.linked)
-
-        // Mutex.lock() lol
-        this.anchored = true
-        this.curSelection = e.target.id;
-
-        // These projects use the selected tech
-        let anchored_projects = [...this.projects]
-
-        // Mutex.unlock()
-        this.anchored = false
-        console.log(`Cur Selection : ${this.curSelection}`)
-        console.log(`Cur Projects : `)
-        console.log(this.projects)
-        console.log(`Anchored Projects : `)
-        console.log(anchored_projects)
-
-        // Assign each project a list of its technologies
     }
 
     // Get an array of projects with similar tech

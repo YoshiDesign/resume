@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 // My service for servicing
 import {ResumeService} from './services/ResumeService'
+import {PreviewService} from './services/PreviewService'
 import Skillet from './repo/Skillet'
 
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { TheaterComponentComponent } from './theater-component/theater-component
   ],
   providers: [
       ResumeService,
-      Skillet
+      Skillet,
+      PreviewService
   ],
   bootstrap: [AppComponent]
 })

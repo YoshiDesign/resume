@@ -1,9 +1,10 @@
 [
     {
-        "work" : [
+        "projects" : [
             {
                 "id" : 11,
                 "title" : "Personal API",
+                "tech" : ["flask"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -12,8 +13,20 @@
                 ]
             },
             {
+                "id" : 2,
+                "title" : "The World Works",
+                "tech" : ["react"],
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "This project was a larger undertaking than I was prepared for. With a collection of data scraped from many different resources, I was able to build an interactive map that gives you a look at a vast array of cost of living and wage statistics for over 19,000 cities and 3,000 occupiation titles. It has been in development since April of 2020."
+                    }    
+                ]
+            },
+            {
                 "id" : 4,
-                "title" : "OpenCV &amp; Embedded Systems",
+                "title" : "OpenCV & Embedded Systems",
+                "tech" : ["cpp"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -22,8 +35,20 @@
                 ]
             },
             {
+                "id" : 9,
+                "title" : "Retro Flight Sim",
+                "tech" : ["cpp"],
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "This one is quite hard to explain. Essentially, I analyze tweet timelines through sentiment analysis and turn them, character by character, into a game of Space Invaders. Negative sentiments increase the difficulty of of the gameplay. This caused quite the stir on Reddit's game-dev forum. For legal reasons I never published the game."
+                    }    
+                ]
+            },
+            {
                 "id" : 8,
                 "title" : "Personal Space Invaders",
+                "tech" : ["py"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -33,7 +58,8 @@
             },
             {
                 "id" : 7,
-                "title" : "Steganography (CS50 Final)",
+                "title" : "Steganography Web App & CLI Tool",
+                "tech" : ["py"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -42,53 +68,69 @@
                 ]
             },
             {
-                "id" : 2,
-                "title" : "World-Works",
+                "id" : 14,
+                "title" : "My Portfolio",
+                "tech" : ["ts"],
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "This project was a larger undertaking than I was prepared for. With a collection of data scraped from many different resources, I was able to build an interactive map that gives you a look at a vast array of cost of living and wage statistics for over 19,000 cities and 3,000 occupiation titles. It has been in development since April of 2020."
-                    }    
-                ]
-            },
-            {
-                "id" : 1,
-                "title" : "Web Developer at Demme Learning",
-                "projects" : [
-                    {
-                        "alt_title" : 0,
-                        "desc"  : "My first job as a developer had me thrusting through the responsibilities of a senior level developer. Becoming overqualified prior to my first career move was certainly justified. My first major success was designing and developing a fully custom single-sign-on surface for their primary domain. It features OpenSSL and required a deep dive into the mechanisms of RFC6265."
+                        "desc"  : "To check out the porcelain and plumbing of this webpage, check out the source code here!"
                     }    
                 ]
             }
         ]
     },
     {
-        "cert" : [
-            {
-                "title" : "CompTIA A+",
-                "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
+        "achievements" : [
+            { 
+                "id" : "cs50ai",
+                "title" : "Harvard CS50-AI",
+                "tech" : ["pdf"],
+                "desc"  : "Introduction to Artificial Intelligence with Python. This course taught me the concepts and algorithms at the foundation of modern artificial intelligence. I took my education in AI 1 step further and began using Jupyter Labs as a platform for which to practice ML concepts.",
                 "alt_title" : 0
             },
             {
-                "title" : "CompTIA CySA+",
-                "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
-                "alt_title" : 0
-            },
-            {
+                "id" : "cs50x",
                 "title" : "Harvard CS50-X",
+                "tech" : ["pdf"],
                 "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress blog.",
                 "alt_title" : 0
             },
             { 
+                "id" : "cs50b",
                 "title" : "Harvard CS50-B",
+                "tech" : ["pdf"],
                 "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.",
                 "alt_title" : 0
             },
-            { 
-                "title" : "Harvard CS50-AI",
-                "desc"  : "Introduction to Artificial Intelligence with Python. This course taught me the concepts and algorithms at the foundation of modern artificial intelligence. I took my education in AI 1 step further and began using Jupyter Labs as a platform for which to practice ML concepts.",
+            {
+                "id" : "aplus",
+                "title" : "CompTIA A+",
+                "tech" : ["pdf"],
+                "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
                 "alt_title" : 0
+            },
+            {
+                "id" : "cysa",
+                "title" : "CompTIA CySA+",
+                "tech" : ["pdf"],
+                "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
+                "alt_title" : 0
+            }
+        ]
+    },
+    {
+        "previous_roles" : [
+            {
+                "id" : 1,
+                "title" : "Web Developer at Demme Learning",
+                "tech": [],
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "My first job as a developer had me thrusting through the responsibilities of a senior level developer. Becoming overqualified prior to my first career move was certainly justified. My first major success was designing and developing a fully custom single-sign-on surface for their primary domain. It features OpenSSL and required a deep dive into the mechanisms of RFC6265."
+                    }    
+                ]
             }
         ]
     }
