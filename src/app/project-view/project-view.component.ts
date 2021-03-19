@@ -48,6 +48,8 @@ export class ProjectViewComponent implements OnInit {
         this.linker(e.target.id)
         this.curHighlight = e.target.id
         console.log(`Cur Highlight: ${this.curHighlight}`)
+        console.log(`Cur hover Projects:`)
+        console.log(this.projects)
     }
 
     // Blur tech item
@@ -100,15 +102,17 @@ export class ProjectViewComponent implements OnInit {
         // Mutex.lock() lol
         this.anchored = true
         this.curSelection = e.target.id;
+
+        // These projects use the selected tech
         let anchored_projects = [...this.projects]
+
         // Mutex.unlock()
         this.anchored = false
         console.log(`Cur Selection : ${this.curSelection}`)
         console.log(`Cur Projects : `)
         console.log(this.projects)
-
-        // Expand this list of technologies into their individual projects
-        
+        console.log(`Anchored Projects : `)
+        console.log(anchored_projects)
 
         // Assign each project a list of its technologies
     }

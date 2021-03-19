@@ -3,6 +3,7 @@
     --primary-background: #211f35;
     --primary-dark: #000d20;
     --tert-background:#feedad;
+    --hover-dark:rgb(24, 24, 49);
     --color-turq:#5ac8c8;
     --color-fturq:#81eded;
     --color-mag: #f844ff;
@@ -48,7 +49,7 @@ h2 {color:white;}
     width: 100%;
     /* z-index:5500; */
     box-sizing:border-box;
-    background-color: var(--color-dark-focus);
+    background-color: var(--color-darkestop-focus);
     transition: box-shadow cubic-bezier(.165, .84, .44, 1) .25s;
     height: 50px;
     min-width:auto;
@@ -112,6 +113,44 @@ h2 {color:white;}
     position:relative;
     left:2px;
 }
+.socials {
+    display: inline-flex;
+    width: 100%;
+    height: 88px;
+    justify-content: flex-end;
+}
+.scl {
+    position: relative;
+    top: 7px;
+    left: 7px;
+}
+.scl2 {
+    height: 54px;
+    width: 54px;
+    background:var(--color-darkest-focus);
+    border-radius:50%;
+    border:3px solid rgb(0, 54, 136);
+    top: 5px;
+    margin: auto;
+}
+.socials a {
+    border-radius:50%;
+    width: 67px;
+    height: 67px;
+    margin: auto;
+}
+.scl2:hover {
+    border:3px solid ghostwhite;
+}
+.socials .sm-img {
+    width:40px;
+    height:40px;
+}
+.s-head {
+    padding:13px 0;
+    margin:auto;
+}
+.s-head h3{color:ghostwhite;}
 .slt {
     border :2px solid ghostwhite;
     position:relative;
@@ -235,6 +274,7 @@ h2 {color:white;}
 .grid {
     display:flex;
 }
+
 .test {
     border-left:1px solid var(--color-turq);
     border-right:1px solid var(--color-turq);
@@ -268,9 +308,6 @@ h2 {color:white;}
     /* background:tomato !important; */
     /* fill:tomato !important; */
 }
-.badges {
-    margin-top:10px;
-}
 .err {
     /* font-family:Consolas; */
     font-size:22px;
@@ -293,7 +330,7 @@ h2 {color:white;}
 .br-t {border-top:1px solid ghostwhite;}
 .br-b {border-bottom:1px solid ghostwhite;}
 .mdex {z-index: 150;}
-.d-window{ position:relative; width:100%;}
+.d-window{ position:relative; width:100%;background:#45455f;}
 .d-window img { margin: auto auto; }
 .d-box {
     height:50vh;
@@ -356,7 +393,7 @@ h2 {color:white;}
     border-left: 3px solid var(--color-turq);
     transform:rotate(-45deg);
     position: absolute;
-    top: 34%;
+    top: 46%;
     left:11px;
   }
 .rm {
@@ -368,8 +405,8 @@ h2 {color:white;}
     right:0;
     /* background:blue; */
 }
-.rm:hover {background:var(--color-darkestop-focus); cursor:pointer;}
-.lm:hover {background:var(--color-darkestop-focus); cursor:pointer;}
+.rm:hover {background:var(--hover-dark); cursor:pointer;}
+.lm:hover {background:var(--hover-dark); cursor:pointer;}
 .rm::after {
     content: "";
     height: 20px;
@@ -378,44 +415,32 @@ h2 {color:white;}
     border-right: 3px solid var(--color-turq);
     transform:rotate(45deg);
     position: absolute;
-    top: 34%;
+    top: 46%;
     right: 9px;
     opacity:1;
   }
 
 .imBox {
-    /* display:inline-block; */
-    height:180px;
-    width:180px;
-    margin-top:53px;
+    display: inline-block;
+    margin-top: 0;
 }
+
 .imBox img{
     margin:0 !important;
     width:136px;
 }
-.badge-container {
-    display:flex; 
-    width:100%;
-    height:239px;
-    padding-bottom:5px;
+.badge-container-m {
+    display: flex;
     justify-content: space-around;
 }
-.badge-container img {
-    justify-content: space-evenly;
-    height:70%;
-    min-width: 70%;
-    padding-left: 10px;
-}
-
 .md-8 {
     display:inline-block;
     width: 58%;
     margin:auto;
     float:right;
 }
-.dark {background-color:var(--primary-dark);}
-.section{cursor:pointer; position:relative;}
-.section:hover {background:rgb(69, 69, 95);}
+.section{cursor:pointer; position:relative;background:var(--color-darkest-focus);}
+.section:hover {background:var(--hover-dark);}
 .section-alt {
     width:100%;
     min-height:60px;
@@ -437,6 +462,7 @@ h2 {color:white;}
     margin-bottom:19px;
     background:var(--color-dark-focus);
 }
+.mobi{display:none;}
 
 @keyframes spin {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 @keyframes spinr {0%{transform:rotate(0deg);}100%{transform:rotate(-360deg);}}
@@ -447,6 +473,15 @@ h2 {color:white;}
 @keyframes glow {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}} 
 @keyframes glow2 {0%{opacity:0.2;} 97%{opacity:1.0;} 100%{opacity:0.2;}}
 @keyframes bluish {0%{color:ghostwhite;} 100%{color: var(--color-turq);}}
+
+@media (max-width: 1525px) {
+
+    .imBox img {
+        margin: 0 !important;
+        width: 95px;
+    }
+
+}
 
 @media (max-width: 973px) {
     #navi {
@@ -470,26 +505,17 @@ h2 {color:white;}
     }
     .md-4 {
         display: flex;
-        flex-direction: row;	
-        justify-content: space-between;
+        flex-direction: column;	
     }
     .md-1 {
-
-        display: flex;
-        flex-direction: column;
-        justify-content: inherit;
+        display: none;
     }
     .md-8 {
         width:100%;
         float:none;
     }
     .d-window {
-        display:inline-block;
-        width:330px;
-        margin:0;
         padding-top:10px;
-        padding-left:18px;
-        padding-right:5px;
         background:#45455f;
     }
     .proPic {
@@ -502,62 +528,36 @@ h2 {color:white;}
     .br-t {
         border:none !important;
     }
-
-    .rm, .lm {display:none;}
-    .badge-container {height: 126px; }
-    .badge-container img {
-        width: auto;
-    }
-    .imBox {margin-top:0;}
-    
+    .d-window {width:100%}
+    .rm{width:9%; background:var(--color-darkestop-focus);}
+    .lm{width:9%; background:var(--color-darkestop-focus);}
+    .rm::after{top:45%; right:30px;}
+    .lm::after{top:45%; left:30px;}
 }
 
 @media (max-width: 780px) {
-
-    body {
-        background:white;
-    }
-    .l-side {
-        flex-direction:column;
-    }
     .d-window {
         margin:auto auto;
     }
     .d-window > * {
         margin:auto auto;
     }
-    #social_box {height: 120vh; width:auto;}
+    #social_box {height: 61vh;}
     .md {padding:0;}
-
 }
-
 @media (max-width: 670px) {
-    .imBox {
-        height: 160px;
-        width: 160px;
-    }
     .err {font-size:16px;}
 }
-
-
 @media (max-width: 560px) {
     .err {font-size:12px;}
     .social-p {font-size:12px; position:relative; top:10px;}
     .d-window {padding-right:0; padding-left:3px;}
     .badge-container img {height:75%; width: auto;}
     .test.r-side.r {background: none; border:none;}
-    .imBox {
-        height: 120px;
-        width: 120px;
-    }
 }
 @media (max-width: 490px) {
     .md {padding:0;}
     .social-p {font-size:9px;}
-    .imBox {
-        height: 90px;
-        width: 90px;
-    }
 }
 @media (max-width: 420px) {
     .social-p {display:none;}

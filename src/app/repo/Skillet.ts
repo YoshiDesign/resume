@@ -78,6 +78,7 @@ export default class Skillet {
                 ['lara',   "lara.png",  [P.DEMME]],
                 ['ang',    "ang.png",   [P.DEMME, P.RES]],
                 ['flask',  "flask.png", [P.STEG, P.API]],
+                ['docker',  "docker.png", []]
             ],
 
             libraries : [
