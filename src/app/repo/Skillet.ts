@@ -114,6 +114,9 @@ export default class Skillet {
                 ["vim", "vim2.png", [P.OCV, P.UTAUST]],
                 ["gnu", "gnu.png", [P.OCV]]
 
+            ],
+            omit : [
+                ["pdf", "pdf.png"]
             ]
         }
     }

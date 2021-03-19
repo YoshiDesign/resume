@@ -20,7 +20,6 @@ export class PreviewService {
      * @param tech - The slug from Skillet.details
      */
     getIcon(tech){
-        let ref = ""
         for (let item in this.skillet.details) {
             for (let row of this.skillet.details[item]) {
                 // Get the PNG filename

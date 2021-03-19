@@ -91,7 +91,7 @@
             },
             {
                 "id" : "cs50x",
-                "title" : "Harvard CS50-X",
+                "title" : "Harvard CS50",
                 "tech" : ["pdf"],
                 "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress blog.",
                 "alt_title" : 0

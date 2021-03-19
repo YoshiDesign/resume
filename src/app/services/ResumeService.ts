@@ -32,8 +32,13 @@ export class ResumeService  {
 
         let skillet_buffer = []
 
+        // Top-level categories from Skillet.details to be omitted
+        let excludes = ["omit"]
+
         for (let item in this.skillet.details) {
-            skillet_buffer.push(this.skillet.details[item])
+            if (!excludes.includes(item)){
+                skillet_buffer.push(this.skillet.details[item])
+            }
         }
         
         return skillet_buffer
