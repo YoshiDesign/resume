@@ -2,20 +2,9 @@
     {
         "projects" : [
             {
-                "id" : "api",
-                "title" : "Personal API",
-                "tech" : ["flask"],
-                "projects" : [
-                    {
-                        "alt_title" : 0,
-                        "desc"  : "I use Heroku to host a Python web server. It is a Flask installation that is currently being used to service any means of data transfer I require from 3rd part API's to database stores. An ever expanding asset."
-                    }    
-                ]
-            },
-            {
                 "id" : "ww",
                 "title" : "The World Works",
-                "tech" : ["react"],
+                "tech" : ["react","nodejs","mgo","rds"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -24,9 +13,31 @@
                 ]
             },
             {
+                "id" : "dtb",
+                "title" : "The Digital Toolbox",
+                "tech" : ["lara", "php","mysql"],
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "T"
+                    }    
+                ]
+            },
+            {
+                "id" : "api",
+                "title" : "Personal API",
+                "tech" : ["flask", "py"],
+                "projects" : [
+                    {
+                        "alt_title" : 0,
+                        "desc"  : "I use Heroku to host a Python web server. It is a Flask installation that is currently being used to service any means of data transfer I require from 3rd part API's to database stores. An ever expanding asset."
+                    }    
+                ]
+            },
+            {
                 "id" : "ocv",
                 "title" : "OpenCV & Embedded Systems",
-                "tech" : ["cpp"],
+                "tech" : ["cpp","vs","ocv"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -37,7 +48,7 @@
             {
                 "id" : "fsim",
                 "title" : "Retro Flight Simulator",
-                "tech" : ["cpp"],
+                "tech" : ["cpp", "vs"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -48,7 +59,7 @@
             {
                 "id" : "psi",
                 "title" : "Personal Space Invaders",
-                "tech" : ["py"],
+                "tech" : ["py","pgame"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -58,8 +69,8 @@
             },
             {
                 "id" : "steg",
-                "title" : "Steganography Web App & CLI Tool",
-                "tech" : ["py"],
+                "title" : "Steganography Web App & CLI",
+                "tech" : ["py","hku","flask"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -70,7 +81,7 @@
             {
                 "id" : "port",
                 "title" : "My Portfolio",
-                "tech" : ["ts"],
+                "tech" : ["ang", "ts"],
                 "projects" : [
                     {
                         "alt_title" : 0,
@@ -85,35 +96,35 @@
             { 
                 "id" : "cs50ai",
                 "title" : "Harvard CS50-AI",
-                "tech" : ["pdf"],
+                "tech" : ["tab","pdf"],
                 "desc"  : "Introduction to Artificial Intelligence with Python. This course taught me the concepts and algorithms at the foundation of modern artificial intelligence. I took my education in AI 1 step further and began using Jupyter Labs as a platform for which to practice ML concepts.",
                 "alt_title" : 0
             },
             {
                 "id" : "cs50x",
                 "title" : "Harvard CS50",
-                "tech" : ["pdf"],
+                "tech" : ["tab","pdf"],
                 "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress blog.",
                 "alt_title" : 0
             },
             { 
                 "id" : "cs50b",
                 "title" : "Harvard CS50-B",
-                "tech" : ["pdf"],
+                "tech" : ["tab","pdf"],
                 "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.",
                 "alt_title" : 0
             },
             {
                 "id" : "aplus",
                 "title" : "CompTIA A+",
-                "tech" : ["pdf"],
+                "tech" : ["tab","pdf"],
                 "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
                 "alt_title" : 0
             },
             {
                 "id" : "cysa",
                 "title" : "CompTIA CySA+",
-                "tech" : ["pdf"],
+                "tech" : ["tab","pdf"],
                 "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
                 "alt_title" : 0
             }

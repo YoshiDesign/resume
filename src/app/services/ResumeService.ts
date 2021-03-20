@@ -28,7 +28,7 @@ export class ResumeService  {
      * Project Buffer:
      * Projects and their associated technologies. Also maps each to the Descriptions.json object
      */
-    setupProjects () {
+    setupProjects () : object {
 
         let skillet_buffer = []
 

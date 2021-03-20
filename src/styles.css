@@ -169,6 +169,9 @@ h2 {color:white;}
     min-width:10px;
     margin:auto;
 }
+.active-unit {
+    background:black !important;
+}
 .slt {
     border :2px solid ghostwhite;
     position:relative;
@@ -282,17 +285,14 @@ h2 {color:white;}
 .l-cog-pl {
     position:relative; 
     animation:linear 2s infinite spin;
+
 }
 .r-cog-pl {
     position:relative; 
     animation:linear 2s infinite spinr;
 }
-
 .stop-anim {animation:none; opacity:1.0;}
-.grid {
-    display:flex;
-}
-
+.grid {display:flex;}
 .test {
     border-left:1px solid var(--color-turq);
     border-right:1px solid var(--color-turq);
@@ -401,6 +401,12 @@ h2 {color:white;}
     z-index:50;
     background:var(--color-dark-focus);
 }
+.down {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 51%;
+}
 .toc-heads {
     color:ghostwhite;
     font-size:22px;
@@ -416,6 +422,10 @@ h2 {color:white;}
     height:35px;
     border-bottom:1px solid rgba(255, 255, 255, 0.315);
     padding-top:15px;
+}
+.toc-item:hover {
+    background:rebeccapurple;
+    cursor:pointer;
 }
 .toc-img {
     display:inline-block;
@@ -537,6 +547,7 @@ h2 {color:white;}
     .md {
         min-width:auto;
     }
+    .da {display:none;}
     .m p {
         float:right;
         width:40%;

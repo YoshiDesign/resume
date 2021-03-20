@@ -19,17 +19,29 @@ export class PreviewService {
      * Apply icons to Table of Contents
      * @param tech - The slug from Skillet.details
      */
-    getIcon(tech){
-        for (let item in this.skillet.details) {
-            for (let row of this.skillet.details[item]) {
-                // Get the PNG filename
-                if (row[0] == tech){
-                    return row[1]
+    getIcon(tech) : any {
+
+        let imgs = []
+
+        for (let slug of tech) {
+            console.log(`Inspecting Slug: ${slug}`)
+            for (let item in this.skillet.details) {
+                for (let row of this.skillet.details[item]) {
+                    // Get the PNG filename
+                    if (row[0] == slug){
+                        imgs.push(row[1])
+                    }
                 }
             }
         }
-
-        return false
+        
+        if (imgs.length > 0) {
+            console.log(imgs)
+            return imgs
+        }
+        else {
+            return false
+        }
 
     }
 

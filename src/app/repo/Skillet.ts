@@ -119,8 +119,10 @@ export default class Skillet {
                 ["gnu", "gnu.png", [P.OCV]]
 
             ],
+            // Auxiliary page trinkets
             omit : [
-                ["pdf", "pdf.png"]
+                ["pdf", "pdf.png"],
+                ["tab", "newtab.png"]
             ]
         }
     }
