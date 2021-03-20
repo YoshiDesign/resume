@@ -2,7 +2,7 @@
     {
         "projects" : [
             {
-                "id" : 11,
+                "id" : "api",
                 "title" : "Personal API",
                 "tech" : ["flask"],
                 "projects" : [
@@ -13,7 +13,7 @@
                 ]
             },
             {
-                "id" : 2,
+                "id" : "ww",
                 "title" : "The World Works",
                 "tech" : ["react"],
                 "projects" : [
@@ -24,7 +24,7 @@
                 ]
             },
             {
-                "id" : 4,
+                "id" : "ocv",
                 "title" : "OpenCV & Embedded Systems",
                 "tech" : ["cpp"],
                 "projects" : [
@@ -35,8 +35,8 @@
                 ]
             },
             {
-                "id" : 9,
-                "title" : "Retro Flight Sim",
+                "id" : "fsim",
+                "title" : "Retro Flight Simulator",
                 "tech" : ["cpp"],
                 "projects" : [
                     {
@@ -46,7 +46,7 @@
                 ]
             },
             {
-                "id" : 8,
+                "id" : "psi",
                 "title" : "Personal Space Invaders",
                 "tech" : ["py"],
                 "projects" : [
@@ -57,7 +57,7 @@
                 ]
             },
             {
-                "id" : 7,
+                "id" : "steg",
                 "title" : "Steganography Web App & CLI Tool",
                 "tech" : ["py"],
                 "projects" : [
@@ -68,7 +68,7 @@
                 ]
             },
             {
-                "id" : 14,
+                "id" : "port",
                 "title" : "My Portfolio",
                 "tech" : ["ts"],
                 "projects" : [

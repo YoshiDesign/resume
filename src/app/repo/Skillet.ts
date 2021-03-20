@@ -29,9 +29,11 @@ export default class Skillet {
         enum P {
             DEMME = 1,WW,RES,OCV,
             CS50,UTAUST,STEG,
-            PSI,GAME,API
+            PSI,GAME,API,FSIM,
+            PORT
         }
 
+        // Makes things easier to read from the front-end.
         this.reference = {
             'demme' : P.DEMME,
             'ww' : P.WW,
@@ -41,7 +43,9 @@ export default class Skillet {
             'utaust' : P.UTAUST,
             'steg' : P.STEG,
             'psi' : P.PSI,
-            'api' : P.API
+            'api' : P.API,
+            'fsim': P.FSIM,
+            'port': P.PORT
         }
 
         /** Project details : Primary data structure to feed frontend factories

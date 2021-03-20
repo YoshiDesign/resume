@@ -4,8 +4,8 @@
     --primary-dark: #000d20;
     --tert-background:#feedad;
     --hover-dark:rgb(24, 24, 49);
-    --color-turq:#5ac8c8;
-    --color-fturq:#81eded;
+    --color-turq:rebeccapurple;
+    --color-fturq:rebeccapurple;
     --color-mag: #f844ff;
     --color-lights:ghostwhite;
     --color-alt-text: #86b1ea;
@@ -119,7 +119,7 @@ h2 {color:white;}
     height: 88px;
     justify-content: flex-end;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgb(0 0 0) 0%, #101010 35%, #363636 100%);
     border-top:1px solid white;
 }
 .scl {
@@ -132,8 +132,7 @@ h2 {color:white;}
     width: 54px;
     background:var(--color-darkest-focus);
     border-radius:50%;
-    border:3px solid rgb(0, 54, 136);
-    top: 5px;
+    border:4px solid white;
     margin: auto;
 }
 .socials a {
@@ -143,7 +142,7 @@ h2 {color:white;}
     margin: auto;
 }
 .scl2:hover {
-    border:3px solid ghostwhite;
+    border:2px solid ghostwhite;
 }
 .socials .sm-img {
     width:40px;
@@ -154,6 +153,22 @@ h2 {color:white;}
     margin:auto;
 }
 .s-head h3{color:ghostwhite;}
+.d-meter {
+    background: rebeccapurple;
+    margin:auto;;
+    height: 15px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    padding:0 11%;
+}
+.d-unit {
+    display:inline-flex;
+    background:white;
+    height:10px;
+    min-width:10px;
+    margin:auto;
+}
 .slt {
     border :2px solid ghostwhite;
     position:relative;
@@ -337,9 +352,10 @@ h2 {color:white;}
 .d-window img { margin: auto auto; }
 .d-box {
     height:50vh;
-    padding: 20px 11% 81px;
+    padding: 5px 11% 81px;
     overflow-y:scroll;
     overflow-x:hidden;
+    background:black;
 }
 .d-box::-webkit-scrollbar {
    display:none;
@@ -387,13 +403,14 @@ h2 {color:white;}
 }
 .toc-heads {
     color:ghostwhite;
-    padding-left:10px;
+    font-size:22px;
 }
 .toc-list {
     width:100%;
     padding:0;
     list-style:none;
     margin-bottom:45px;
+    color:ghostwhite;
 }
 .toc-item {
     height:35px;
@@ -545,12 +562,16 @@ h2 {color:white;}
         float:none;
     }
     .d-window {
-        padding-top:10px;
         background:#44445f;
         height:100vh;
         width:100%
     }
-    .d-box {height:100vh;}
+    .d-box {
+        height:100vh;
+    }
+    .d-meter {
+        margin:0;
+    }
     .proPic {
         width: 220px;
         height: 280px;

@@ -48,7 +48,7 @@ export class SocialViewComponent implements OnInit {
                 let ref = this.PreviewService.getIcon(k.tech[0])
 
                 item.setAttribute('class', 'toc-item')
-                item.setAttribute('id', k.id)
+                item.setAttribute('data-toc-id', k.id)
                 item.innerText = k.title
                 
                 if (!ref)
@@ -56,7 +56,15 @@ export class SocialViewComponent implements OnInit {
                     ; // Don't render an icon
                 }
                 else {
+                    let meter = document.getElementById("soc-meter")
+                    let unit = document.createElement('DIV')
                     let icon = document.createElement('IMG')
+
+                    // build the meter
+                    unit.classList.add('d-unit')
+                    unit.setAttribute('data-list-id', k.id)
+                    meter.appendChild(unit)
+
                     icon.setAttribute('src', "assets/img/" + ref)
                     icon.classList.add("toc-img")
                     item.appendChild(icon)    
