@@ -52,7 +52,7 @@ export class SocialViewComponent implements OnInit {
      * hook the browser's "back" button into the preview pane
      * @param e 
      */
-    updateURLParams(e){
+    updateURLParams = (e) => {
 
         let p = e.target.getAttribute("data-toc-id")
 
@@ -83,7 +83,7 @@ export class SocialViewComponent implements OnInit {
      * Prepare the preview pane for a new preview
      * @param query 
      */
-    selectPreview(query){
+    selectPreview(query) : void {
         
         // Clear the preview window
         document.getElementById('p-content').innerHTML = ""
@@ -93,7 +93,7 @@ export class SocialViewComponent implements OnInit {
             el.classList.remove('active-unit')
         })
 
-        // Select the preview location dot and activate it
+        // Select the proper preview location dot and activate it
         let activeTab = document.querySelector("[data-unit-id="+ query +"]")
         activeTab.classList.add('active-unit')
 
@@ -107,21 +107,53 @@ export class SocialViewComponent implements OnInit {
      */
     buildNewPreview(id) {
 
-        // We only need the "projects" object to handle any preview id's
-        for (let i in this.data[0][PROJECTS]) {
+        // This preview's object in Descriptions.json
+        let previewData;
 
+        console.log(`Searching for ${id}`)
+        console.log(this.data[0][PROJECTS])
+
+        // Index into the "projects" object, fetching this project's object
+        for (let item of this.data[0][PROJECTS]) {
+            if (item.id == id) {
+                previewData = item
+                break
+            }
         }
+
+        console.log("PREVIEW DATA")
+        console.log(previewData)
+
+        let head  = document.createElement("h3")    // Heading
+        let iconHeadingContainer = document.createElement("div") // container for tech icons
+
+        iconHeadingContainer.classList.add('tech-used')
+
+        // Use `tech` to find the `icons` of its related projects (1 to many, respectively)
+        let tech : Array<string> = this.PreviewService.getAllIcons(previewData.id)
+        let icons : Array<HTMLElement> = []
+        
+        for (let filename in tech) {
+            let icon = document.createElement('IMG')
+            icon.setAttribute('src', "assets/img/" + filename)
+            icon.classList.add("toc-img")
+            icons.push(icon)
+        }
+
+        console.log("ICONS")
+        console.log(icons)
 
     }
 
-    buildToC(){
+    buildToC() : void {
 
         // Set state
         this.current_preview = "toc"
 
+        // A list of headings for the ToC
         var contents : Array <HTMLElement> = []
 
-        for (let i in this.data) // Indexes
+        for (let i in this.data) // JSON index
         {
             for (let j in this.data[i])   // Description Keys
             {
@@ -131,7 +163,7 @@ export class SocialViewComponent implements OnInit {
 
                 // Make sure each heading title is title-cased
                 let titles = j.split("_")
-                titles.forEach(word => {
+                titles.forEach( word => {
                     heading.innerText += word.charAt(0).toUpperCase() + word.slice(1) + " "
                 })
 
@@ -147,8 +179,9 @@ export class SocialViewComponent implements OnInit {
                     // Create the table of contents
                     let item = document.createElement('LI')
 
-                    if (j == PROJECTS)
+                    if (j == PROJECTS) {
                         item.addEventListener('click', this.updateURLParams)
+                    }
 
                     // Get the tech slug from the JSON DB
                     let refs = this.PreviewService.getIcon(k.tech)

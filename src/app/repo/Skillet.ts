@@ -68,7 +68,7 @@ export default class Skillet {
             lingua : [
                 ['js', "cjs.png",   [P.WW,P.RES,P.CS50,P.DEMME]],
                 ['py',  "py.png",   [P.PSI,P.STEG,P.CS50, P.API]],
-                ['cpp', "cpp.png",  [P.OCV,P.GAME]],
+                ['cpp', "cpp.png",  [P.OCV,P.GAME, P.FSIM]],
                 ['ts',  "ts.png",   [P.RES,P.WW,P.DEMME]],
                 ['php', "php.png",  [P.DEMME]],
                 ['bash',"sheb.png", [P.WW, P.DEMME]],
@@ -104,7 +104,7 @@ export default class Skillet {
             ],
 
             iot : [
-                ["vs", "vs.png", [P.OCV, P.UTAUST, P.GAME]],
+                ["vs", "vs.png", [P.OCV, P.UTAUST, P.FSIM]],
                 ["ardno", "ard.png",    [P.OCV]],
                 ["rpi",   "rpi.png",    [P.OCV]],
                 ["unity", "unity.png", [P.GAME]],
@@ -112,7 +112,7 @@ export default class Skillet {
             ],
 
             sys : [
-                ["lnx",   "ln.png",     [P.PSI, P.API, P.DEMME, P.OCV]],
+                ["lnx",   "ln.png", [P.PSI, P.API, P.DEMME, P.OCV]],
                 ["arm", "arm.png", [P.OCV, P.UTAUST]],
                 ["cmake", "cmake.png", [P.OCV]],
                 ["vim", "vim2.png", [P.OCV, P.UTAUST]],
