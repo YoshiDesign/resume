@@ -175,10 +175,14 @@ export class SocialViewComponent implements OnInit {
                 {
                     // Create the table of contents
                     let item = document.createElement('LI')
-                    // Contains the group of little icons on the ToC
+                    // Contains the group of little icons on the ToC, apply evt listeners
                     let iconSection = document.createElement('DIV')
-                    iconSection.classList.add('icon-section')
+                    this.setIconSectionListeners(iconSection)
 
+                    let apply_to_meter = true
+
+                    iconSection.classList.add('icon-section')
+ 
                     if (j == PROJECTS) {
                         item.addEventListener('click', this.updateURLParams)
                     }
@@ -199,7 +203,7 @@ export class SocialViewComponent implements OnInit {
 
                         let meter = document.getElementById("soc-meter")
                         let unit = document.createElement('DIV')
-                        let apply_to_meter = true
+                        
                         
                         for (let filename of refs) {
                             // Set up new tech icon for ToC
@@ -221,11 +225,14 @@ export class SocialViewComponent implements OnInit {
                                 meter.appendChild(unit)
                             }
 
-                            
-
                         }
                             
                     }
+
+                    // keeps border away from icon groups that aren't in the project's section
+                    if (!apply_to_meter)
+                        iconSection.classList.add('icon-style-override')
+
                     item.appendChild(iconSection)
                     headingList.appendChild(item)
 
@@ -246,6 +253,17 @@ export class SocialViewComponent implements OnInit {
             toc.appendChild(el)
         })
         
+    }
+
+    setIconSectionListeners(s) {
+        s.addEventListener('mouseover', function(e){
+            this.style.background = "blue"
+            this.parentElement.classList.add("black")
+        })
+        s.addEventListener('mouseout', function(e){
+            this.style.background = "black"
+            this.parentElement.classList.remove("black")
+        })
     }
 
 }
