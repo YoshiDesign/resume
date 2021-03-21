@@ -27,7 +27,7 @@ export default class Skillet {
          * project they were involved in creating.
          */
         enum P {
-            DEMME = 1,WW,RES,OCV,
+            DTB = 1,WW,OCV,
             CS50,UTAUST,STEG,
             PSI,GAME,API,FSIM,
             PORT
@@ -35,9 +35,8 @@ export default class Skillet {
 
         // Makes things easier to read from the front-end.
         this.reference = {
-            'demme' : P.DEMME,
+            'dtb' : P.DTB,
             'ww' : P.WW,
-            'res' : P.RES,
             'ocv' : P.OCV,
             'cs50' : P.CS50,
             'utaust' : P.UTAUST,
@@ -66,12 +65,12 @@ export default class Skillet {
              */
 
             lingua : [
-                ['js', "cjs.png",   [P.WW,P.RES,P.CS50,P.DEMME]],
-                ['py',  "py.png",   [P.PSI,P.STEG,P.CS50, P.API]],
+                ['js', "cjs.png",   [P.WW,P.CS50,P.DTB, P.PORT]],
+                ['py',  "py.png",   [P.PSI, P.STEG, P.CS50, P.API, P.WW]],
                 ['cpp', "cpp.png",  [P.OCV,P.GAME, P.FSIM]],
-                ['ts',  "ts.png",   [P.RES,P.WW,P.DEMME]],
-                ['php', "php.png",  [P.DEMME]],
-                ['bash',"sheb.png", [P.WW, P.DEMME]],
+                ['ts',  "ts.png",   [P.WW, P.DTB, P.PORT]],
+                ['php', "php.png",  [P.DTB]],
+                ['bash',"sheb.png", [P.WW, P.DTB]],
                 ['lua', "lua.png",  [P.CS50]],
                 ['csharp', "cs.png",[P.OCV, P.GAME]]
             ],
@@ -79,15 +78,15 @@ export default class Skillet {
             frameworks : [
                 ['nodejs', "nodejs.png",[P.WW]],
                 ['react',  "react.png", [P.WW]],
-                ['lara',   "lara.png",  [P.DEMME]],
-                ['ang',    "ang.png",   [P.DEMME, P.RES]],
+                ['lara',   "lara.png",  [P.DTB]],
+                ['ang',    "ang.png",   [P.DTB, P.PORT]],
                 ['flask',  "flask.png", [P.STEG, P.API]],
                 ['docker',  "docker.png", []]
             ],
 
             libraries : [
                 ["gql",  "gql.png",     [P.WW]],
-                ["ossl", "ossl.png",    [P.DEMME]],
+                ["ossl", "ossl.png",    [P.DTB]],
                 ["ocv",  "ocv.png",     [P.OCV]],
                 ["d3",   "d3.png",      [P.WW]],
                 ["pgame","pgame.png",   [P.PSI]],
@@ -95,24 +94,24 @@ export default class Skillet {
 
             other : [
                 ["rds",    "rds.png",   [P.API, P.WW]],
-                ["mysql",  "mysql.png", [P.CS50, P.DEMME]],
+                ["mysql",  "mysql.png", [P.CS50, P.DTB]],
                 ["pgsql", "pgsql.png",  [P.API]],
                 ["mgo",   "mgo.png",    [P.WW]],
-                ["hku",   "hku.png",    [P.PSI,P.API,P.STEG]],
-                ["wp",    "wp.png",     [P.DEMME]],
-                ["apache", "apache.png", [P.DEMME]]
+                ["hku",   "hku.png",    [P.PSI, P.API, P.STEG]],
+                ["wp",    "wp.png",     [P.DTB]],
+                ["apache", "apache.png", [P.DTB]]
             ],
 
             iot : [
                 ["vs", "vs.png", [P.OCV, P.UTAUST, P.FSIM]],
-                ["ardno", "ard.png",    [P.OCV]],
-                ["rpi",   "rpi.png",    [P.OCV]],
+                ["ardno", "ard.png", [P.OCV]],
+                ["rpi",   "rpi.png", [P.OCV]],
                 ["unity", "unity.png", [P.GAME]],
-                ["lnch",  "tva.png",    [P.UTAUST]]
+                ["lnch",  "tva.png", [P.UTAUST]]
             ],
 
             sys : [
-                ["lnx",   "ln.png", [P.PSI, P.API, P.DEMME, P.OCV]],
+                ["lnx",   "ln.png", [P.PSI, P.API, P.DTB, P.OCV]],
                 ["arm", "arm.png", [P.OCV, P.UTAUST]],
                 ["cmake", "cmake.png", [P.OCV]],
                 ["vim", "vim2.png", [P.OCV, P.UTAUST]],

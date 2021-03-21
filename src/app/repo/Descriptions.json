@@ -4,7 +4,7 @@
             {
                 "id" : "ww",
                 "title" : "The World Works",
-                "tech" : ["react","nodejs","mgo","rds"],
+                "tech" : ["react","nodejs","rds"],
                 "projects" : [
                     {
                         "alt_title" : 0,

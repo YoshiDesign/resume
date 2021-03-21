@@ -22,13 +22,11 @@ export class PreviewService {
      * Get all of the tech icons from a Project - exhaustive
      * @param project 
      */
-    getAllIcons(project) : any {
+    getAllIcons(project_slug) : any {
 
-        // Get the project key
-        let P = this.skillet.reference[project]
+        // Get the project ID
+        let P = this.skillet.reference[project_slug]
         let imgs = []
-
-        console.log(`P = ${P}`)
 
         // Loop through all Skillet details
         for (let item in this.skillet.details) {
@@ -37,18 +35,14 @@ export class PreviewService {
                 continue
 
             for (let arr of this.skillet.details[item]) {
-                console.log("ARR")
-                console.log(arr)
-                
+
                     // Gather the PNG filename for the tech we found in this project
                     if (arr[2].includes(P)){
-                        console.log("Found: " + arr[0])
                         imgs.push(arr[1])
                     }
                 
             }
         }
-
         return imgs
 
     }

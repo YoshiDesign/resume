@@ -17,6 +17,7 @@ export class SocialViewComponent implements OnInit {
     data : any
 
     public current_preview : string
+    public current_core_tech : Array <string>
     
     constructor(PreviewService : PreviewService) { 
         this.PreviewService = PreviewService
@@ -28,7 +29,6 @@ export class SocialViewComponent implements OnInit {
         this.buildToC()
 
         document.getElementById('previews').addEventListener('scroll', function(){
-            console.log("SCROLLIN HATN")
             document.getElementById('da').style.display = "none";
         })
 
@@ -74,7 +74,10 @@ export class SocialViewComponent implements OnInit {
         // Replace the current entry in the browser's history
         window.history.replaceState(nextState, nextTitle, nextURL)
 
-        // Initiate the preview update
+        // Initiate the preview update 
+        // -- TODO -- This is just a callback. This function can be a closure.
+        // We can generalize this function and extract it into its own class
+        // to have a global history class
         this.selectPreview(p)
 
     }
@@ -86,7 +89,16 @@ export class SocialViewComponent implements OnInit {
     selectPreview(query) : void {
         
         // Clear the preview window
-        document.getElementById('p-content').innerHTML = ""
+        if (window.innerWidth <= 973) {
+            document.getElementById('p-content').innerHTML = ""
+            //  Build Mobile carousel
+        } else {
+
+            Array.from(document.getElementsByClassName('tech-section')).forEach( el =>  {
+                el.classList.add('hide-me')
+            })
+
+        }
 
         // Deactivate any active tabs. There should only be one but this is a limitation
         Array.from(document.getElementsByClassName('active-unit')).forEach( el => {
@@ -102,16 +114,16 @@ export class SocialViewComponent implements OnInit {
     }
 
     /**
-     * Construct a new preview in the preview pane
+     * Construct a new preview in the preview pane, whether its mobile or not
      * @param id 
      */
     buildNewPreview(id) {
 
-        // This preview's object in Descriptions.json
         let previewData;
-
-        console.log(`Searching for ${id}`)
-        console.log(this.data[0][PROJECTS])
+        // Create the elements
+        let head  = document.createElement("h3")    // Heading
+        let iconHeadingContainer = document.createElement("div") // container for tech icons
+        iconHeadingContainer.classList.add('tech-used')
 
         // Index into the "projects" object, fetching this project's object
         for (let item of this.data[0][PROJECTS]) {
@@ -121,24 +133,26 @@ export class SocialViewComponent implements OnInit {
             }
         }
 
-        console.log("PREVIEW DATA")
+        console.log("P-Data")
         console.log(previewData)
-
-        let head  = document.createElement("h3")    // Heading
-        let iconHeadingContainer = document.createElement("div") // container for tech icons
-
-        iconHeadingContainer.classList.add('tech-used')
 
         // Use `tech` to find the `icons` of its related projects (1 to many, respectively)
         let tech : Array<string> = this.PreviewService.getAllIcons(previewData.id)
         let icons : Array<HTMLElement> = []
-        
+
         for (let filename in tech) {
             let icon = document.createElement('IMG')
             icon.setAttribute('src', "assets/img/" + filename)
             icon.classList.add("toc-img")
             icons.push(icon)
         }
+
+        if (window.innerWidth <= 973) {
+
+            
+        }
+
+
 
     }
 
@@ -178,10 +192,10 @@ export class SocialViewComponent implements OnInit {
                     // Contains the group of little icons on the ToC, apply evt listeners
                     let iconSection = document.createElement('DIV')
                     this.setIconSectionListeners(iconSection)
+                    iconSection.classList.add('icon-section')
 
                     let apply_to_meter = true
 
-                    iconSection.classList.add('icon-section')
  
                     if (j == PROJECTS) {
                         item.addEventListener('click', this.updateURLParams)
@@ -255,15 +269,61 @@ export class SocialViewComponent implements OnInit {
         
     }
 
+    // Add event listeners to ToC's ".icon-section"s
     setIconSectionListeners(s) {
-        s.addEventListener('mouseover', function(e){
-            this.style.background = "blue"
-            this.parentElement.classList.add("black")
-        })
-        s.addEventListener('mouseout', function(e){
-            this.style.background = "black"
-            this.parentElement.classList.remove("black")
-        })
+
+
+
+        // Mobile event behavior
+        if (window.innerWidth <= 973) {
+
+            s.addEventListener('click', function(e){
+                this.style.background = "black"
+                this.parentElement.classList.remove("black")
+            })
+
+        // Desktop event behavior
+        } else {
+
+            //
+            s.addEventListener('mouseover', e => {
+                e.stopPropagation()
+                // Get all tech icons, append to the current section
+                let projectId = e.target.closest('LI').getAttribute('data-toc-id')
+                let imgContainer = e.target.closest('.icon-section')
+                let newImg = document.createElement('IMG')
+                let newIcons : Array<string> = this.PreviewService.getAllIcons(projectId)
+
+                newImg.setAttribute('class', 'toc-img tmp_img')
+
+                newIcons.forEach( filename => {
+                    var found = 0
+                     Array.from(imgContainer.children).forEach( (el : HTMLImageElement) => {
+                        if (el.src.includes(filename)) {found = 1}
+                    })
+                    if (!found){
+                        // Append a new image to the list and extend the boundaries
+                        let nextImg = <HTMLImageElement> newImg.cloneNode(true)
+                        nextImg.setAttribute('src', "assets/img/" + filename)
+                        imgContainer.appendChild(nextImg)
+                    }
+                })
+
+                e.target.classList.add('icon-update')
+                this.current_core_tech = newIcons
+
+            })
+
+            //
+            s.addEventListener('mouseout', e => {
+                Array.from(document.getElementsByClassName('tmp_img')).forEach( el => {
+                    el.remove()
+                })
+                e.target.classList.remove('icon-update')
+                this.current_core_tech = null
+            })
+
+        }
     }
 
 }
