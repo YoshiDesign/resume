@@ -64,6 +64,15 @@ h2 {color:white;}
     flex-flow: row nowrap;
     align-items: center;
 }
+#preview-tech {
+    position: absolute;
+    width: 54.3vw;
+    height: 49.5vh;
+    background: blue;
+    z-index: 100;
+    left: 3px;
+    top: 55px;
+}
 .primary {
     height: 100%;
     display: flex;
@@ -429,8 +438,14 @@ h2 {color:white;}
 }
 .toc-img {
     display:inline-block;
-    float:right;
     height:20px;
+}
+.icon-section {
+    min-width:45px;
+    float:right;
+    border:1px solid rgba(255, 255, 255, 0.315);
+    padding:3px 1px 0 3px;
+    background:black;
 }
 .lm {
     position:absolute;

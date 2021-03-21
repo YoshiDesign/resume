@@ -140,9 +140,6 @@ export class SocialViewComponent implements OnInit {
             icons.push(icon)
         }
 
-        console.log("ICONS")
-        console.log(icons)
-
     }
 
     buildToC() : void {
@@ -178,6 +175,9 @@ export class SocialViewComponent implements OnInit {
                 {
                     // Create the table of contents
                     let item = document.createElement('LI')
+                    // Contains the group of little icons on the ToC
+                    let iconSection = document.createElement('DIV')
+                    iconSection.classList.add('icon-section')
 
                     if (j == PROJECTS) {
                         item.addEventListener('click', this.updateURLParams)
@@ -189,7 +189,6 @@ export class SocialViewComponent implements OnInit {
                     item.setAttribute('class', 'toc-item')
                     item.setAttribute('data-toc-id', k.id)
                     item.innerText = k.title
-                    
 
                     if (refs.length == 0)
                     {
@@ -208,21 +207,26 @@ export class SocialViewComponent implements OnInit {
 
                             icon.setAttribute('src', "assets/img/" + filename)
                             icon.classList.add("toc-img")
-                            item.appendChild(icon)
 
-                            // Only projects will be previewd in the panel
+                            iconSection.appendChild(icon)
+
+                            // Only projects will be previewd in the panel. This makes sure we only generate carousel cues for projects
                             apply_to_meter = j == PROJECTS ? true : false
 
                             if (apply_to_meter) {
+                                // The carousel cue
                                 unit.classList.add('d-unit')
                                 unit.setAttribute('data-unit-id', k.id)
+                                // The collection of cues
                                 meter.appendChild(unit)
                             }
+
+                            
 
                         }
                             
                     }
-                    
+                    item.appendChild(iconSection)
                     headingList.appendChild(item)
 
                 }

@@ -139,7 +139,7 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "My first job as a developer had me thrusting through the responsibilities of a senior level developer. Becoming overqualified prior to my first career move was certainly justified. My first major success was designing and developing a fully custom single-sign-on surface for their primary domain. It features OpenSSL and required a deep dive into the mechanisms of RFC6265."
+                        "desc"  : "My first job as a developer had me thrusting through the responsibilities of a senior level developer. Becoming overqualified prior to my first career move was certainly warranted. My first major success was designing and developing a fully custom single-sign-on surface for their primary domain. It features OpenSSL and required a deep dive into the mechanisms of RFC6265."
                     }    
                 ]
             }
