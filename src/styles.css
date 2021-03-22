@@ -642,7 +642,7 @@ h2 {color:white;}
 @media (max-width: 973px) {
     #navi {
         flex-direction:column-reverse;
-        height: 99px;
+        height: 50px;
     }
     .md {
         min-width:auto;
@@ -668,6 +668,7 @@ h2 {color:white;}
         width:100%;
         float:none;
     }
+    .err {display:none;}
     .d-window {
         background:#44445f;
         height:100vh;
@@ -712,20 +713,28 @@ h2 {color:white;}
 
 }
 @media (max-width: 670px) {
-    .err {font-size:16px;}
-    .d-box {padding:0 58px;}
+    .d-box {padding:0 38px;}
+    .rm{width:6%;}
+    .lm{width:6%;}
+    .rm::after {right:10px;}
+    .lm::after {left:10px;}
 }
-@media (max-width: 560px) {
-    .err {font-size:12px;}
+@media (max-width: 570px) {
     .social-p {font-size:12px; position:relative; top:10px;}
     .d-window {padding-right:0; padding-left:0;}
     .badge-container img {height:75%; width: auto;}
     .test.r-side.r {background: none; border:none;}
+    .rm::after {right:6px;}
+    .lm::after {left:6px;}
 }
 @media (max-width: 490px) {
     .md {padding:0;}
     .social-p {font-size:9px;}
+    .d-box li {font-size:13px;}
 }
-@media (max-width: 420px) {
+@media (max-width: 425px) {
+    .d-box {padding: 0 29px;}
+    .rm::after {right:6px;}
+    .lm::after {left:6px;}
     .social-p {display:none;}
 }

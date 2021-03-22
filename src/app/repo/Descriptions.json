@@ -21,7 +21,7 @@
                     {
                         "alt_title" : 0,
                         "desc"  : "This is my pride and joy in terms of my professional web development experience so far. The DTB is a multi-domain learning platform, a lightweight LMS, featuring an administrative back-end, loaded with internal tooling that I have crafted for Demme Learning over the years!",
-                        "link" : "<a href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>"
+                        "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>"
                     }    
                 ]
             },
