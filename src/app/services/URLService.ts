@@ -4,10 +4,26 @@ import { PreviewService } from './PreviewService'
 @Injectable() // Injected into project-view.component.ts
 class URLService  {
 
+    /**
+     * This class should probably be named something else.
+     * It observes the URL and builds the preview windows accordingly
+     */
+
     PreviewService : PreviewService
 
     constructor(PreviewService : PreviewService){
         this.PreviewService = PreviewService
+    }
+
+    resetURL() :void
+    {
+        let url = new URL(window.location.href)
+        url.searchParams.delete('page')
+        window.history.pushState(
+            {additionalInformation: 'Anthony\'s Portfolio'}, 
+            "Anthony T. Lyristis",
+            url.href
+        )
     }
 
     /**
@@ -17,7 +33,7 @@ class URLService  {
      */
     updateURLParams = (e, data) => {
 
-        let query = e.target.closest('li').getAttribute("data-toc-id")
+        let query  = e.target.closest('li').getAttribute("data-toc-id")
 
         // // Update the latest preview id
         // this.current_preview = query
@@ -37,10 +53,13 @@ class URLService  {
         // Replace the current entry in the browser's history
         window.history.replaceState(nextState, nextTitle, nextURL)
 
-        // Initiate the preview update 
-        // -- TODO -- This is just a callback. This function can be a closure.
-        // We can generalize this function and extract it into its own class
-        // to have a global history class
+       
+        // -- TODO -- This next call could be returned by this function instead. We would then add
+        // selectPreview() and buildNewPreview() to the social-view-component.
+        // I like them in this file for now though because execution streams linearly.
+        // This class executes top to bottom, simple enough for now!
+
+         // Initiate the preview update 
         this.selectPreview(query, data)
 
     }
@@ -51,9 +70,6 @@ class URLService  {
      * @param query 
      */
     selectPreview(query, data) : void {
-
-        console.log("QUERY = " + query)
-        console.log(data)
 
         document.getElementById('tech-window').classList.remove('lup')
         // Clear the preview windows
@@ -86,9 +102,6 @@ class URLService  {
      * @param id 
      */
     buildNewPreview(query, data) {
-        
-        console.log("DATA")
-        console.log(data)
 
         let previewData;
         let iconHeadingContainer = document.createElement("div") // container for tech icons

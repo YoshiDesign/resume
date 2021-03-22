@@ -14,6 +14,7 @@ const PROJECTS = "projects"
 })
 export class SocialViewComponent implements OnInit {
 
+    // Watches URLs and builds appropriate previews
     URLService : URLService;
     PreviewService : PreviewService
     data : any
@@ -44,6 +45,9 @@ export class SocialViewComponent implements OnInit {
             })
             // Reset the heading
             document.getElementById('p-window-title').innerText = "Proficiencies"
+            // Reset the URL
+            this.URLService.resetURL()
+
         })
 
         // Integrating the browser's "back" button for project previews
@@ -60,11 +64,14 @@ export class SocialViewComponent implements OnInit {
     }
 
     ngAfterViewInit() {
+
         // Check the URL for queries
         let url = new URL(window.location.href)
         let q = url.searchParams.get('page')
-        if (q == "toc")
+
+        if (q == "toc"){
             this.buildToC()
+        }
         else if(q != null)
             this.URLService.selectPreview(q, this.data[0][PROJECTS])
         
@@ -77,8 +84,6 @@ export class SocialViewComponent implements OnInit {
 
         // A list of headings for the ToC
         var contents : Array <HTMLElement> = []
-
-        console.log("TRYING TOC")
 
         for (let i in this.data) // JSON index
         {
