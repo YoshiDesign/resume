@@ -1,5 +1,28 @@
-<h2>Proficiencies</h2>
-<div id="preview-tech"></div>
+<h2 id="p-window-title">Proficiencies</h2>
+<div id="preview-tech" class="test hide-me">
+
+    <div id="tech-window" class="tech">
+        <h5 id="X"><span class="X1">X</span></h5>
+        <div class="p-title">
+
+            <h4 id="previewLink"></h4>
+
+        </div>
+
+        <h4 class="nop-top">Stack: </h4> 
+        <div id="previewTechImages" class="p-icon-section">
+            <!-- <img class="p-tech-img" src="assets/img/flask.png" alt="">
+            <img class="p-tech-img" src="assets/img/flask.png" alt="">
+            <img class="p-tech-img" src="assets/img/flask.png" alt="">
+            <img class="p-tech-img" src="assets/img/flask.png" alt="">
+            <img class="p-tech-img" src="assets/img/flask.png" alt="">
+            <img class="p-tech-img" src="assets/img/flask.png" alt=""> -->
+        </div>
+         <div class="proj">
+            <p id="previewDescription"></p>
+        </div>
+    </div>
+</div>
 <section class="tech-section" *ngFor="let item of buffer ; index as i ; ">    <!-- Outer Loop (Y) -->
     
     <div class="test r-side">
@@ -8,7 +31,7 @@
 
             <div (click)="highlighter($event)" 
                  (mouseout)="unhighlight($event)" 
-                 (mouseover)="highlighter($event)" 
+                 (mouseover)="highlighter($event)"
                  [id]="n[0]" class="imBox-sm" 
                  *ngFor="let n of buffer[i] ; index as j ; "> <!-- Inner Loop (X) -->
                     <img class="no-evt" [src]="imgAssets + n[1]" alt="">

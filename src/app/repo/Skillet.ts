@@ -35,7 +35,7 @@ export default class Skillet {
 
         // Makes things easier to read from the front-end.
         this.reference = {
-            'dtb' : P.DTB,
+
             'ww' : P.WW,
             'ocv' : P.OCV,
             'cs50' : P.CS50,
@@ -65,12 +65,12 @@ export default class Skillet {
              */
 
             lingua : [
-                ['js', "cjs.png",   [P.WW,P.CS50,P.DTB, P.PORT]],
+                ['js', "cjs.png",   [P.WW,P.CS50, P.PORT]],
                 ['py',  "py.png",   [P.PSI, P.STEG, P.CS50, P.API, P.WW]],
                 ['cpp', "cpp.png",  [P.OCV,P.GAME, P.FSIM]],
-                ['ts',  "ts.png",   [P.WW, P.DTB, P.PORT]],
-                ['php', "php.png",  [P.DTB]],
-                ['bash',"sheb.png", [P.WW, P.DTB]],
+                ['ts',  "ts.png",   [P.WW, P.PORT]],
+                ['php', "php.png",  []],
+                ['bash',"sheb.png", [P.WW, P.API, P.CS50]],
                 ['lua', "lua.png",  [P.CS50]],
                 ['csharp', "cs.png",[P.OCV, P.GAME]]
             ],
@@ -78,15 +78,16 @@ export default class Skillet {
             frameworks : [
                 ['nodejs', "nodejs.png",[P.WW]],
                 ['react',  "react.png", [P.WW]],
-                ['lara',   "lara.png",  [P.DTB]],
-                ['ang',    "ang.png",   [P.DTB, P.PORT]],
+                ['lara',   "lara.png",  []],
+                ['ang',    "ang.png",   [P.PORT]],
                 ['flask',  "flask.png", [P.STEG, P.API]],
                 ['docker',  "docker.png", []]
             ],
 
             libraries : [
                 ["gql",  "gql.png",     [P.WW]],
-                ["ossl", "ossl.png",    [P.DTB]],
+                ["apollo",  "apollo.png", [P.WW]],
+                ["ossl", "ossl.png",    []],
                 ["ocv",  "ocv.png",     [P.OCV]],
                 ["d3",   "d3.png",      [P.WW]],
                 ["pgame","pgame.png",   [P.PSI]],
@@ -94,12 +95,12 @@ export default class Skillet {
 
             other : [
                 ["rds",    "rds.png",   [P.API, P.WW]],
-                ["mysql",  "mysql.png", [P.CS50, P.DTB]],
+                ["mysql",  "mysql.png", [P.CS50]],
                 ["pgsql", "pgsql.png",  [P.API]],
                 ["mgo",   "mgo.png",    [P.WW]],
                 ["hku",   "hku.png",    [P.PSI, P.API, P.STEG]],
-                ["wp",    "wp.png",     [P.DTB]],
-                ["apache", "apache.png", [P.DTB]]
+                ["wp",    "wp.png",     []],
+                ["apache", "apache.png", []]
             ],
 
             iot : [
@@ -111,7 +112,8 @@ export default class Skillet {
             ],
 
             sys : [
-                ["lnx",   "ln.png", [P.PSI, P.API, P.DTB, P.OCV]],
+                ["lnx",   "ln.png", [P.PSI, P.API, P.OCV]],
+                ["emsc",   "emsc.png", [P.FSIM]],
                 ["arm", "arm.png", [P.OCV, P.UTAUST]],
                 ["cmake", "cmake.png", [P.OCV]],
                 ["vim", "vim2.png", [P.OCV, P.UTAUST]],

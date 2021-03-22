@@ -40,6 +40,7 @@ export class ProjectViewComponent implements OnInit {
 
     // Hovering over tech item
     highlighter (e) :void {
+
         this.linker(e.target.id)
         this.curHighlight = e.target.id
         // console.log(`Cur Highlight: ${this.curHighlight}`)
@@ -49,9 +50,10 @@ export class ProjectViewComponent implements OnInit {
 
     // Blur tech item
     unhighlight(e) :void {
-        for (let p of this.linked) {
-            document.getElementById(p).classList.remove('slt')
-        }
+
+        // for (let p of this.linked) {
+        //     document.getElementById(p).classList.remove('slt')
+        // }
         document.getElementById(e.target.id).classList.remove('hlt')
     }
 
@@ -80,7 +82,7 @@ export class ProjectViewComponent implements OnInit {
                 }
             }
         }
-        
+        return 
         // Get an array of all image id's which share this tech's projects
         this.linked = this.connectProjects(projects)
 

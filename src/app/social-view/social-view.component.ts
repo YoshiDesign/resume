@@ -1,4 +1,3 @@
-import { prepareSyntheticListenerFunctionName } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 import { PreviewService } from '../services/PreviewService'
 
@@ -32,10 +31,21 @@ export class SocialViewComponent implements OnInit {
             document.getElementById('da').style.display = "none";
         })
 
+        document.getElementById("X").addEventListener('click', e => {
+            document.getElementById('preview-tech').classList.add('hide-me')
+            Array.from(document.getElementsByClassName('tech-section')).forEach( el => {
+                el.classList.remove('hide-me')
+            })
+            // Reset the heading
+            document.getElementById('p-window-title').innerText = "Proficiencies"
+        })
+
         // Integrating the browser's "back" button for project previews
         window.onpopstate = (e) => {
+
             let lastURL = new URL(window.location.href)
-            let lastPreview = lastURL.searchParams.get('preview')
+            let lastPreview = lastURL.searchParams.get('page')
+
             console.log("EVENT")
             console.log(e)
             console.log(lastPreview)
@@ -54,19 +64,19 @@ export class SocialViewComponent implements OnInit {
      */
     updateURLParams = (e) => {
 
-        let p = e.target.getAttribute("data-toc-id")
+        let query = e.target.closest('li').getAttribute("data-toc-id")
 
         // Update the latest preview id
-        this.current_preview = p
+        this.current_preview = query
 
         // Generate an updated URL
         let url = new URL(document.location.href)
-        url.searchParams.set("page", p)
+        url.searchParams.set("page", query)
 
         // History API attributes
         const nextURL = url.href
         const nextTitle = document.title
-        const nextState = { additionalInformation: 'Anthony\'s Portfolio - preview-id: ' + p }
+        const nextState = { additionalInformation: 'Anthony\'s Portfolio - preview-id: ' + query}
 
         // Create a new entry in the browser's history
         window.history.pushState(nextState, nextTitle, nextURL)
@@ -78,78 +88,101 @@ export class SocialViewComponent implements OnInit {
         // -- TODO -- This is just a callback. This function can be a closure.
         // We can generalize this function and extract it into its own class
         // to have a global history class
-        this.selectPreview(p)
+        this.selectPreview(query)
 
     }
 
     /**
+     * Evt listener - the user clicks on a ToC list item
      * Prepare the preview pane for a new preview
      * @param query 
      */
     selectPreview(query) : void {
-        
-        // Clear the preview window
+        document.getElementById('tech-window').classList.remove('lup')
+        // Clear the preview windows
         if (window.innerWidth <= 973) {
-            document.getElementById('p-content').innerHTML = ""
-            //  Build Mobile carousel
-        } else {
 
+            document.getElementById('p-content').innerHTML = ""
+
+            // Deactivate any active tabs. There should only be one but this is a limitation
+            Array.from(document.getElementsByClassName('active-unit')).forEach( el => {
+                el.classList.remove('active-unit')
+            })
+
+            // Select the proper preview location dot and activate it
+            let activeTab = document.querySelector("[data-unit-id="+ query +"]")
+            activeTab.classList.add('active-unit')
+        } else {
+            // remove proficiencies
             Array.from(document.getElementsByClassName('tech-section')).forEach( el =>  {
                 el.classList.add('hide-me')
             })
 
         }
 
-        // Deactivate any active tabs. There should only be one but this is a limitation
-        Array.from(document.getElementsByClassName('active-unit')).forEach( el => {
-            el.classList.remove('active-unit')
-        })
-
-        // Select the proper preview location dot and activate it
-        let activeTab = document.querySelector("[data-unit-id="+ query +"]")
-        activeTab.classList.add('active-unit')
-
         this.buildNewPreview(query)
 
     }
 
     /**
-     * Construct a new preview in the preview pane, whether its mobile or not
+     * Construct a preview
      * @param id 
      */
-    buildNewPreview(id) {
-
+    buildNewPreview(query) {
+        
         let previewData;
-        // Create the elements
-        let head  = document.createElement("h3")    // Heading
         let iconHeadingContainer = document.createElement("div") // container for tech icons
+        let icons : Array<HTMLElement> = []
+
         iconHeadingContainer.classList.add('tech-used')
 
         // Index into the "projects" object, fetching this project's object
         for (let item of this.data[0][PROJECTS]) {
-            if (item.id == id) {
+            if (item.id == query) {
                 previewData = item
                 break
             }
         }
 
-        console.log("P-Data")
-        console.log(previewData)
-
         // Use `tech` to find the `icons` of its related projects (1 to many, respectively)
-        let tech : Array<string> = this.PreviewService.getAllIcons(previewData.id)
-        let icons : Array<HTMLElement> = []
 
-        for (let filename in tech) {
+        // Make array of <img> for each tech icon
+        for (let filename of this.PreviewService.getAllIcons(query)) {
             let icon = document.createElement('IMG')
             icon.setAttribute('src', "assets/img/" + filename)
-            icon.classList.add("toc-img")
+            icon.setAttribute('alt', filename.split(".")[0])
+            icon.setAttribute('class', 'p-tech-img')
+
             icons.push(icon)
         }
 
+        // previewData - the object from Descriptions.json
+        // icons - array of imgs
+
         if (window.innerWidth <= 973) {
 
+
+        } else {
+
+            let imgContainer = document.getElementById('previewTechImages')
+            imgContainer.innerHTML = ""
+
+            if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"color:white; margin-right:20px;\">Proprietary</h3>"
+            icons.forEach( el => {
+                imgContainer.appendChild(el)
+            })
+
+            // Reveal the preview container
+            document.getElementById('preview-tech').classList.remove('hide-me')
+            document.getElementById('p-window-title').innerText = previewData.title // TODO - I'm only grabbing the first obj. I don't have any projects with multiple projects... but it's there...
+            document.getElementById('previewDescription').innerHTML = previewData.projects[0].desc
+            document.getElementById('previewLink').innerHTML = previewData.projects[0].link
+
+            setTimeout(() => {
+                document.getElementById('tech-window').classList.add('lup')    
+            }, 100);
             
+
         }
 
 
@@ -310,7 +343,6 @@ export class SocialViewComponent implements OnInit {
                 })
 
                 e.target.classList.add('icon-update')
-                this.current_core_tech = newIcons
 
             })
 
@@ -320,7 +352,6 @@ export class SocialViewComponent implements OnInit {
                     el.remove()
                 })
                 e.target.classList.remove('icon-update')
-                this.current_core_tech = null
             })
 
         }

@@ -36,6 +36,9 @@
 * {
     position:relative;
 }
+a {
+    color:var(--s-purple);
+}
 @font-face {
     font-family: 'Inter var';
     src: url('assets/fonts/Inter.var.woff2');
@@ -65,14 +68,36 @@ h2 {color:white;}
     flex-flow: row nowrap;
     align-items: center;
 }
+#X {
+    text-align:right;
+    display:block;
+    margin: 0 0 5px 0;
+    padding: 3px 5px 3px 0;
+    cursor:default;
+    background:rgba(0, 0, 0, 0.371);
+    color:rgba(248, 248, 255, 0.268);
+    font-weight:1 !important;
+    font-family:monospace;
+}
+#X:hover {
+    color:tomato;
+}
+.X1 {
+    font-size:25px;
+    padding:4px 4px 6px 4px;
+}
 #preview-tech {
     position: absolute;
     width: 54.3vw;
     height: 49.5vh;
-    background: blue;
+    background: var(--color-darkestop-focus);
     z-index: 100;
     left: 3px;
     top: 55px;
+}
+#p-content h4 {
+    padding-left:0;
+    margin-bottom:0;
 }
 .primary {
     height: 100%;
@@ -195,7 +220,7 @@ h2 {color:white;}
     position:absolute;
     bottom:1px;
     left:34px;
-    width:191px;
+    width:197px;
     height:3px;
     border-bottom:3px solid var(--color-fturq);
     border-left:3px solid var(--color-fturq);
@@ -389,17 +414,9 @@ h2 {color:white;}
 .dim {
     opacity:0.2
 }
-.m p {
-    color:rgba(255, 255, 255, 0.747);
-    padding:5px;
-    width:auto;
-    text-align:center;
-    float:right;
-    margin:15px 15px 15px 0;
-    position:relative;
-    top:5px;
-}
+
 .md {
+    /* position:relative; */
     padding:25px;
     width:100%;
     display:inline-block;
@@ -461,7 +478,46 @@ h2 {color:white;}
     z-index: 500;
     overflow: hidden;
     transition:max-width 0.3s linear, width 0.3s linear;
+
 }
+.p-icon-section {
+    float:right;
+    min-width:40px;
+    height: 40px;
+    display:flex;
+}
+.tech {
+    overflow: hidden;
+    transition: height 0.5s linear;
+    height: 0px;
+}
+.lup {
+    height:480px !important;
+}
+.p-tech-img {
+    width:40px;
+    float:right;
+    margin-right:10px;
+}
+.proj {
+    width:600px;
+    padding:15px;
+}
+
+.m h4 {
+    display:inline-block;
+    color:ghostwhite;
+    padding-left:15px;
+    margin-top:10px;
+}
+.m p {
+    color:rgba(255, 255, 255, 0.747);
+    margin:15px 15px 15px 0;
+    position:relative;
+    top:5px;
+    word-wrap: break-word;
+}
+
 .icon-update {
     min-width:60px;
     max-width:311px;
@@ -592,10 +648,6 @@ h2 {color:white;}
         min-width:auto;
     }
     .da {display:none;}
-    .m p {
-        float:right;
-        width:40%;
-    }
     .section {height:auto;}
     .l-side {
         width:100%;
