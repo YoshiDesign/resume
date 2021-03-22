@@ -8,7 +8,7 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "With a collection of data scraped from many different resources, I was able to build an interactive map that gives you a look at a vast array of cost of living and wage statistics for over 19,000 cities and 3,000 occupiation titles. It has been in development since July of 2020.",
+                        "desc"  : "The World Works (DubDub) is an interactive map which offers a variety of insights into the life of the average citizen in the USA. By inspecting your local community, you can determine if your avocations and career trajectory are optimal for your location. With cost of living statistics for over 19,000 cities, metrics from public schools, even gig economy enterprises, and not to mention stats for over 3,000 occupations listed by the Bureau of Labor Statistics, visitors can determine if they can be saving more while working less or perhaps working more and making more; the choice is theirs, but this app brings it all into one interactive view. <p>In development since July of 2020 and looking forward to your support!</p>",
                         "link" : "https://"
                     }    
                 ]
