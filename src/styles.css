@@ -111,7 +111,7 @@ outline: 1px solid slategrey;
 .close{
     display:block;
     margin: 0;
-    padding: 3px 5px 3px 0;
+    padding: 0 5px 0 0;
     cursor:default;
     background:var(--color-darkestop-focus);
     color:rgba(248, 248, 255, 0.268);

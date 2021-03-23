@@ -16,3 +16,21 @@ export class SafePipe implements PipeTransform {
   }
 } 
 
+export abstract class PreviewData {
+    
+    id : string
+    title: string
+    tech: string
+    alt_title: string
+    desc : string
+    link: string
+    media: string
+    caption: string
+    
+    projects: object
+
+    get getProjects(){
+        return this.projects
+    }
+
+}
