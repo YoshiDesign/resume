@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PreviewService } from './PreviewService'
-import {DomSanitizer} from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable() // Injected into project-view.component.ts
 class URLService  {
@@ -14,14 +14,13 @@ class URLService  {
 
     public media_ref : string
     public video : boolean
-    private sanitizer
-
+    private previewData
 
     constructor(PreviewService : PreviewService,
         sanitizer: DomSanitizer ){
         this.PreviewService = PreviewService
         this.media_ref = ""
-        this.sanitizer = sanitizer
+        this.previewData = null
     }
 
     resetURL() :void
@@ -115,7 +114,6 @@ class URLService  {
      */
     buildNewPreview(query, data) {
 
-        let previewData;
         let iconHeadingContainer = document.createElement("div") // container for tech icons
         let icons : Array<HTMLElement> = []
 
@@ -124,7 +122,7 @@ class URLService  {
         // Index into the "projects" object, fetching this project's object
         for (let item of data) {
             if (item.id == query) {
-                previewData = item
+                this.previewData = item
                 break
             }
         }
@@ -158,7 +156,7 @@ class URLService  {
             })
 
             // Show & build
-            this.showPreviewContainer(previewData)
+            this.showPreviewContainer()
 
         }
     }
@@ -167,18 +165,18 @@ class URLService  {
      * 
      * @param previewData 
      */
-    showPreviewContainer(previewData) {
+    showPreviewContainer() {
         // Reveal the preview container
         document.getElementById('preview-tech').classList.remove('hide-me')
-        document.getElementById('p-window-title').innerText = previewData.title // TODO - I'm only grabbing the first obj. I don't have any projects with multiple projects... but it's there...
-        document.getElementById('previewDescription').innerHTML = previewData.projects[0].desc
-        document.getElementById('previewLink').innerHTML = previewData.projects[0].link
+        document.getElementById('p-window-title').innerText = this.previewData.title // TODO - I'm only grabbing the first obj. I don't have any projects with multiple projects... but it's there...
+        document.getElementById('previewDescription').innerHTML = this.previewData.projects[0].desc
+        document.getElementById('previewLink').innerHTML = this.previewData.projects[0].link
 
         // Build the additional comments section
-        if (previewData.projects.length > 1) {
+        if (this.previewData.projects.length > 1) {
 
             document.getElementById('adtl').classList.remove('hide-me')
-            document.getElementById('adtl-p').innerHTML = previewData.projects[1].alt_title + " - " + previewData.projects[1].desc
+            document.getElementById('adtl-p').innerHTML = this.previewData.projects[1].alt_title + " - " + this.previewData.projects[1].desc
 
         }  
         // or dont
@@ -231,17 +229,21 @@ class URLService  {
                 document.getElementById('media').appendChild(pimage)
                 document.getElementById('media').addEventListener('click', e => {
                     e.stopPropagation()
+
                     // Reveal the theatre
                     document.getElementById('theatre').classList.add('md-1')
                     document.getElementById('X2').classList.remove('hide-me')
                     document.getElementById('tl-arrow').classList.remove('hide-me')
                     document.getElementById('tr-arrow').classList.remove('hide-me')
 
-                    
+                    this.loadTheatre()
 
                 })
             }
         }
+    }
+    loadTheatre() {
+
     }
 }
 
