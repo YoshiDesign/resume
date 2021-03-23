@@ -80,7 +80,7 @@ export default class Skillet {
                 ['react',  "react.png", [P.WW]],
                 ['lara',   "lara.png",  []],
                 ['ang',    "ang.png",   [P.PORT]],
-                ['flask',  "flask.png", [P.STEG, P.API]],
+                ['flask',  "flask.png", [P.STEG, P.API, P.PSI]],
                 ['docker',  "docker.png", []]
             ],
 

@@ -93,6 +93,10 @@ h2 {color:white;}
     z-index: 100;
     left: 3px;
 }
+#adtl h3 {
+    padding-top:15px;
+    color:ghostwhite;
+}
 .yScroll {
     /* overflow-y:scroll; */
 }
@@ -108,8 +112,9 @@ h2 {color:white;}
     top:40px;
 }
 .png {
-    margin-top:15px;
-    border:1px solid white;
+    margin-top:5px;
+    padding-bottom:10px;
+    border:none;
     float:right;
 }
 #previewDescription {
@@ -509,8 +514,10 @@ h2 {color:white;}
 }
 .tech {
     overflow-y: scroll;
+}
+.expand {
     transition: height 0.5s linear;
-    height: 0px;
+    height: 0px !important;
 }
 .lup {
     height:480px !important;

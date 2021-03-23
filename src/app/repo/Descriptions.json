@@ -24,14 +24,14 @@
                         "alt_title" : "",
                         "desc"  : "This is my pride and joy in terms of my professional web development experience so far. The DTB is a multi-domain learning platform, a lightweight LMS, featuring an administrative back-end, loaded with internal tooling that I have crafted for Demme Learning over the years!",
                         "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
-                        "media" : ["/assets/previews/dtb.png", "/assets/previews/dtb2.png"],
+                        "media" : ["/assets/previews/dtb.png", "/assets/previews/dtb2.png", "/assets/previews/avi.png"],
                         "caption" : "Just a peek at the cloud filesystem tool, built into the Toolbox's admin domain. Developed quite early in my career."
                     },
                     {
-                        "alt_title" : "Single Sign-On",
-                        "desc"  : "I have built numerous internal tools at Demme Learning, but the most notable project was one the Single Sign-On architecture during my first year of employment. Using a heavy reliance on self education and RFC-6265, my <i>first</i> task in my first role was to ensure that 1 wordpress site, 1 enterprise eCommerce solution, and 1 proprietary LMS (The Digital Toolbox), were capable of persisting 1 user session no matter which application was being used. I heavily documented my strategy, security considerations, and worked with our eCommerce developers to implement a robust and portable, framework agnostic, custom SSO solution. Perhaps you can tell I was proud of myself for some time. All in a day!",
+                        "alt_title" : "<b>Single Sign-On</b>",
+                        "desc"  : "I have built numerous internal applications at Demme Learning, but the most notable project was a custom Single Sign-On architecture during my first year as a developer. Using a heavy reliance on self education and RFC-6265, my <i>first</i> task in my first role was to ensure that 1 wordpress site, 1 enterprise eCommerce solution, and 1 proprietary LMS (The Digital Toolbox), were capable of persisting 1 user session no matter which application was being used. I heavily documented my strategy, security considerations, and worked with our eCommerce developers to implement a robust and portable, framework agnostic, proprietary SSO solution.",
                         "link" : "",
-                        "media" : ["/assets/previews/avi.png"],
+                        "media" : "[]",
                         "caption" : "Not my primary implementation reference."
                     }    
                 ]
@@ -39,13 +39,13 @@
             {
                 "id" : "ocv",
                 "title" : "OpenCV & Embedded Systems",
-                "tech" : ["cpp","vs","ocv"],
+                "tech" : ["vs","ocv"],
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "I've always wanted to dive head-first into robotics and electrical engineering. Click here to see my robot buddy. It can see you too!",
-                        "link" : "https://",
-                        "media" : "<img src='' >",
+                        "desc"  : "I've always wanted to dive head-first into robotics and electrical engineering. Over on the right you'll see my mouse controlled robot buddy. It can see you too! I've used this robot to perform Thomas Young's famed double-slit experiment numerous times.<p oops='true'>Doublevision is a sandbox for combining the artificial intelligence and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi. Also included is the ASIO header library to add networking to your projects.</p><p>What is most exciting about this project is that it uses a relatively new standard of interacting with the Raspberry Pi's GPIO interface, known as <a target='_blank' href='https://www.youtube.com/watch?v=cdTLewJCL1Y&t=1210s'>libgpio</a>. This new lib deprecated the previous method of GPIO access by a longshot! Development can be done on any Raspberry Pi 3b+ or later.</p>",
+                        "link" : "<a target='_blank' href='https://github.com/YoshiDesign/doublevision'>Check out the Doublevision repo on GitHub</a>",
+                        "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
                         "caption" : ""
                     }    
                 ]
@@ -58,8 +58,8 @@
                     {
                         "alt_title" : 0,
                         "desc"  : "Using the Pixel Game Engine, developed by <a href='https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA'>@javidx9</a>, and with the creative direction of a friend and local designer artist, <a href='https://tonzolaart.com/'>@tonzola_art</a>, this project is a consequence of my ongoing love affair with game development. As of March 21 2021, it has been optimized to work within the Emscripten toolchain.",
-                        "link" : "https://",
-                        "media" : "<iframe src='https://onedrive.live.com/embed?cid=689974887EAECD42&resid=689974887EAECD42%2118476&authkey=ALLyRkNG9hVjFbw' width='320' height='217' frameborder='0' scrolling='no' allowfullscreen></iframe>",
+                        "link" : "",
+                        "media" : "/assets/previews/retrocade.MP4",
                         "caption" : "Part of an arcade series I'm working on."
                     }    
                 ]
@@ -71,9 +71,9 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. A Python PyGame client accesses the Twitter API using my personal API, conducts a sentiment analysis to determine the 'difficulty' of the gameplay, and proceeds to turn each tweet into a game of Space invaders; where each tweet can be disassembled (blasted into oblivion with a variety of powerups and weapons) character by characters. The game was not distributed for legal reasons, and not to mention that it was built by a novice at the time!",
+                        "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. A Python PyGame client accesses the Twitter API using a Flask web proxy on Heroku, conducts a sentiment analysis to determine the 'difficulty' of the gameplay, and proceeds to turn each tweet into a game of Space invaders; where each tweet can be disassembled (blasted into oblivion with a variety of powerups and weapons) character by characters. The game was not distributed for legal reasons, and not to mention that it was built by a novice at the time!",
                         "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
-                        "media" : "<img src='https://sn3301files.storage.live.com/y4m9M770cvpVzzAGKQMCk_ZW0gBJH57ELIU3jch9PhBr2O6RvNQKuL2gcSCbY1KPLAdJ-p7HnV9QSvhqrAoNwHZLNy0Fs8FtckuP5-3KLQoK2RQN5xgx0l0EbC_t0roLUJjqluaUqqV1tQidBiPbh3TtHpgtA1LUOagRocPTaFerfLACSHJCANKcabVbb8IF4bk?width=660&height=383&cropmode=none' width='660' height='383' />",
+                        "media" : ["/assets/previews/dtrmp.png"],
                         "caption" : "Passing judgements upon our former president, programatically, so you don't have to."
                     }    
                 ]
@@ -85,9 +85,9 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "A (deprecated) web application and learning tool that I built using Python. Conceal text, encrypt entire books into an image (if the size allows for it), or hide all of your love letters in plain sight! The CLI version is available as a github gist, which also offers the\"inspector\" switch.",
-                        "link" : "<a href='https://alyrist.herokuapp.com' target='_blank'>Get the CLI tool.</a>",
-                        "media" : "<img src='https://sn3301files.storage.live.com/y4mbCg6cj3KBB2avlNynrFhYMYslZ9Wx-MVNYLL9L7Kurm6g5nv_d_8VFqSYGDOr_d9A_c5_PIlDDMFpu6xr8Iy_414p3By1ozNaWw_x0QSd7gKvO_TiIzcMfHtfDYgMPXFeY0iSjTrNSnX_rm1K2PFYY5ZjmHLbBN856jwP7Ckyovhz4HsOdlxGJv-x2I7XcJB?width=416&height=366&cropmode=none' width='416' height='366' />",
+                        "desc"  : "A deprecated web application and learning tool that I built using Python, for my CS50 final project. Conceal messages or encrypt entire books into an image (if the size allows for it), perhaps even hide all of your most personal love letters in plain sight; I know I have! <p>The CLI tool is available as a GitHub gist, which also offers the\"inspector\" switch.</p>",
+                        "link" : "<a href='https://gist.github.com/YoshiDesign/015ad38535a5537eef2be1b333a009d1' target='_blank'>Get the gist</a>",
+                        "media" : ["/assets/previews/pycli.png"],
                         "caption" : "-h -I -d -e"
                     }    
                 ]
@@ -101,7 +101,7 @@
                         "alt_title" : 0,
                         "desc"  : "To check out the porcelain and plumbing of this webpage, check out the source code here! Like it? It's yours! <p>Disclaimer: Experience not included.<p>",
                         "link" : "<a href='https://github.com/YoshiDesign/resume' target='_blank'>Check out the repo on Github</a>",
-                        "media" : "<iframe src='https://onedrive.live.com/embed?cid=689974887EAECD42&resid=689974887EAECD42%2118486&authkey=AE21GsgzQNMOaHo' width='98' height='120' frameborder='0' scrolling='no'></iframe>",
+                        "media" : ["/assets/previews/portfolio.png"],
                         "caption" : "You are here^"
                     }    
                 ]

@@ -166,15 +166,16 @@ class URLService  {
             if (previewData.projects.length > 1) {
                 extra_media = true
 
-                // Allows for 1 additional image when there are multiple projects per projects. TODO - extend this
-                previewData.projects[0].media.push(previewData.projects[1].media[0])
+                // Build the additional comments section
+                document.getElementById('adtl').classList.remove('hide-me')
+                document.getElementById('adtl-p').innerHTML = previewData.projects[1].alt_title + " - " + previewData.projects[1].desc
 
+            }  
+            else {
+                document.getElementById('adtl').classList.add('hide-me')
             }
 
-            // <iframe id="pFrame"  width="300" height="300" [src]="media_ref" frameborder="0" allowfullscreen></iframe>
-            
-            
-            
+
             // Smooth out the first dropdown transition
             setTimeout(() => {
                 document.getElementById('tech-window').classList.add('lup')    
