@@ -12,6 +12,7 @@ import { SocialViewComponent } from './social-view/social-view.component';
 import { ProjectViewComponent } from './project-view/project-view.component';
 import { BadgeComponentComponent } from './badge-component/badge-component.component';
 import { TheaterComponentComponent } from './theater-component/theater-component.component';
+import { SafePipe } from './Helpers/Helpers';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TheaterComponentComponent } from './theater-component/theater-component
     ProjectViewComponent,
     BadgeComponentComponent,
     TheaterComponentComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule

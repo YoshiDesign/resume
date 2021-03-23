@@ -1,5 +1,8 @@
 import { Component, OnInit, ClassProvider } from '@angular/core';
 import { ResumeService } from '../services/ResumeService'
+import URLService from '../services/URLService'
+
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-project-view',
@@ -8,8 +11,8 @@ import { ResumeService } from '../services/ResumeService'
   providers: [ResumeService]
 })
 export class ProjectViewComponent implements OnInit {
-
     ResumeService : ResumeService
+    URLService : URLService
     imgAssets : string
 
     public buffer   : any    = []   // Constructs the frontend icons
@@ -18,31 +21,37 @@ export class ProjectViewComponent implements OnInit {
     
     private anchored : boolean
     private linked  : any    = []   // Array of currently linked icons
-    private curHighlight : string
-    private curSelection : string
+    // private curHighlight : string
+    // private curSelection : string
     
     constructor(
         ResumeService : ResumeService,
+        URLService : URLService,
     ) { 
         // A project was selected
         this.anchored = false
-
+        this.URLService = URLService
         this.ResumeService = ResumeService
         this.imgAssets = "assets/img/"
         this.linked = null
-        this.curHighlight = null
-        this.curSelection = null
+        // this.curHighlight = null
+        // this.curSelection = null
     }
 
     ngOnInit() {
         this.buffer = this.ResumeService.skillet_buffer
     }
 
+    discardMedia ()
+    {
+        document.getElementById('media').innerHTML = ""
+    }
+
     // Hovering over tech item
     highlighter (e) :void {
 
         this.linker(e.target.id)
-        this.curHighlight = e.target.id
+        // this.curHighlight = e.target.id
         // console.log(`Cur Highlight: ${this.curHighlight}`)
         // console.log(`Cur hover Projects:`)
         // console.log(this.projects)
@@ -82,7 +91,7 @@ export class ProjectViewComponent implements OnInit {
                 }
             }
         }
-        return 
+        return // Decided not to implement this
         // Get an array of all image id's which share this tech's projects
         this.linked = this.connectProjects(projects)
 

@@ -39,10 +39,12 @@ export class SocialViewComponent implements OnInit {
 
         // Closes preview windows
         document.getElementById("X").addEventListener('click', e => {
+
             document.getElementById('preview-tech').classList.add('hide-me')
             Array.from(document.getElementsByClassName('tech-section')).forEach( el => {
                 el.classList.remove('hide-me')
             })
+
             // Reset the heading
             document.getElementById('p-window-title').innerText = "Proficiencies"
             // Reset the URL
@@ -78,9 +80,6 @@ export class SocialViewComponent implements OnInit {
     }
 
     buildToC() : void {
-
-        // Set state
-        // this.current_preview = "toc"
 
         // A list of headings for the ToC
         var contents : Array <HTMLElement> = []

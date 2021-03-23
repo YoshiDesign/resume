@@ -1,8 +1,9 @@
 <h2 id="p-window-title">Proficiencies</h2>
-<div id="preview-tech" class="test hide-me">
-
+<div id="preview-tech" class="brd hide-me">
+    <h5 id="X" (click)="discardMedia()"><span class="X1">X</span></h5>
+    <div></div>
     <div id="tech-window" class="tech">
-        <h5 id="X"><span class="X1">X</span></h5>
+        
         <div class="p-title">
 
             <h4 id="previewLink"></h4>
@@ -18,14 +19,26 @@
             <img class="p-tech-img" src="assets/img/flask.png" alt="">
             <img class="p-tech-img" src="assets/img/flask.png" alt=""> -->
         </div>
-         <div class="proj">
-            <p id="previewDescription"></p>
+         <div class="pad flex">
+            <div>
+                <p id="previewDescription"></p>
+                <div id="adtl" class="hide-me">
+                    <h3>Additional Comments</h3>
+                    <p id="adtl-p"><span id="intro"></span>: </p>
+                </div>
+            </div>
+            <div id="media">
+                
+            </div>
+            
+        
         </div>
+
     </div>
 </div>
 <section class="tech-section" *ngFor="let item of buffer ; index as i ; ">    <!-- Outer Loop (Y) -->
     
-    <div class="test r-side">
+    <div class="brd r-side">
 
         <div class="section-alt">
 

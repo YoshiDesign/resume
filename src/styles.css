@@ -89,11 +89,31 @@ h2 {color:white;}
 #preview-tech {
     position: absolute;
     width: 54.3vw;
-    height: 49.5vh;
     background: var(--color-darkestop-focus);
     z-index: 100;
     left: 3px;
-    top: 55px;
+}
+.yScroll {
+    /* overflow-y:scroll; */
+}
+.vid {
+    margin-top:17px;
+    width:300px;
+    height:171px !important;
+}
+.pdf {
+    position:absolute;
+    left:0;
+    right:0;
+    top:40px;
+}
+.png {
+    margin-top:15px;
+    border:1px solid white;
+    float:right;
+}
+#previewDescription {
+    min-width: 251px;
 }
 #p-content h4 {
     padding-left:0;
@@ -216,6 +236,7 @@ h2 {color:white;}
 .hlt {
     border:2px solid var(--color-turq)
 }
+.flex{display:flex;}
 .cirq {
     position:absolute;
     bottom:1px;
@@ -329,7 +350,7 @@ h2 {color:white;}
 }
 .stop-anim {animation:none; opacity:1.0;}
 .grid {display:flex;}
-.test {
+.brd {
     border-left:1px solid var(--color-turq);
     border-right:1px solid var(--color-turq);
     border-top:1px solid ghostwhite;
@@ -487,7 +508,7 @@ h2 {color:white;}
     display:flex;
 }
 .tech {
-    overflow: hidden;
+    overflow-y: scroll;
     transition: height 0.5s linear;
     height: 0px;
 }
@@ -499,8 +520,7 @@ h2 {color:white;}
     float:right;
     margin-right:10px;
 }
-.proj {
-    width:600px;
+.pad {
     padding:15px;
 }
 

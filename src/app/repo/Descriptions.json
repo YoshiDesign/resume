@@ -8,32 +8,31 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "The World Works (DubDub) is an interactive map which offers a variety of insights into the life of the average citizen in the USA. By inspecting your local community, you can determine if your avocations and career trajectory are optimal for your location. With cost of living statistics for over 19,000 cities, metrics from public schools, even gig economy enterprises, and not to mention stats for over 3,000 occupations listed by the Bureau of Labor Statistics, visitors can determine if they can be saving more while working less or perhaps working more and making more; the choice is theirs, but this app brings it all into one interactive view. <p>In development since July of 2020 and looking forward to your support!</p>",
-                        "link" : "https://"
+                        "desc"  : "The World Works (DubDub) is an interactive map which offers a variety of insights into the life of the average citizen in the USA. By inspecting your local community, you can determine if your avocations and career trajectory are optimal for your location. With cost of living statistics for over 19,000 cities, metrics from public schools, even gig economy enterprises, and not to mention stats for over 3,000 occupations listed by the Bureau of Labor Statistics, visitors can determine if they can be saving more while working less or perhaps working more and making more; the choice is theirs, but this app brings it all into one interactive view. <p>In development since July of 2020.</p>",
+                        "link" : "<a href='https://dub-dub.herokuapp.com/chart/mapFour'>Check out the map!</a>",
+                        "media" : "/assets/previews/wwmobile.MP4",
+                        "caption" : "Demo for the Y-Combinator Summer 2021 application"
                     }    
                 ]
             },
             {
                 "id" : "dtb",
                 "title" : "The Digital Toolbox",
-                "tech" : ["lara", "php","ang"],
+                "tech" : ["lara", "php"],
                 "projects" : [
                     {
-                        "alt_title" : 0,
+                        "alt_title" : "",
                         "desc"  : "This is my pride and joy in terms of my professional web development experience so far. The DTB is a multi-domain learning platform, a lightweight LMS, featuring an administrative back-end, loaded with internal tooling that I have crafted for Demme Learning over the years!",
-                        "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>"
-                    }    
-                ]
-            },
-            {
-                "id" : "api",
-                "title" : "Personal API",
-                "tech" : ["flask", "py"],
-                "projects" : [
+                        "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
+                        "media" : ["/assets/previews/dtb.png", "/assets/previews/dtb2.png"],
+                        "caption" : "Just a peek at the cloud filesystem tool, built into the Toolbox's admin domain. Developed quite early in my career."
+                    },
                     {
-                        "alt_title" : 0,
-                        "desc"  : "I use Heroku to host a Python Flask server. It is currently being used to service any means of data transfer I require, though at the present it is only being used to relay tweets to my game client, Personal Space Invaders.",
-                        "link" : "https://alyrist.herokuapp.com/twit?h=&lt;any_twitter_handle&gt;"
+                        "alt_title" : "Single Sign-On",
+                        "desc"  : "I have built numerous internal tools at Demme Learning, but the most notable project was one the Single Sign-On architecture during my first year of employment. Using a heavy reliance on self education and RFC-6265, my <i>first</i> task in my first role was to ensure that 1 wordpress site, 1 enterprise eCommerce solution, and 1 proprietary LMS (The Digital Toolbox), were capable of persisting 1 user session no matter which application was being used. I heavily documented my strategy, security considerations, and worked with our eCommerce developers to implement a robust and portable, framework agnostic, custom SSO solution. Perhaps you can tell I was proud of myself for some time. All in a day!",
+                        "link" : "",
+                        "media" : ["/assets/previews/avi.png"],
+                        "caption" : "Not my primary implementation reference."
                     }    
                 ]
             },
@@ -45,7 +44,9 @@
                     {
                         "alt_title" : 0,
                         "desc"  : "I've always wanted to dive head-first into robotics and electrical engineering. Click here to see my robot buddy. It can see you too!",
-                        "link" : "https://"
+                        "link" : "https://",
+                        "media" : "<img src='' >",
+                        "caption" : ""
                     }    
                 ]
             },
@@ -56,8 +57,10 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "Using the Pixel Game Engine, developed by @javidx9 and supported by the One-Lone-Coder community, this project is an ongoing love affair with game development. As of March 21 2021, it has been optimized to work within the Emscripten toolchain.",
-                        "link" : "https://"
+                        "desc"  : "Using the Pixel Game Engine, developed by <a href='https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA'>@javidx9</a>, and with the creative direction of a friend and local designer artist, <a href='https://tonzolaart.com/'>@tonzola_art</a>, this project is a consequence of my ongoing love affair with game development. As of March 21 2021, it has been optimized to work within the Emscripten toolchain.",
+                        "link" : "https://",
+                        "media" : "<iframe src='https://onedrive.live.com/embed?cid=689974887EAECD42&resid=689974887EAECD42%2118476&authkey=ALLyRkNG9hVjFbw' width='320' height='217' frameborder='0' scrolling='no' allowfullscreen></iframe>",
+                        "caption" : "Part of an arcade series I'm working on."
                     }    
                 ]
             },
@@ -69,7 +72,9 @@
                     {
                         "alt_title" : 0,
                         "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. A Python PyGame client accesses the Twitter API using my personal API, conducts a sentiment analysis to determine the 'difficulty' of the gameplay, and proceeds to turn each tweet into a game of Space invaders; where each tweet can be disassembled (blasted into oblivion with a variety of powerups and weapons) character by characters. The game was not distributed for legal reasons, and not to mention that it was built by a novice at the time!",
-                        "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>"
+                        "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
+                        "media" : "<img src='https://sn3301files.storage.live.com/y4m9M770cvpVzzAGKQMCk_ZW0gBJH57ELIU3jch9PhBr2O6RvNQKuL2gcSCbY1KPLAdJ-p7HnV9QSvhqrAoNwHZLNy0Fs8FtckuP5-3KLQoK2RQN5xgx0l0EbC_t0roLUJjqluaUqqV1tQidBiPbh3TtHpgtA1LUOagRocPTaFerfLACSHJCANKcabVbb8IF4bk?width=660&height=383&cropmode=none' width='660' height='383' />",
+                        "caption" : "Passing judgements upon our former president, programatically, so you don't have to."
                     }    
                 ]
             },
@@ -80,8 +85,10 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "A web application and learning tool that I built using Python. It is your conventional steganographic image processor. Conceal text, encrypt entire books into an image, or hide away all of those love letters. The CLI version is available on github, which also offers the\"inspector\" switch.",
-                        "link" : "<a href='https://alyrist.herokuapp.com' target='_blank'>https://alyrist.herokuapp.com</a>"
+                        "desc"  : "A (deprecated) web application and learning tool that I built using Python. Conceal text, encrypt entire books into an image (if the size allows for it), or hide all of your love letters in plain sight! The CLI version is available as a github gist, which also offers the\"inspector\" switch.",
+                        "link" : "<a href='https://alyrist.herokuapp.com' target='_blank'>Get the CLI tool.</a>",
+                        "media" : "<img src='https://sn3301files.storage.live.com/y4mbCg6cj3KBB2avlNynrFhYMYslZ9Wx-MVNYLL9L7Kurm6g5nv_d_8VFqSYGDOr_d9A_c5_PIlDDMFpu6xr8Iy_414p3By1ozNaWw_x0QSd7gKvO_TiIzcMfHtfDYgMPXFeY0iSjTrNSnX_rm1K2PFYY5ZjmHLbBN856jwP7Ckyovhz4HsOdlxGJv-x2I7XcJB?width=416&height=366&cropmode=none' width='416' height='366' />",
+                        "caption" : "-h -I -d -e"
                     }    
                 ]
             },
@@ -93,7 +100,9 @@
                     {
                         "alt_title" : 0,
                         "desc"  : "To check out the porcelain and plumbing of this webpage, check out the source code here! Like it? It's yours! <p>Disclaimer: Experience not included.<p>",
-                        "link" : "<a href='https://github.com/YoshiDesign/resume' target='_blank'>Check out the repo on Github</a>"
+                        "link" : "<a href='https://github.com/YoshiDesign/resume' target='_blank'>Check out the repo on Github</a>",
+                        "media" : "<iframe src='https://onedrive.live.com/embed?cid=689974887EAECD42&resid=689974887EAECD42%2118486&authkey=AE21GsgzQNMOaHo' width='98' height='120' frameborder='0' scrolling='no'></iframe>",
+                        "caption" : "You are here^"
                     }    
                 ]
             }
@@ -106,6 +115,7 @@
                 "title" : "Harvard CS50-AI",
                 "tech" : ["tab","pdf"],
                 "desc"  : "Introduction to Artificial Intelligence with Python. This course taught me the concepts and algorithms at the foundation of modern artificial intelligence. I took my education in AI 1 step further and began using Jupyter Labs as a platform for which to practice ML concepts.",
+                "media" : "",
                 "alt_title" : 0
             },
             {
@@ -113,6 +123,7 @@
                 "title" : "Harvard CS50",
                 "tech" : ["tab","pdf"],
                 "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress blog.",
+                "media" : "",
                 "alt_title" : 0
             },
             { 
@@ -120,6 +131,7 @@
                 "title" : "Harvard CS50-B",
                 "tech" : ["tab","pdf"],
                 "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.",
+                "media" : "",
                 "alt_title" : 0
             },
             {
@@ -127,6 +139,7 @@
                 "title" : "CompTIA A+",
                 "tech" : ["tab","pdf"],
                 "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
+                "media" : "",
                 "alt_title" : 0
             },
             {
@@ -134,6 +147,7 @@
                 "title" : "CompTIA CySA+",
                 "tech" : ["tab","pdf"],
                 "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
+                "media" : "",
                 "alt_title" : 0
             }
         ]

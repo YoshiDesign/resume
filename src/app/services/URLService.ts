@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PreviewService } from './PreviewService'
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Injectable() // Injected into project-view.component.ts
 class URLService  {
@@ -9,10 +10,18 @@ class URLService  {
      * It observes the URL and builds the preview windows accordingly
      */
 
-    PreviewService : PreviewService
+    PreviewService : PreviewService 
 
-    constructor(PreviewService : PreviewService){
+    public media_ref : string
+    public video : boolean
+    private sanitizer
+
+
+    constructor(PreviewService : PreviewService,
+        sanitizer: DomSanitizer ){
         this.PreviewService = PreviewService
+        this.media_ref = ""
+        this.sanitizer = sanitizer
     }
 
     resetURL() :void
@@ -35,8 +44,8 @@ class URLService  {
 
         let query  = e.target.closest('li').getAttribute("data-toc-id")
 
-        // // Update the latest preview id
-        // this.current_preview = query
+        // remove the previous iframe
+        document.getElementById('media').innerHTML = ""
 
         // Generate an updated URL
         let url = new URL(document.location.href)
@@ -56,8 +65,8 @@ class URLService  {
        
         // -- TODO -- This next call could be returned by this function instead. We would then add
         // selectPreview() and buildNewPreview() to the social-view-component.
-        // I like them in this file for now though because execution streams linearly.
-        // This class executes top to bottom, simple enough for now!
+        // However, for readability, I like them within this file, because execution streams linearly.
+        // This class always executes from top to bottom
 
          // Initiate the preview update 
         this.selectPreview(query, data)
@@ -140,7 +149,7 @@ class URLService  {
             let imgContainer = document.getElementById('previewTechImages')
             imgContainer.innerHTML = ""
 
-            if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"color:white; margin-right:20px;\">Proprietary</h3>"
+            if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"color:white; margin-right:20px;\">Classified</h3>"
             icons.forEach( el => {
                 imgContainer.appendChild(el)
             })
@@ -150,12 +159,55 @@ class URLService  {
             document.getElementById('p-window-title').innerText = previewData.title // TODO - I'm only grabbing the first obj. I don't have any projects with multiple projects... but it's there...
             document.getElementById('previewDescription').innerHTML = previewData.projects[0].desc
             document.getElementById('previewLink').innerHTML = previewData.projects[0].link
+            console.log("MEDIA")
+            console.log( previewData.projects[0].media)
 
+            let extra_media = false
+            if (previewData.projects.length > 1) {
+                extra_media = true
+
+                // Allows for 1 additional image when there are multiple projects per projects. TODO - extend this
+                previewData.projects[0].media.push(previewData.projects[1].media[0])
+
+            }
+
+            // <iframe id="pFrame"  width="300" height="300" [src]="media_ref" frameborder="0" allowfullscreen></iframe>
+            
+            
+            
+            // Smooth out the first dropdown transition
             setTimeout(() => {
                 document.getElementById('tech-window').classList.add('lup')    
             }, 100);
-            
+
+            if (typeof previewData.projects[0].media != "object" && previewData.projects[0].media.toLowerCase().includes("mp4"))
+            {
+                let iframe = document.createElement("IFRAME")
+                iframe.id = "pFrame"
+                iframe.setAttribute('src', previewData.projects[0].media)
+                iframe.setAttribute('frameborder', "0")
+                iframe.setAttribute('allowfullscreen', "")
+                iframe.setAttribute('class', "vid")
+                document.getElementById('media').appendChild(iframe)
+                
+            }
+            else
+            {
+                for (let img of previewData.projects[0].media) {
+                    console.log(img)
+                    let pimage = document.createElement('IMG')
+                    pimage.setAttribute('src', img)
+                    pimage.setAttribute('class', 'png')
+                    pimage.setAttribute('height', '110px')
+                    pimage.setAttribute('width', '190px')
+                    document.getElementById('media').appendChild(pimage)
+
+                }
+                
+            }
+
         }
+
 
     }
 
