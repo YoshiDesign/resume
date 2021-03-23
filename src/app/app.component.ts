@@ -1,22 +1,67 @@
 import { Component, OnInit } from '@angular/core';
+import windowResize from './Helpers/WindowResize'
+import { PreviewService } from './services/PreviewService'
+import FactoryService from './services/FactoryService'
+import Preview from './repo/Preview';
+
+const PROJECTS = "projects"
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
 export class AppComponent implements OnInit {
     title = 'resume';
 
-    public switchPos : number;
-    public mode : string;
+    public switchPos : number
+    public mode : string
 
-    constructor(){}
+    private data : any
+
+    fService : FactoryService
+    pService : PreviewService
+
+    constructor(
+        FactoryService : FactoryService,
+        PreviewService : PreviewService
+    ){  
+        this.fService = FactoryService
+        this.pService = PreviewService
+        this.data = this.pService.Descriptions.default
+    }
 
     ngOnInit() {
         this.mode = ""
         this.switchPos = 0
+
+        window.onresize = windowResize
+
+        // Integrating the browser's "back" button for project previews
+        window.onpopstate = (e) => {
+
+            let lastURL = new URL(window.location.href)
+            let lastPreview = lastURL.searchParams.get('page')
+
+            // Routing
+            if (!lastPreview) this.fService.buildToC()
+            if (lastPreview) this.fService.selectPreview(lastPreview, this.data[0][PROJECTS])
+        };
+
     }
+
+    ngAfterViewInit() {
+
+        // Check the URL for queries
+        let url = new URL(window.location.href)
+        let q = url.searchParams.get('page')
+
+        if(q != null) {
+            this.fService.selectPreview(q, this.data[0][PROJECTS])
+        }
+        
+    }
+
 
     // Activate the switch modes
     switchLed () : void {

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 // My service for servicing
 import {ResumeService} from './services/ResumeService'
 import {PreviewService} from './services/PreviewService'
-import URLService from './services/URLService'
+import URLService from './services/FactoryService'
 import Skillet from './repo/Skillet'
 
 import { AppComponent } from './app.component';

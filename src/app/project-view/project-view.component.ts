@@ -1,6 +1,6 @@
 import { Component, OnInit, ClassProvider } from '@angular/core';
 import { ResumeService } from '../services/ResumeService'
-import URLService from '../services/URLService'
+import URLService from '../services/FactoryService'
 
 import { DomSanitizer } from '@angular/platform-browser'
 
@@ -40,15 +40,15 @@ export class ProjectViewComponent implements OnInit {
 
     ngOnInit() {
         this.buffer = this.ResumeService.skillet_buffer
-
     }
 
     closeTheatre() {
         document.getElementById('theatre').classList.remove('md-1')
         document.getElementById('X2').classList.add('hide-me')
         document.getElementById('tl-arrow').classList.add('hide-me')
+        document.getElementById('tl-arrow').classList.remove('ovr-show')
         document.getElementById('tr-arrow').classList.add('hide-me')
-
+        document.getElementById('tr-arrow').classList.remove('ovr-show')
     }
 
     discardMedia ()
@@ -57,7 +57,7 @@ export class ProjectViewComponent implements OnInit {
         document.getElementById('badges').classList.remove('hide-me')
     }
 
-    // Hovering over tech item
+    // Hovering over tech item -- TODO I limited this functionality, seemed unnecessary
     highlighter (e) :void {
 
         this.linker(e.target.id)
