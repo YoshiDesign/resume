@@ -74,8 +74,9 @@ export class SocialViewComponent implements OnInit {
         if (q == "toc"){
             this.buildToC()
         }
-        else if(q != null)
+        else if(q != null) {
             this.URLService.selectPreview(q, this.data[0][PROJECTS])
+        }
         
     }
 

@@ -40,11 +40,21 @@ export class ProjectViewComponent implements OnInit {
 
     ngOnInit() {
         this.buffer = this.ResumeService.skillet_buffer
+
+    }
+
+    closeTheatre() {
+        document.getElementById('theatre').classList.remove('md-1')
+        document.getElementById('X2').classList.add('hide-me')
+        document.getElementById('tl-arrow').classList.add('hide-me')
+        document.getElementById('tr-arrow').classList.add('hide-me')
+
     }
 
     discardMedia ()
     {
         document.getElementById('media').innerHTML = ""
+        document.getElementById('badges').classList.remove('hide-me')
     }
 
     // Hovering over tech item

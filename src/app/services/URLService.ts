@@ -80,7 +80,10 @@ class URLService  {
      */
     selectPreview(query, data) : void {
 
+        // Organize the windows
         document.getElementById('tech-window').classList.remove('lup')
+        document.getElementById('badges').classList.add('hide-me')
+
         // Clear the preview windows
         if (window.innerWidth <= 973) {
 
@@ -154,64 +157,92 @@ class URLService  {
                 imgContainer.appendChild(el)
             })
 
-            // Reveal the preview container
-            document.getElementById('preview-tech').classList.remove('hide-me')
-            document.getElementById('p-window-title').innerText = previewData.title // TODO - I'm only grabbing the first obj. I don't have any projects with multiple projects... but it's there...
-            document.getElementById('previewDescription').innerHTML = previewData.projects[0].desc
-            document.getElementById('previewLink').innerHTML = previewData.projects[0].link
-            console.log("MEDIA")
-            console.log( previewData.projects[0].media)
-
-            let extra_media = false
-            if (previewData.projects.length > 1) {
-                extra_media = true
-
-                // Build the additional comments section
-                document.getElementById('adtl').classList.remove('hide-me')
-                document.getElementById('adtl-p').innerHTML = previewData.projects[1].alt_title + " - " + previewData.projects[1].desc
-
-            }  
-            else {
-                document.getElementById('adtl').classList.add('hide-me')
-            }
-
-
-            // Smooth out the first dropdown transition
-            setTimeout(() => {
-                document.getElementById('tech-window').classList.add('lup')    
-            }, 100);
-
-            if (typeof previewData.projects[0].media != "object" && previewData.projects[0].media.toLowerCase().includes("mp4"))
-            {
-                let iframe = document.createElement("IFRAME")
-                iframe.id = "pFrame"
-                iframe.setAttribute('src', previewData.projects[0].media)
-                iframe.setAttribute('frameborder', "0")
-                iframe.setAttribute('allowfullscreen', "")
-                iframe.setAttribute('class', "vid")
-                document.getElementById('media').appendChild(iframe)
-                
-            }
-            else
-            {
-                for (let img of previewData.projects[0].media) {
-                    console.log(img)
-                    let pimage = document.createElement('IMG')
-                    pimage.setAttribute('src', img)
-                    pimage.setAttribute('class', 'png')
-                    pimage.setAttribute('height', '110px')
-                    pimage.setAttribute('width', '190px')
-                    document.getElementById('media').appendChild(pimage)
-
-                }
-                
-            }
+            // Show & build
+            this.showPreviewContainer(previewData)
 
         }
+    }
 
+    /**
+     * 
+     * @param previewData 
+     */
+    showPreviewContainer(previewData) {
+        // Reveal the preview container
+        document.getElementById('preview-tech').classList.remove('hide-me')
+        document.getElementById('p-window-title').innerText = previewData.title // TODO - I'm only grabbing the first obj. I don't have any projects with multiple projects... but it's there...
+        document.getElementById('previewDescription').innerHTML = previewData.projects[0].desc
+        document.getElementById('previewLink').innerHTML = previewData.projects[0].link
+
+        // Build the additional comments section
+        if (previewData.projects.length > 1) {
+
+            document.getElementById('adtl').classList.remove('hide-me')
+            document.getElementById('adtl-p').innerHTML = previewData.projects[1].alt_title + " - " + previewData.projects[1].desc
+
+        }  
+        // or dont
+        else {
+            document.getElementById('adtl').classList.add('hide-me')
+        }
+
+        // Smooth out the first dropdown transition
+        setTimeout(() => {
+            document.getElementById('tech-window').classList.add('lup')    
+        }, 100);
+
+        this.assemblePreviewAssets(previewData)
 
     }
 
+    /**
+     * 
+     * @param previewData 
+     */
+    assemblePreviewAssets(previewData) {
+        // Videos
+        if (typeof previewData.projects[0].media != "object" && previewData.projects[0].media.toLowerCase().includes("mp4"))
+        {
+            let frame = document.createElement("VIDEO")
+            let src = document.createElement("SOURCE")
+            
+            src.setAttribute('src', previewData.projects[0].media)
+            src.setAttribute('type', "video/mp4")
+            
+            frame.id = "pFrame"
+            frame.setAttribute('controls', "")
+            frame.setAttribute('class', "vid")
+            frame.setAttribute('width', "320")
+            frame.setAttribute('height', "320")
+            frame.appendChild(src)
+            document.getElementById('media').appendChild(frame)
+            
+        }
+        // Other
+        else
+        {
+            for (let img of previewData.projects[0].media) {
+                console.log(img)
+                let pimage = document.createElement('IMG')
+                pimage.setAttribute('src', img)
+                pimage.setAttribute('class', 'png')
+                pimage.setAttribute('height', '110px')
+                pimage.setAttribute('width', '190px')
+                document.getElementById('media').appendChild(pimage)
+                document.getElementById('media').addEventListener('click', e => {
+                    e.stopPropagation()
+                    // Reveal the theatre
+                    document.getElementById('theatre').classList.add('md-1')
+                    document.getElementById('X2').classList.remove('hide-me')
+                    document.getElementById('tl-arrow').classList.remove('hide-me')
+                    document.getElementById('tr-arrow').classList.remove('hide-me')
+
+                    
+
+                })
+            }
+        }
+    }
 }
 
 export default URLService;

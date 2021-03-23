@@ -57,7 +57,7 @@
                 "projects" : [
                     {
                         "alt_title" : 0,
-                        "desc"  : "Using the Pixel Game Engine, developed by <a href='https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA'>@javidx9</a>, and with the creative direction of a friend and local designer artist, <a href='https://tonzolaart.com/'>@tonzola_art</a>, this project is a consequence of my ongoing love affair with game development. As of March 21 2021, it has been optimized to work within the Emscripten toolchain.",
+                        "desc"  : "Using the Pixel Game Engine, developed by <a href='https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA'>@javidx9</a>, and with the creative direction of a friend and local designer artist, <a href='https://tonzolaart.com/'>@tonzola_art</a>, this project is a consequence of my ongoing love affair with game development. As of March 21 2021, it has been outfitted to compile with the Emscripten toolchain.",
                         "link" : "",
                         "media" : "/assets/previews/retrocade.MP4",
                         "caption" : "Part of an arcade series I'm working on."
