@@ -189,7 +189,7 @@ class URLService  {
             document.getElementById('tech-window').classList.add('lup')    
         }, 100);
 
-        this.assemblePreviewAssets(previewData)
+        this.assemblePreviewAssets()
 
     }
 
@@ -197,14 +197,14 @@ class URLService  {
      * 
      * @param previewData 
      */
-    assemblePreviewAssets(previewData) {
+    assemblePreviewAssets() {
         // Videos
-        if (typeof previewData.projects[0].media != "object" && previewData.projects[0].media.toLowerCase().includes("mp4"))
+        if (typeof this.previewData.projects[0].media != "object" && this.previewData.projects[0].media.toLowerCase().includes("mp4"))
         {
             let frame = document.createElement("VIDEO")
             let src = document.createElement("SOURCE")
             
-            src.setAttribute('src', previewData.projects[0].media)
+            src.setAttribute('src', this.previewData.projects[0].media)
             src.setAttribute('type', "video/mp4")
             
             frame.id = "pFrame"
@@ -219,7 +219,7 @@ class URLService  {
         // Other
         else
         {
-            for (let img of previewData.projects[0].media) {
+            for (let img of this.previewData.projects[0].media) {
                 console.log(img)
                 let pimage = document.createElement('IMG')
                 pimage.setAttribute('src', img)
