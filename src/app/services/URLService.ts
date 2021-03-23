@@ -220,31 +220,35 @@ class URLService  {
         // Other
         else
         {
+            // Add image thumbnails to the preview window
             for (let img of this.previewData.projects[0].media) {
-                console.log(img)
                 let pimage = document.createElement('IMG')
                 pimage.setAttribute('src', img)
                 pimage.setAttribute('class', 'png')
                 pimage.setAttribute('height', '110px')
                 pimage.setAttribute('width', '190px')
                 document.getElementById('media').appendChild(pimage)
-                document.getElementById('media').addEventListener('click', e => {
-                    e.stopPropagation()
-
-                    // Reveal the theatre
-                    document.getElementById('theatre').classList.add('md-1')
-                    document.getElementById('X2').classList.remove('hide-me')
-                    document.getElementById('tl-arrow').classList.remove('hide-me')
-                    document.getElementById('tr-arrow').classList.remove('hide-me')
-
-                    this.loadTheatre()
-
-                })
             }
+
+            // Reveal the theatre when any image is selected
+            document.getElementById('media').addEventListener('click', e => {
+                e.stopPropagation()
+
+                document.getElementById('theatre').classList.add('md-1')
+                document.getElementById('X2').classList.remove('hide-me')
+                document.getElementById('tl-arrow').classList.remove('hide-me')
+                document.getElementById('tr-arrow').classList.remove('hide-me')
+
+            })
+
+            // Add images to the hidden theatre (carousel) for when it's selected
+            this.loadTheatre()
+
         }
     }
-    loadTheatre() {
 
+    loadTheatre() {
+        console.log(this.previewData.projects[0].media)
     }
 }
 
