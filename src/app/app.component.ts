@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
 
             // Routing
             if (!lastPreview) this.fService.buildToC()
-            if (lastPreview) this.fService.selectPreview(lastPreview, this.data[0][PROJECTS])
+            if (lastPreview) this.fService.selectPreview(lastPreview)
 
         };
 
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
         let q = url.searchParams.get('page')
 
         if(q != null) {
-            this.fService.selectPreview(q, this.data[0][PROJECTS])
+            this.fService.selectPreview(q)
         }
         
     }

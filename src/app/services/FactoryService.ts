@@ -20,17 +20,19 @@ class FactoryService  {
 
     private previewData
     private data
+    private curProject
     public currentDeviceScale
 
     constructor(PreviewService : PreviewService){
         this.PreviewService = PreviewService
         this.media_ref = ""
         this.data = this.PreviewService.Descriptions.default
+        this.curProject = this.data[0][PROJECTS]
         this.previewData = null
         this.currentDeviceScale = window.innerWidth <= MOBILE_SCREEN_SIZE ? MOBILE : DESKTOP
     }
 
-    resetURL() :void
+    resetURL() : void
     {
         let url = new URL(window.location.href)
         url.searchParams.delete('page')
@@ -49,17 +51,31 @@ class FactoryService  {
         })
     }
 
+    resetToC() {
+        document.getElementById('p-content').innerHTML = ""
+        this.buildToC()
+    }
+
+    resetAll() {
+        this.resetToC()
+        this.resetTech()
+    }
 
     /**
      * 
      */
-    buildToC() : void {
+    buildToC(tSet=false) : void {
 
-        console.log("BUILDING")
         this.resetTech();
 
         // A list of headings for the ToC
         var contents : Array <HTMLElement> = []
+
+        // The carousel cues
+        let meter = document.getElementById("soc-meter")
+        let unit = document.createElement('DIV')
+
+        meter.innerHTML = ""
 
         for (let i in this.data) // JSON index
         {
@@ -96,7 +112,7 @@ class FactoryService  {
                     if (j == PROJECTS) {
                         item.addEventListener(
                             'click', 
-                            wrapEvent(this.updateURLParams, this.data[0][PROJECTS])
+                            wrapEvent(this.updateURLParams)
                         )
                     }
 
@@ -109,15 +125,13 @@ class FactoryService  {
 
                     if (refs.length == 0)
                     {
-                        console.log("No Refss")
+                        console.log("No Refs")
                         ; // Don't render an icon
                     }
                     else {
-
-                        let meter = document.getElementById("soc-meter")
-                        let unit = document.createElement('DIV')
                         
                         for (let filename of refs) {
+
                             // Set up new tech icon for ToC
                             let icon = document.createElement('IMG')
 
@@ -125,24 +139,24 @@ class FactoryService  {
                             icon.classList.add("toc-img")
 
                             iconSection.appendChild(icon)
- 
-                            // Only projects will be previewd in the panel. This makes sure we only generate carousel cues for projects
-                            apply_to_meter = j == PROJECTS ? true : false
-
-                            if (apply_to_meter) {
-                                // The carousel cue
-                                unit.classList.add('d-unit')
-                                unit.setAttribute('data-unit-id', k.id)
-                                // The collection of cues
-                                meter.appendChild(unit)
-                            }
 
                         }
                             
                     }
+                    // Only projects will be previewed in the panel. This makes sure we only generate carousel cues for projects
+
+                    // DEBUG - This loop was running numerous times
+                    if (j == PROJECTS) {
+                        let n_unit = <HTMLElement> unit.cloneNode(true)
+                        // The carousel cue
+                        n_unit.classList.add('d-unit')
+                        n_unit.setAttribute('data-unit-id', k.id)
+                        // The collection of cues
+                        meter.appendChild(n_unit)
+                    }
 
                     // keeps border away from icon groups that aren't in the project's section
-                    if (!apply_to_meter)
+                    if (j != PROJECTS)
                         iconSection.classList.add('icon-style-override')
 
                     item.appendChild(iconSection)
@@ -234,12 +248,9 @@ class FactoryService  {
      * otherwise history would be forever ruined
      * @param e 
      */
-    updateURLParams = (e, data) => {
+    updateURLParams = (e) => {
 
         let query = e.target.closest('li').getAttribute("data-toc-id")
-
-        // remove the previous iframe
-        document.getElementById('media').innerHTML = ""
 
         // Generate an updated URL
         let url = new URL(document.location.href)
@@ -256,13 +267,8 @@ class FactoryService  {
         // Replace the current entry in the browser's history
         window.history.replaceState(nextState, nextTitle, nextURL)
 
-        // -- TODO -- This next call could be returned by this function instead. We would then add
-        // selectPreview() and buildNewPreview() to the social-view-component.
-        // However, for readability, I like them within this file, because execution streams linearly.
-        // This class always executes from top to bottom
-
-         // Initiate the preview update 
-        this.selectPreview(query, data)
+         // Since the URL has changed, initiate a project preview update 
+        this.selectPreview(query)
 
     }
 
@@ -271,7 +277,13 @@ class FactoryService  {
      * Prepare the preview pane for a new preview
      * @param query 
      */
-    selectPreview(query, data) : void {
+    selectPreview(query) : void {
+
+        // Special case - Window resize crosses the mobile/desktop threshold without a query parameter in the URL
+        if (query == "RESET"){
+           this.resetAll()
+           return
+        }
 
         // Organize the windows
         document.getElementById('media').innerHTML = ""
@@ -307,7 +319,7 @@ class FactoryService  {
 
         }
 
-        this.buildNewPreview(query, data)
+        this.buildNewPreview(query, this.curProject)
 
     }
 
@@ -348,7 +360,7 @@ class FactoryService  {
         imgContainer.innerHTML = ""
 
         // If any reason to hide the stack, display "Classified" instead
-        if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"color:white; margin-right:20px;\">Classified</h3>"
+        if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"color:white; margin-top:4px; margin-right:20px;\">Classified</h3>"
 
         icons.forEach( el => {
             imgContainer.appendChild(el)
@@ -453,8 +465,12 @@ class FactoryService  {
             document.getElementById('X').innerText = this.previewData.title
         }
 
-        if (this.currentDeviceScale == MOBILE) console.log("USING MOBILE")
-        if (this.currentDeviceScale == DESKTOP) console.log("USING DESKTOP")
+        if (this.currentDeviceScale == MOBILE) {
+            //
+        }
+        if (this.currentDeviceScale == DESKTOP) {
+            //
+        }
         
     }
 

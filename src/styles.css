@@ -83,7 +83,8 @@ h2 {color:white;}
     border:2px solid white;
 }
 #tech-window {
-    background:var(--blue-opaque);
+    background:rgba(0, 0, 0, 0.75);
+    padding-top:4px;
 }
 #tech-window::-webkit-scrollbar {
 width: 0.25em;
@@ -229,6 +230,7 @@ outline: 1px solid slategrey;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgb(0 0 0) 0%, #101010 35%, #363636 100%);
     border-top:1px solid white;
+    border-bottom: 1px solid white;
 }
 .scl {
     position: relative;
@@ -618,6 +620,7 @@ outline: 1px solid slategrey;
 }
 .icon-style-override {
     border:none !important;
+    width:fit-content;
 }
 .black {background:black !important}
 .lm {
@@ -726,15 +729,21 @@ outline: 1px solid slategrey;
 }
 
 @media (max-width: 973px) {
+    .brd {border-top:none;}
+    .brdn {border:none;}
+    #tech-window::-webkit-scrollbar {display:none;}
+    .p-icon-section{float:unset;}
+    .nop-top{display:none !important;}
     .rm, .lm {display:block;}
     .md-1, .err, .da, #preview-tech {display: none;}
     .flex {flex-direction:column; width:93%;}
     #navi {flex-direction:column-reverse;height: 50px;}
-    #media{display:flex; margin:15px auto;}
+    #media{display:flex; flex-wrap: wrap;max-width: 85vw;background:transparent;}
+    #media:hover{cursor:default; border:none; background:black;}
+    .png{margin:auto; border:1px solid white; padding: 4px; width:50vw;height:320px; margin-top:3px !important;}
     #tech-window{background:black;}
     .p-title{text-align:center;}
     .lup{height:98vh !important;}
-    .png{margin:auto; width:120px;margin-top:3px !important;}
     .md {min-width:auto;}
     .section {height:auto;}
     .l-side {width:100%;display:flex;}
@@ -756,7 +765,7 @@ outline: 1px solid slategrey;
 }
 @media (max-width: 780px) {
     .d-window, .d-window > * {margin:auto auto;}
-    .d-box {height:100vh; padding:0 69px;}
+    .d-box {height:100vh; padding:4px 69px;}
     .md {padding:0;}
 
 }
@@ -781,7 +790,7 @@ outline: 1px solid slategrey;
     .d-box li {font-size:13px;}
 }
 @media (max-width: 425px) {
-    .d-box {padding: 0 29px;}
+    .d-box {padding: 0 21px;}
     .rm::after {right:6px;}
     .lm::after {left:6px;}
     .social-p {display:none;}

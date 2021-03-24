@@ -22,20 +22,24 @@ export default function windowResize(evt=null, isMobile=false, isDesktop=false, 
         return
     }
 
+    let url = new URL(document.location.href)
+    let currentQuery = url.searchParams.get("page") || "RESET"
+    console.log('CURRENT QUERY: ' + currentQuery)
+
     if (window.innerWidth > MOBILE_SCREEN_SIZE) {
         isMobile = false
         isDesktop = true
         fService.currentDeviceScale = DESKTOP
-        fService.updateURLParams
-        
-
     } else if (window.innerWidth <= MOBILE_SCREEN_SIZE) {
         isMobile = true
         isDesktop = false
         fService.currentDeviceScale = MOBILE
 
     }
-    console.log("SWITCHED: " + isMobile + ", " + isDesktop)
+
+    // "Adjust the pages elements accordingly" *wink* We've already maintained control via the URL
+    window.location = window.location
+
     return <any> {
         mobile: isMobile, 
         desktop: isDesktop

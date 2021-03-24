@@ -41,8 +41,6 @@ export class SocialViewComponent implements OnInit {
             Array.from(document.getElementsByClassName('tech-section')).forEach( el => {
                 el.classList.remove('hide-me')
             })
-
-            // Reset the heading
             
             // Reset the URL
             this.FactoryService.resetURL()
