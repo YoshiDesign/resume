@@ -1,4 +1,3 @@
-import { ReturnStatement } from '@angular/compiler'
 import FactoryService from '../services/FactoryService'
 
 export const MOBILE_SCREEN_SIZE = 973
@@ -6,7 +5,7 @@ export const DESKTOP = "desktop"
 export const MOBILE = "mobile"
 
 /**
- * Window resize event - not limited to explicit use by event listeners
+ * Window resize event - not explicitly limited to use only by event listeners
  * @param evt -- The event listner if this function is being utilized as a callback for the window resize event
  * @param isMobile 
  * @param isDesktop 
@@ -27,6 +26,8 @@ export default function windowResize(evt=null, isMobile=false, isDesktop=false, 
         isMobile = false
         isDesktop = true
         fService.currentDeviceScale = DESKTOP
+        fService.updateURLParams
+        
 
     } else if (window.innerWidth <= MOBILE_SCREEN_SIZE) {
         isMobile = true

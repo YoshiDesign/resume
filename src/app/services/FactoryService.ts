@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PreviewService } from './PreviewService'
 import { wrapEvent } from '../Helpers/Helpers'
-import windowResize, { MOBILE_SCREEN_SIZE } from '../Helpers/WindowResize'
+import { MOBILE, DESKTOP, MOBILE_SCREEN_SIZE } from '../Helpers/WindowResize'
 
 // Key to access the projects array within Descriptions.json
 const PROJECTS = "projects"
@@ -27,6 +27,7 @@ class FactoryService  {
         this.media_ref = ""
         this.data = this.PreviewService.Descriptions.default
         this.previewData = null
+        this.currentDeviceScale = window.innerWidth <= MOBILE_SCREEN_SIZE ? MOBILE : DESKTOP
     }
 
     resetURL() :void
@@ -47,6 +48,7 @@ class FactoryService  {
             el.classList.remove('hide-me')
         })
     }
+
 
     /**
      * 
@@ -182,9 +184,10 @@ class FactoryService  {
         // Desktop event behavior
         } else {
 
-            //
+            // Mouse over the icon highlights in the ToC to reveal the full stack at a glance
             s.addEventListener('mouseover', e => {
                 e.stopPropagation()
+
                 // Get all tech icons, append to the current section
                 let projectId = e.target.closest('LI').getAttribute('data-toc-id')
                 let imgContainer = e.target.closest('.icon-section')
@@ -193,24 +196,27 @@ class FactoryService  {
 
                 newImg.setAttribute('class', 'toc-img tmp_img')
 
+                // While fetching new icons, avoid fetching one's already presented as a highlight. Makes the extension look smoother
                 newIcons.forEach( filename => {
                     var found = 0
                      Array.from(imgContainer.children).forEach( (el : HTMLImageElement) => {
+                        // We do not need this filename, it's already present
                         if (el.src.includes(filename)) {found = 1}
                     })
                     if (!found){
-                        // Append a new image to the list and extend the boundaries
+                        // Append a new image to the list and extend the container
                         let nextImg = <HTMLImageElement> newImg.cloneNode(true)
                         nextImg.setAttribute('src', "assets/img/" + filename)
                         imgContainer.appendChild(nextImg)
                     }
                 })
 
+                // Alters the min/max widths and keeps things orderly
                 e.target.classList.add('icon-update')
 
             })
 
-            //
+            // Collapse the list
             s.addEventListener('mouseout', e => {
                 Array.from(document.getElementsByClassName('tmp_img')).forEach( el => {
                     el.remove()
@@ -223,12 +229,14 @@ class FactoryService  {
 
     /**
      * Push a new URI onto window.history, allowing us to
-     * hook the browser's "back" button into the preview pane
+     * hook the browser's "back" button into the preview pane.
+     * Should only ever be accessed as an event listener's callback
+     * otherwise history would be forever ruined
      * @param e 
      */
     updateURLParams = (e, data) => {
 
-        let query  = e.target.closest('li').getAttribute("data-toc-id")
+        let query = e.target.closest('li').getAttribute("data-toc-id")
 
         // remove the previous iframe
         document.getElementById('media').innerHTML = ""
@@ -268,6 +276,7 @@ class FactoryService  {
         // Organize the windows
         document.getElementById('media').innerHTML = ""
         document.getElementById('tech-window').classList.remove('lup')
+
         if (window.innerWidth > MOBILE_SCREEN_SIZE)
             document.getElementById('badges').classList.add('hide-me')
 
@@ -443,7 +452,13 @@ class FactoryService  {
             document.getElementById('p-content').appendChild(mobilePreview)
             document.getElementById('X').innerText = this.previewData.title
         }
+
+        if (this.currentDeviceScale == MOBILE) console.log("USING MOBILE")
+        if (this.currentDeviceScale == DESKTOP) console.log("USING DESKTOP")
+        
     }
+
+    
 
     loadTheatre() {
         console.log(this.previewData.projects[0].media)

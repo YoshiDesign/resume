@@ -22,7 +22,7 @@
                 "projects" : [
                     {
                         "alt_title" : "",
-                        "desc"  : "This is my pride and joy in terms of my professional web development experience so far. The DTB is a multi-domain learning platform, a lightweight LMS, featuring an administrative back-end, loaded with internal tooling that I have crafted for Demme Learning over the years!",
+                        "desc"  : "This is my pride and joy in terms of my professional web development experience so far. The DTB is a multi-domain learning platform, a lightweight LMS, and features an administrative back-end, loaded with internal tooling that I have crafted for Demme Learning over the years!",
                         "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
                         "media" : ["/assets/previews/dtb.png", "/assets/previews/dtb2.png", "/assets/previews/avi.png"],
                         "caption" : "Just a peek at the cloud filesystem tool, built into the Toolbox's admin domain. Developed quite early in my career."
