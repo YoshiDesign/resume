@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import windowResize from './Helpers/WindowResize'
+import windowResize, { DESKTOP, MOBILE, MOBILE_SCREEN_SIZE } from './Helpers/WindowResize'
+import { wrapEvent } from './Helpers/Helpers' 
 import { PreviewService } from './services/PreviewService'
 import FactoryService from './services/FactoryService'
-import Preview from './repo/Preview';
+
 
 const PROJECTS = "projects"
 
@@ -17,7 +18,10 @@ export class AppComponent implements OnInit {
     public switchPos : number
     public mode : string
 
+    private isMobile : boolean = false
+    private isDesktop : boolean = false
     private data : any
+    private currentDeviceScale
 
     fService : FactoryService
     pService : PreviewService
@@ -26,18 +30,22 @@ export class AppComponent implements OnInit {
         FactoryService : FactoryService,
         PreviewService : PreviewService
     ){  
+
         this.fService = FactoryService
         this.pService = PreviewService
         this.data = this.pService.Descriptions.default
+        
+        // Tip: windowResize is a cheap function
+        this.isDesktop = window.innerWidth > MOBILE_SCREEN_SIZE ? true : false
+        this.isMobile = !this.isDesktop
+
     }
 
     ngOnInit() {
         this.mode = ""
         this.switchPos = 0
 
-        window.onresize = windowResize
-
-        // Integrating the browser's "back" button for project previews
+        // Integrating the browser's "back" button for previews
         window.onpopstate = (e) => {
 
             let lastURL = new URL(window.location.href)
@@ -46,11 +54,15 @@ export class AppComponent implements OnInit {
             // Routing
             if (!lastPreview) this.fService.buildToC()
             if (lastPreview) this.fService.selectPreview(lastPreview, this.data[0][PROJECTS])
+
         };
 
     }
 
     ngAfterViewInit() {
+
+        // Window resize event listener + binding
+        window.onresize = wrapEvent(windowResize, this.isMobile, this.isDesktop, this.fService)
 
         // Check the URL for queries
         let url = new URL(window.location.href)
@@ -62,8 +74,22 @@ export class AppComponent implements OnInit {
         
     }
 
+    // [!] Frequently executed - Use cautiously [!]
+    ngAfterContentChecked() {
 
-    // Activate the switch modes
+        if (window.innerWidth <= MOBILE_SCREEN_SIZE) {
+            this.isDesktop = false
+            this.isMobile = true
+            
+        } else {
+            this.isDesktop = true
+            this.isMobile = false
+        
+        }
+    }
+
+
+    // Arm the exploding header switch -- TODO - Move the implementation to separate file, perhaps
     switchLed () : void {
 
         if (this.switchPos == 2)

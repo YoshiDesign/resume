@@ -2,10 +2,12 @@ import Skillet from '../repo/Skillet'
 import * as Descriptions from '../repo/Descriptions.json'
 import { Injectable } from '@angular/core';
 
+/**
+ * This class acquires assets for each project listing and its preview
+ */
 @Injectable()
 export class PreviewService {
 
-    // Used by this class's client component
     Descriptions : any = Descriptions;
 
     private skillet : Skillet

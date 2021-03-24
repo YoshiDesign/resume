@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PreviewService } from './PreviewService'
 import { wrapEvent } from '../Helpers/Helpers'
-import { resetComponentState } from '@angular/core/src/render3/state';
+import windowResize, { MOBILE_SCREEN_SIZE } from '../Helpers/WindowResize'
 
 // Key to access the projects array within Descriptions.json
 const PROJECTS = "projects"
@@ -17,8 +17,10 @@ class FactoryService  {
 
     public media_ref : string
     public video : boolean
+
     private previewData
     private data
+    public currentDeviceScale
 
     constructor(PreviewService : PreviewService){
         this.PreviewService = PreviewService
@@ -46,6 +48,9 @@ class FactoryService  {
         })
     }
 
+    /**
+     * 
+     */
     buildToC() : void {
 
         console.log("BUILDING")
@@ -110,7 +115,6 @@ class FactoryService  {
                         let meter = document.getElementById("soc-meter")
                         let unit = document.createElement('DIV')
                         
-                        
                         for (let filename of refs) {
                             // Set up new tech icon for ToC
                             let icon = document.createElement('IMG')
@@ -162,13 +166,13 @@ class FactoryService  {
     }
 
     /**
-     * Add event listeners to ToC's ".icon-section"s
+     * Expanding list item icons
      * @param s 
      */
     setIconSectionListeners(s) {
 
         // Mobile event behavior
-        if (window.innerWidth <= 973) {
+        if (window.innerWidth <= MOBILE_SCREEN_SIZE) {
 
             s.addEventListener('click', function(e){
                 this.style.background = "black"
@@ -236,7 +240,7 @@ class FactoryService  {
         // History API attributes
         const nextURL = url.href
         const nextTitle = document.title
-        const nextState = { additionalInformation: 'Anthony\'s Portfolio - preview-id: ' + query}
+        const nextState = { additionalInformation: 'Anthony\'s Portfolio - preview-id: ' + query }
 
         // Create a new entry in the browser's history
         window.history.pushState(nextState, nextTitle, nextURL)
@@ -244,7 +248,6 @@ class FactoryService  {
         // Replace the current entry in the browser's history
         window.history.replaceState(nextState, nextTitle, nextURL)
 
-       
         // -- TODO -- This next call could be returned by this function instead. We would then add
         // selectPreview() and buildNewPreview() to the social-view-component.
         // However, for readability, I like them within this file, because execution streams linearly.
@@ -263,11 +266,13 @@ class FactoryService  {
     selectPreview(query, data) : void {
 
         // Organize the windows
+        document.getElementById('media').innerHTML = ""
         document.getElementById('tech-window').classList.remove('lup')
-        document.getElementById('badges').classList.add('hide-me')
+        if (window.innerWidth > MOBILE_SCREEN_SIZE)
+            document.getElementById('badges').classList.add('hide-me')
 
         // Breakdown of the preview window for rebuild
-        if (window.innerWidth <= 973) {
+        if (window.innerWidth <= MOBILE_SCREEN_SIZE) {
 
             /**
              * Properly display the mobile carousel elements based upon
@@ -351,8 +356,8 @@ class FactoryService  {
     showPreviewContainer() {
 
         // Reveal the preview container
-        if (window.innerWidth > 973) document.getElementById('preview-tech').classList.remove('hide-me')
-        document.getElementById('p-window-title').classList.add('hide-me')
+        if (window.innerWidth > MOBILE_SCREEN_SIZE) document.getElementById('preview-tech').classList.remove('hide-me')
+
         document.getElementById('previewDescription').innerHTML = this.previewData.projects[0].desc
         document.getElementById('previewLink').innerHTML = this.previewData.projects[0].link
 
@@ -414,32 +419,29 @@ class FactoryService  {
                 pimage.setAttribute('width', '190px')
                 document.getElementById('media').appendChild(pimage)
             }
+        }
+        // Reveal the theatre when any image is selected
+        document.getElementById('media').addEventListener('click', e => {
+            e.stopPropagation()
 
-            // Reveal the theatre when any image is selected
-            document.getElementById('media').addEventListener('click', e => {
-                e.stopPropagation()
+            document.getElementById('theatre').classList.add('md-1') // Full width
+            document.getElementById('X2').classList.remove('hide-me')
+            document.getElementById('tl-arrow').classList.remove('hide-me')
+            document.getElementById('tl-arrow').classList.add('ovr-show')
+            document.getElementById('tr-arrow').classList.remove('hide-me')
+            document.getElementById('tr-arrow').classList.add('ovr-show')
 
-                document.getElementById('theatre').classList.add('md-1') // Full width
-                document.getElementById('X2').classList.remove('hide-me')
-                document.getElementById('tl-arrow').classList.remove('hide-me')
-                document.getElementById('tl-arrow').classList.add('ovr-show')
-                document.getElementById('tr-arrow').classList.remove('hide-me')
-                document.getElementById('tr-arrow').classList.add('ovr-show')
+        })
 
-            })
+        // Build the carousel ahead of time
+        this.loadTheatre()
 
-            // Build the carousel ahead of time
-            this.loadTheatre()
-
-
-            if (window.innerWidth <= 973) {
-                let mobilePreview = <HTMLElement> document.getElementById("preview-tech").cloneNode(true)
-                mobilePreview.classList.remove('hide-me')
-                mobilePreview.id = "mobile-preview"
-                document.getElementById('p-content').appendChild(mobilePreview)
-                document.getElementById('X').innerText = this.previewData.title
-            }
-
+        if (window.innerWidth <= MOBILE_SCREEN_SIZE) {
+            let mobilePreview = <HTMLElement> document.getElementById("preview-tech").cloneNode(true)
+            mobilePreview.classList.remove('hide-me')
+            mobilePreview.id = "mobile-preview"
+            document.getElementById('p-content').appendChild(mobilePreview)
+            document.getElementById('X').innerText = this.previewData.title
         }
     }
 
