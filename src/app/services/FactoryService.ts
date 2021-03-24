@@ -5,6 +5,7 @@ import { MOBILE, DESKTOP, MOBILE_SCREEN_SIZE } from '../Helpers/WindowResize'
 
 // Key to access the projects array within Descriptions.json
 const PROJECTS = "projects"
+const ACHIEVEMENTS = "achievements"
 
 @Injectable() // Injected into project-view.component.ts
 class FactoryService  {
@@ -20,14 +21,16 @@ class FactoryService  {
 
     private previewData
     private data
-    private curProject
+    private curProjects
+    private curAchievements
     public currentDeviceScale
 
     constructor(PreviewService : PreviewService){
         this.PreviewService = PreviewService
         this.media_ref = ""
         this.data = this.PreviewService.Descriptions.default
-        this.curProject = this.data[0][PROJECTS]
+        this.curProjects = this.data[0][PROJECTS]
+        this.curAchievements = this.data[0][ACHIEVEMENTS]
         this.previewData = null
         this.currentDeviceScale = window.innerWidth <= MOBILE_SCREEN_SIZE ? MOBILE : DESKTOP
     }
@@ -116,6 +119,10 @@ class FactoryService  {
                         )
                     }
 
+                    if (j == ACHIEVEMENTS) {
+
+                    }
+
                     // Get the tech slug from the JSON DB
                     let refs = this.PreviewService.getIcon(k.tech)
 
@@ -146,7 +153,7 @@ class FactoryService  {
                     // Only projects will be previewed in the panel. This makes sure we only generate carousel cues for projects
 
                     // DEBUG - This loop was running numerous times
-                    if (j == PROJECTS) {
+                    if (j == PROJECTS || ACHIEVEMENTS) {
                         let n_unit = <HTMLElement> unit.cloneNode(true)
                         // The carousel cue
                         n_unit.classList.add('d-unit')
@@ -319,7 +326,7 @@ class FactoryService  {
 
         }
 
-        this.buildNewPreview(query, this.curProject)
+        this.buildNewPreview(query, this.curProjects)
 
     }
 
@@ -440,19 +447,22 @@ class FactoryService  {
                 pimage.setAttribute('width', '190px')
                 document.getElementById('media').appendChild(pimage)
             }
+            // Reveal the theatre when any image is selected
+            document.getElementById('media').addEventListener('click', e => {
+                e.stopPropagation()
+
+                // if (e.target.closest('VIDEO'))
+
+                document.getElementById('theatre').classList.add('md-1') // Full width
+                document.getElementById('X2').classList.remove('hide-me')
+                document.getElementById('tl-arrow').classList.remove('hide-me')
+                document.getElementById('tl-arrow').classList.add('ovr-show')
+                document.getElementById('tr-arrow').classList.remove('hide-me')
+                document.getElementById('tr-arrow').classList.add('ovr-show')
+
+            })
         }
-        // Reveal the theatre when any image is selected
-        document.getElementById('media').addEventListener('click', e => {
-            e.stopPropagation()
-
-            document.getElementById('theatre').classList.add('md-1') // Full width
-            document.getElementById('X2').classList.remove('hide-me')
-            document.getElementById('tl-arrow').classList.remove('hide-me')
-            document.getElementById('tl-arrow').classList.add('ovr-show')
-            document.getElementById('tr-arrow').classList.remove('hide-me')
-            document.getElementById('tr-arrow').classList.add('ovr-show')
-
-        })
+        
 
         // Build the carousel ahead of time
         this.loadTheatre()
