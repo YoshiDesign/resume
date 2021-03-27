@@ -7,7 +7,7 @@ import { MOBILE, DESKTOP, MOBILE_SCREEN_SIZE } from '../Helpers/WindowResize'
 const PROJECTS = "projects"
 const ACHIEVEMENTS = "achievements"
 
-@Injectable() // Injected into project-view.component.ts
+@Injectable() // Injected into social-view.component.ts
 class FactoryService  {
 
     /**
@@ -24,15 +24,23 @@ class FactoryService  {
     private curProjects
     private curAchievements
     public currentDeviceScale
+    public tocCategories : Array <string>
 
     constructor(PreviewService : PreviewService){
         this.PreviewService = PreviewService
         this.media_ref = ""
         this.data = this.PreviewService.Descriptions.default
-        this.curProjects = this.data[0][PROJECTS]
-        this.curAchievements = this.data[0][ACHIEVEMENTS]
+        this.curProjects = this.data[PROJECTS]
+        this.curAchievements = this.data[ACHIEVEMENTS]
         this.previewData = null
+        this.tocCategories =  null
         this.currentDeviceScale = window.innerWidth <= MOBILE_SCREEN_SIZE ? MOBILE : DESKTOP
+
+        this.loadTocCategories()
+    }
+
+    get getCategories (): string[] {
+        return this.tocCategories
     }
 
     resetURL() : void
@@ -56,7 +64,7 @@ class FactoryService  {
 
     resetToC() {
         document.getElementById('p-content').innerHTML = ""
-        this.buildToC()
+        // this.buildToC()
     }
 
     resetAll() {
@@ -64,129 +72,154 @@ class FactoryService  {
         this.resetTech()
     }
 
+    loadTocCategories() {
+
+        // Make sure each heading title is title-cased
+        let categories = []
+        for (let c in this.data)   // Description Keys
+        {
+            let cat = ""
+            let title = c.split("_")
+            title.forEach( (word, i) => {
+
+                cat += word.charAt(0).toUpperCase() + word.slice(1)
+
+                // No trailing spaces
+                if (i != title.length - 1)      { cat += " " }
+                else if (i == title.length -1)  { categories.push(cat) }
+
+            })
+            
+        }
+
+        this.tocCategories = categories
+        
+    }
+
     /**
      * 
      */
-    buildToC(tSet=false) : void {
+    // buildToC(tSet=false) : void {
 
-        this.resetTech();
+    //     this.resetTech();
 
-        // A list of headings for the ToC
-        var contents : Array <HTMLElement> = []
+    //     // A list of headings for the ToC
+    //     var contents : Array <HTMLElement> = []
 
-        // The carousel cues
-        let meter = document.getElementById("soc-meter")
-        let unit = document.createElement('DIV')
+    //     // The carousel cues
+    //     let meter = document.getElementById("soc-meter")
+    //     let unit = document.createElement('DIV')
 
-        meter.innerHTML = ""
+    //     meter.innerHTML = ""
 
-        for (let i in this.data) // JSON index
-        {
-            for (let j in this.data[i])   // Description Keys
-            {
-                // Make heading and titleCase the string
-                let heading = document.createElement("H4")
-                heading.classList.add('toc-heads')
+    //     for (let i in this.data) // JSON index
+    //     {
+    //         for (let j in this.data[i])   // Description Keys
+    //         {
+    //             // Make heading and titleCase the string
+    //             let heading = document.createElement("H4")
+    //             heading.classList.add('toc-heads')
 
-                // Make sure each heading title is title-cased
-                let titles = j.split("_")
-                titles.forEach( word => {
-                    heading.innerText += word.charAt(0).toUpperCase() + word.slice(1) + " "
-                })
+    //             // Make sure each heading title is title-cased
+    //             let titles = i.split("_")
+    //             titles.forEach( word => {
+    //                 heading.innerText += word.charAt(0).toUpperCase() + word.slice(1)
+    //                 if (titles.indexOf(word) != titles.length - 1) heading.innerText += " "
+    //             })
 
-                contents.push(heading)
+    //             contents.push(heading)
 
-                // Make each section's list
-                let headingList = document.createElement('UL')
-                headingList.classList.add('toc-list')
-                headingList.setAttribute('id', j+"-list")
+    //             // Make each section's list
+    //             let headingList = document.createElement('UL')
+    //             headingList.classList.add('toc-list')
+    //             headingList.setAttribute('id', i+"-list")
 
-                for (let k of this.data[i][j])  // Datas
-                {
-                    // Create the table of contents
-                    let item = document.createElement('LI')
-                    // Contains the group of little icons on the ToC, apply evt listeners
-                    let iconSection = document.createElement('DIV')
-                    this.setIconSectionListeners(iconSection)
-                    iconSection.classList.add('icon-section')
+    //             for (let k of this.data[i])  // Datas
+    //             {
+    //                 // Create the table of contents
+    //                 let item = document.createElement('LI')
+    //                 // Contains the group of little icons on the ToC, apply evt listeners
+    //                 let iconSection = document.createElement('DIV')
+    //                 this.setIconSectionListeners(iconSection)
+    //                 iconSection.classList.add('icon-section')
 
-                    let apply_to_meter = true
+    //                 let apply_to_meter = true
 
-                    if (j == PROJECTS) {
-                        item.addEventListener(
-                            'click', 
-                            wrapEvent(this.updateURLParams)
-                        )
-                    }
+    //                 if (j == PROJECTS) {
+    //                     item.addEventListener(
+    //                         'click', 
+    //                         wrapEvent(this.updateURLParams)
+    //                     )
+    //                 }
 
-                    if (j == ACHIEVEMENTS) {
+    //                 if (j == ACHIEVEMENTS) {
 
-                    }
+    //                 }
 
-                    // Get the tech slug from the JSON DB
-                    let refs = this.PreviewService.getIcon(k.tech)
+    //                 // Get the tech slug from the JSON DB
+    //                 let refs = this.PreviewService.getIcon(k.tech)
 
-                    item.setAttribute('class', 'toc-item')
-                    item.setAttribute('data-toc-id', k.id)
-                    item.innerText = k.title
+    //                 item.setAttribute('class', 'toc-item')
+    //                 item.setAttribute('data-toc-id', k.id)
+    //                 item.innerText = k.title
 
-                    if (refs.length == 0)
-                    {
-                        console.log("No Refs")
-                        ; // Don't render an icon
-                    }
-                    else {
+    //                 if (refs.length == 0)
+    //                 {
+    //                     console.log("No Refs")
+    //                     ; // Don't render an icon
+    //                 }
+    //                 else {
                         
-                        for (let filename of refs) {
+    //                     for (let filename of refs) {
 
-                            // Set up new tech icon for ToC
-                            let icon = document.createElement('IMG')
+    //                         // Set up new tech icon for ToC
+    //                         let icon = document.createElement('IMG')
 
-                            icon.setAttribute('src', "assets/img/" + filename)
-                            icon.classList.add("toc-img")
+    //                         icon.setAttribute('src', "assets/img/" + filename)
+    //                         icon.classList.add("toc-img")
 
-                            iconSection.appendChild(icon)
+    //                         iconSection.appendChild(icon)
 
-                        }
+    //                     }
                             
-                    }
-                    // Only projects will be previewed in the panel. This makes sure we only generate carousel cues for projects
+    //                 }
+    //                 // Only projects will be previewed in the panel. This makes sure we only generate carousel cues for projects
 
-                    // DEBUG - This loop was running numerous times
-                    if (j == PROJECTS || ACHIEVEMENTS) {
-                        let n_unit = <HTMLElement> unit.cloneNode(true)
-                        // The carousel cue
-                        n_unit.classList.add('d-unit')
-                        n_unit.setAttribute('data-unit-id', k.id)
-                        // The collection of cues
-                        meter.appendChild(n_unit)
-                    }
+    //                 // DEBUG - This loop was running numerous times
+    //                 if (j == PROJECTS || ACHIEVEMENTS) {
+    //                     let n_unit = <HTMLElement> unit.cloneNode(true)
+    //                     // The carousel cue
+    //                     n_unit.classList.add('d-unit')
+    //                     n_unit.setAttribute('data-unit-id', k.id)
+    //                     // The collection of cues
+    //                     meter.appendChild(n_unit)
+    //                 }
 
-                    // keeps border away from icon groups that aren't in the project's section
-                    if (j != PROJECTS)
-                        iconSection.classList.add('icon-style-override')
+    //                 // keeps border away from icon groups that aren't in the project's section
+    //                 if (j != PROJECTS)
+    //                     iconSection.classList.add('icon-style-override')
 
-                    item.appendChild(iconSection)
-                    headingList.appendChild(item)
+    //                 item.appendChild(iconSection)
+    //                 headingList.appendChild(item)
 
-                }
+    //             }
 
-                contents.push(headingList)
+    //             contents.push(headingList)
 
-            }
+    //         }
 
-            // Show the scroll indicator
-            document.getElementById("da").innerHTML = "&#x2193;"
+    //         // Show the scroll indicator
+    //         document.getElementById("da").innerHTML = "&#x2193;"
 
-        }
+    //     }
 
-        // Populate the table of contents with each <li>
-        contents.forEach(el => {
-            let toc = document.getElementById('p-content')
-            toc.appendChild(el)
-        })
+    //     // Populate the table of contents with each <li>
+    //     contents.forEach(el => {
+    //         let toc = document.getElementById('p-content')
+    //         toc.appendChild(el)
+    //     })
         
-    }
+    // }
 
     /**
      * Expanding list item icons
@@ -367,7 +400,7 @@ class FactoryService  {
         imgContainer.innerHTML = ""
 
         // If any reason to hide the stack, display "Classified" instead
-        if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"color:white; margin-top:4px; margin-right:20px;\">Classified</h3>"
+        if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"margin-top:2px; margin-right:20px;\">Classified</h3>"
 
         icons.forEach( el => {
             imgContainer.appendChild(el)

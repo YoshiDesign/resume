@@ -6,7 +6,7 @@ import FactoryService from '../services/FactoryService';
   selector: 'app-social-view',
   templateUrl: './social-view.component.html',
   styleUrls: ['./social-view.component.css'],
-  providers: [PreviewService]
+  providers: [PreviewService, FactoryService]
 })
 export class SocialViewComponent implements OnInit {
 
@@ -15,6 +15,7 @@ export class SocialViewComponent implements OnInit {
     PreviewService : PreviewService
     data : any
     public reset : boolean
+    public categories
 
     // public current_preview : string
     public current_core_tech : Array <string>
@@ -23,11 +24,14 @@ export class SocialViewComponent implements OnInit {
         this.FactoryService = FactoryService
         this.PreviewService = PreviewService
         this.reset = false
+
+        this.categories = this.FactoryService.getCategories;
     }
 
     ngOnInit() {
 
         this.FactoryService.buildToC()
+        // console.log(this.categories)
 
         // Hide the arrow on ToC once it's scrolled
         document.getElementById('previews').addEventListener('scroll', function(){

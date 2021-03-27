@@ -88,7 +88,6 @@ export class AppComponent implements OnInit {
         }
     }
 
-
     // Arm the exploding header switch -- TODO - Move the implementation to separate file, perhaps
     switchLed () : void {
 
@@ -100,7 +99,7 @@ export class AppComponent implements OnInit {
         let nodes = Array.from(document.querySelectorAll('[data-anim]'))
         let modes = Array.from(document.querySelectorAll('[data-mode]'))
         let shows = Array.from(document.querySelectorAll('[data-show]'))
-        let splodes = Array.from(document.getElementsByClassName('splodes'))
+        let explodes = Array.from(document.getElementsByClassName('explodes'))
 
         // Determine the interactive switch's effect
         switch (this.switchPos) {
@@ -147,7 +146,7 @@ export class AppComponent implements OnInit {
                 })
 
                 // Blow up the header
-                splodes.forEach(el => {
+                explodes.forEach(el => {
                     // Randomly assign 1 of any 4 randomly determined directions each animated class
                     let mod = Math.random() * 100
                     if (mod > 50) {

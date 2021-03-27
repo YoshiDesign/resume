@@ -81,7 +81,7 @@ export default class Skillet {
                 ['lara',   "lara.png",  []],
                 ['ang',    "ang.png",   [P.PORT]],
                 ['flask',  "flask.png", [P.STEG, P.API, P.PSI]],
-                ['docker',  "docker.png", []]
+                ["pgame","pgame.png",   [P.PSI]]
             ],
 
             libraries : [
@@ -90,7 +90,7 @@ export default class Skillet {
                 ["ossl", "ossl.png",    []],
                 ["ocv",  "ocv.png",     [P.OCV]],
                 ["d3",   "d3.png",      [P.WW]],
-                ["pgame","pgame.png",   [P.PSI]],
+                // ["wp",    "wp.png",     []],
             ],
 
             other : [
@@ -99,7 +99,7 @@ export default class Skillet {
                 ["pgsql", "pgsql.png",  [P.API]],
                 ["mgo",   "mgo.png",    [P.WW]],
                 ["hku",   "hku.png",    [P.PSI, P.API, P.STEG]],
-                ["wp",    "wp.png",     []],
+                ['docker',  "docker.png", []],
                 ["apache", "apache.png", []]
             ],
 

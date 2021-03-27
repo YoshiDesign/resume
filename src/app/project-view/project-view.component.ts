@@ -57,6 +57,14 @@ export class ProjectViewComponent implements OnInit {
         document.getElementById('badges').classList.remove('hide-me')
     }
 
+    hideTooltip () {
+
+    }
+
+    showTooltip () {
+        
+    }
+
     // Hovering over tech item -- TODO I limited this functionality, seemed unnecessary
     highlighter (e) :void {
 
