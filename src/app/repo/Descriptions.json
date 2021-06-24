@@ -80,7 +80,7 @@
             },
             {
                 "id" : "steg",
-                "title" : "Steganography Web App & CLI",
+                "title" : "CS50 Final - Steganography",
                 "tech" : ["py","flask"],
                 "projects" : [
                     {
@@ -89,20 +89,6 @@
                         "link" : "<a href='https://gist.github.com/YoshiDesign/015ad38535a5537eef2be1b333a009d1' target='_blank'>Get the gist</a>",
                         "media" : ["/assets/previews/pycli.png"],
                         "caption" : "-h -I -d -e"
-                    }    
-                ]
-            },
-            {
-                "id" : "port",
-                "title" : "My Portfolio",
-                "tech" : ["ang", "ts"],
-                "projects" : [
-                    {
-                        "alt_title" : 0,
-                        "desc"  : "To check out the porcelain and plumbing of this webpage, check out the source code here! Like it? It's yours! <p>Disclaimer: Experience not included.<p>",
-                        "link" : "<a href='https://github.com/YoshiDesign/resume' target='_blank'>Check out the repo on Github</a>",
-                        "media" : ["/assets/previews/portfolio.png"],
-                        "caption" : "You are here^"
                     }    
                 ]
             }
@@ -136,7 +122,7 @@
             },
             {
                 "id" : "aplus",
-                "title" : "CompTIA A+",
+                "title" : "CompTIA A+ (2017 - 2021)",
                 "tech" : ["pdf"],
                 "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
                 "media" : "",
@@ -144,7 +130,7 @@
             },
             {
                 "id" : "cysa",
-                "title" : "CompTIA CySA+",
+                "title" : "CompTIA CySA+ (2018 - 2021)",
                 "tech" : ["pdf"],
                 "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
                 "media" : "",
