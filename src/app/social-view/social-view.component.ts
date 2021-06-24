@@ -30,6 +30,8 @@ export class SocialViewComponent implements OnInit {
 
     ngOnInit() {
 
+        console.log("123")
+
         this.FactoryService.buildToC()
         // console.log(this.categories)
 
