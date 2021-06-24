@@ -55,6 +55,9 @@ export class ProjectViewComponent implements OnInit {
     {
         document.getElementById('media').innerHTML = ""
         document.getElementById('badges').classList.remove('hide-me')
+        Array.from(document.getElementsByClassName('introduction')).forEach(el=>{
+            el.classList.remove('hide-me')
+        })
     }
 
     hideTooltip () {

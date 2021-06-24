@@ -68,6 +68,7 @@ export default class Skillet {
                 ['js', "cjs.png",   [P.WW,P.CS50, P.PORT]],
                 ['py',  "py.png",   [P.PSI, P.STEG, P.CS50, P.API, P.WW]],
                 ['cpp', "cpp.png",  [P.OCV,P.GAME, P.FSIM]],
+                ['go', "go.png",    [P.WW]],
                 ['ts',  "ts.png",   [P.WW, P.PORT]],
                 ['php', "php.png",  []],
                 ['bash',"sheb.png", [P.WW, P.API, P.CS50]],
@@ -76,7 +77,7 @@ export default class Skillet {
             ],
 
             frameworks : [
-                ['nodejs', "nodejs.png",[P.WW]],
+                ['nodejs', "nodejs.png",[]],
                 ['react',  "react.png", [P.WW]],
                 ['lara',   "lara.png",  []],
                 ['ang',    "ang.png",   [P.PORT]],
@@ -107,8 +108,6 @@ export default class Skillet {
                 ["vs", "vs.png", [P.OCV, P.UTAUST, P.FSIM]],
                 ["ardno", "ard.png", [P.OCV]],
                 ["rpi",   "rpi.png", [P.OCV]],
-                ["unity", "unity.png", [P.GAME]],
-                ["lnch",  "tva.png", [P.UTAUST]]
             ],
 
             sys : [
@@ -117,8 +116,6 @@ export default class Skillet {
                 ["arm", "arm.png", [P.OCV, P.UTAUST]],
                 ["cmake", "cmake.png", [P.OCV]],
                 ["vim", "vim2.png", [P.OCV, P.UTAUST]],
-                ["gnu", "gnu.png", [P.OCV]]
-
             ],
             // Auxiliary page trinkets
             omit : [

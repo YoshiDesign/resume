@@ -42,7 +42,8 @@
 
     </div>
 </div>
-<section class="tech-section" *ngFor="let item of buffer ; index as i ; ">    <!-- Outer Loop (Y) -->
+
+<!-- <section class="tech-section" *ngFor="let item of buffer ; index as i ; ">   
     
     <div class="brd r-side">
 
@@ -52,7 +53,7 @@
                  (mouseout)="hideTooltip($event)" 
                  (mouseover)="showTooltip($event)"
                  [id]="n[0]" class="imBox-sm" 
-                 *ngFor="let n of buffer[i] ; index as j ; "> <!-- Inner Loop (X) -->
+                 *ngFor="let n of buffer[i] ; index as j ; "> 
                     <img class="no-evt" [src]="imgAssets + n[1]" alt="">
             </div>
         
@@ -60,4 +61,4 @@
 
     </div>
 
-</section>
+</section> -->

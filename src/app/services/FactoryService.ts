@@ -353,7 +353,9 @@ class FactoryService  {
 
         } else {
             // Remove proficiency rows
-            Array.from(document.getElementsByClassName('tech-section')).forEach( el =>  {
+            console.log("HELLOOOOO")
+            document.getElementById('intro').classList.add('hide-me')
+            Array.from(document.getElementsByClassName('introduction')).forEach( el =>  {
                 el.classList.add('hide-me')
             })
 
