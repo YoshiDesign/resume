@@ -25,7 +25,7 @@ export class SocialViewComponent implements OnInit {
         this.PreviewService = PreviewService
         this.reset = false
 
-        this.categories = this.FactoryService.getCategories;
+        // this.categories = this.FactoryService.getCategories;
     }
 
     ngOnInit() {
