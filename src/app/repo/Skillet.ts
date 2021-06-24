@@ -77,7 +77,7 @@ export default class Skillet {
             ],
 
             frameworks : [
-                ['nodejs', "nodejs.png",[P.WW]],
+                ['nodejs', "nodejs.png",[]],
                 ['react',  "react.png", [P.WW]],
                 ['lara',   "lara.png",  []],
                 ['ang',    "ang.png",   [P.PORT]],
