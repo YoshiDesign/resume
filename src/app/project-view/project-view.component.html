@@ -50,8 +50,8 @@
         <div class="section-alt">
 
             <div (click)="highlighter($event)" 
-                 (mouseout)="hideTooltip($event)" 
-                 (mouseover)="showTooltip($event)"
+                 (mouseout)="unhighlight($event)" 
+                 (mouseover)="highlighter($event)"
                  [id]="n[0]" class="imBox-sm" 
                  *ngFor="let n of buffer[i] ; index as j ; "> 
                     <img class="no-evt" [src]="imgAssets + n[1]" alt="">

@@ -372,6 +372,8 @@ class FactoryService  {
         if (icons.length == 0) imgContainer.innerHTML = "<h3 style=\"color:white; margin-top:4px; margin-right:20px;\">Classified</h3>"
 
         icons.forEach( el => {
+            console.log(el)
+            console.log(imgContainer)
             imgContainer.appendChild(el)
         })
         

@@ -99,7 +99,7 @@ export class AppComponent implements OnInit {
         let nodes = Array.from(document.querySelectorAll('[data-anim]'))
         let modes = Array.from(document.querySelectorAll('[data-mode]'))
         let shows = Array.from(document.querySelectorAll('[data-show]'))
-        let explodes = Array.from(document.getElementsByClassName('explodes'))
+        let explodes = Array.from(document.getElementsByClassName('explode'))
 
         // Determine the interactive switch's effect
         switch (this.switchPos) {
@@ -130,6 +130,7 @@ export class AppComponent implements OnInit {
 
             case 2 :
                 // Blow up the circuit
+                console.log("boom")
                 document.getElementById('snode').style.left = "32px"
                 modes.forEach(el => {
                     if (!el.classList.contains('reds'))
