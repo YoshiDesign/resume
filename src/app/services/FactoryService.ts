@@ -363,6 +363,7 @@ class FactoryService  {
             icons.push(icon)
         }
 
+
         // Rebuild of the preview window        
         let imgContainer = document.getElementById('previewTechImages')
         imgContainer = document.getElementById('previewTechImages')
