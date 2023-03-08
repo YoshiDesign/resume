@@ -1,0 +1,135 @@
+[
+    [
+        {
+            "id" : "ww",
+            "title" : "My World Works",
+            "tech" : ["react","go","rds"],
+            "logo" : "worldworks",
+            "link" : "<a target='_blank' href='http://myworldworks.com'>MyWorldWorks.com</a>",
+            "projects" : [
+                {
+                    "alt_title" : 0,
+                    "desc"  : "My World Works (previously: The World Works) is an interactive map, and a massive personal undertaking, which can be used to analyze entire economies across over 140 different countries. The inspiration behind this project was to help individuals optimize their work/life balance by comparing cost of living side-by-side with localized workforce statistics.<p>Hosted on AWS free-tier EC2. In continuous development.</p><p><b>To fully demonstrate this app, choose The United States from the Economics tab. Collecting this much data is a long and labor intensive process. At this time, only the USA is capable of displaying every feature from the app.</b></p>",
+                    "link" : "",
+                    "media" : "",
+                    "caption" : "Demo for the Y-Combinator Summer 2021 application"
+                }    
+            ]
+        },
+        {
+            "id" : "dtb",
+            "title" : "The Digital Toolbox",
+            "tech" : ["vuejs", "lara", "php"],
+            "logo" : "dlearning",
+            "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
+            "projects" : [
+                {
+                    "alt_title" : "",
+                    "desc"  : "The Digital Toolbox is a learning management platform for k-12 mathematics, and is the epicenter of my longest-running role as a web developer. The app boasts 4 separate account types which can support a variety of users from private educators and homeschoolers to public and charter schools. They can create, manage and monitor virtual classrooms using Demme Learning's curricula. I orchestrated numerous upgrades, including the introduction of a Vue.js as the frontend framework, and introduced many useful applets including their <a href='https://digital.demmelearning.com/worksheet-generator' target='_blank'>worksheet generator</a>, an open source Angular application that I repurposed to fit their curriculum materials. I also implemented Demme Learning's current Single Sign-On solution, as well as performed numerous Linux Administration tasks to keep their servers hardened and capable of adapting to increased server load and upgraded technologies.<p><b>I began working on this project as the sole developer of their team. Since then I've introduced numerous modernizations to the underlying stack, and have more recently began working with a team of developers as the Demme Learning domain continues to evolve. I also build and maintain their administrative backend, which hosts custom tooling built by myself, which primarily supports customer service and accounting in their day to day tasks.</b></p>",
+                    "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
+                    "media" : [],
+                    "caption" : "Just a peek at the cloud filesystem tool, built into the Toolbox's admin domain. Developed quite early in my career."
+                }
+  
+            ]
+        },
+        {
+            "id" : "ocv",
+            "title" : "OpenCV & Embedded Systems",
+            "tech" : ["vs","ocv"],
+            "projects" : [
+                {
+                    "alt_title" : 0,
+                    "desc"  : "I've always wanted to dive head-first into robotics and electrical engineering. Here you can see my mouse controlled robot buddy. It can see you too! I've used this robot to perform Thomas Young's famed double-slit experiment numerous times.<p oops='true'>Doublevision is a sandbox for combining the artificial intelligence and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi. I've added the proper CMakeLists.txt in order to build your programs with a simple call to <i>make</i>. Also included is the ASIO header library to add networking to your projects.</p><p>What is most exciting about this project is that it uses a relatively new standard of interacting with the Raspberry Pi's GPIO interface, known as <a target='_blank' href='https://www.youtube.com/watch?v=cdTLewJCL1Y&t=1210s'>libgpio</a>. This new lib deprecated the previous method of GPIO access by a longshot! Development can be done on any Raspberry Pi 3b+ or later.</p>",
+                    "link" : "<a target='_blank' href='https://github.com/YoshiDesign/doublevision'>Check out the Doublevision repo on GitHub</a>",
+                    "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
+                    "caption" : ""
+                }    
+            ]
+        },
+        {
+            "id" : "fsim",
+            "title" : "Retro Flight Simulator",
+            "tech" : ["cpp", "vs"],
+            "projects" : [
+                {
+                    "alt_title" : 0,
+                    "desc"  : "Using the Pixel Game Engine, developed by <a href='https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA'>@javidx9</a> this project is a consequence of my ongoing love affair with game development. As of March 21 2021, it has been outfitted to compile with the Emscripten toolchain.",
+                    "link" : "",
+                    "media" : "/assets/previews/retrocade.MP4",
+                    "caption" : "Part of an arcade series I'm working on."
+                }    
+            ]
+        },
+        {
+            "id" : "psi",
+            "title" : "Personal Space Invaders",
+            "tech" : ["py","pgame"],
+            "projects" : [
+                {
+                    "alt_title" : 0,
+                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. A Python PyGame client accesses the Twitter API using a Flask web proxy on Heroku, conducts a sentiment analysis to determine the 'difficulty' of the gameplay, and proceeds to turn each tweet into a game of Space invaders; where each tweet can be disassembled (blasted into oblivion with a variety of powerups and weapons) character by characters. The game was not distributed for legal reasons, and not to mention that it was built by a novice at the time!",
+                    "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
+                    "media" : ["/assets/previews/dtrmp.png"],
+                    "caption" : "Passing judgements upon our former president, programatically, so you don't have to."
+                }    
+            ]
+        },
+        {
+            "id" : "steg",
+            "title" : "CS50 Final - Steganography Web App",
+            "tech" : ["py","flask"],
+            "projects" : [
+                {
+                    "alt_title" : 0,
+                    "desc"  : "A deprecated web application and learning tool that I built using Python, for my CS50 final project. Conceal messages or encrypt entire books into an image (if the size allows for it), perhaps even hide all of your most personal love letters in plain sight! <p>The CLI tool is available as a GitHub gist, which also offers the\"inspector\" switch.</p>",
+                    "link" : "<a href='https://gist.github.com/YoshiDesign/015ad38535a5537eef2be1b333a009d1' target='_blank'>Get the gist</a>",
+                    "media" : ["/assets/previews/pycli.png"],
+                    "caption" : "-h -I -d -e"
+                }    
+            ]
+        }
+    ],
+    [
+        { 
+            "id" : "cs50ai",
+            "title" : "Harvard CS50-AI",
+            "tech" : ["pdf"],
+            "desc"  : "Introduction to Artificial Intelligence with Python. This course taught me the concepts and algorithms at the foundation of modern artificial intelligence. I took my education in AI 1 step further and began using Jupyter Labs as a platform for which to practice ML concepts.",
+            "media" : "",
+            "alt_title" : 0
+        },
+        {
+            "id" : "cs50x",
+            "title" : "Harvard CS50",
+            "tech" : ["pdf"],
+            "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress blog.",
+            "media" : "",
+            "alt_title" : 0
+        },
+        { 
+            "id" : "cs50b",
+            "title" : "Harvard CS50-B",
+            "tech" : ["pdf"],
+            "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.",
+            "media" : "",
+            "alt_title" : 0
+        },
+        {
+            "id" : "aplus",
+            "title" : "CompTIA A+ (2017 - 2021)",
+            "tech" : ["pdf"],
+            "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
+            "media" : "",
+            "alt_title" : 0
+        },
+        {
+            "id" : "cysa",
+            "title" : "CompTIA CySA+ (2018 - 2021)",
+            "tech" : ["pdf"],
+            "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
+            "media" : "",
+            "alt_title" : 0
+        }
+    ]
+]
