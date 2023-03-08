@@ -32,12 +32,21 @@
     </div>
 </nav>
 <div>
+  <p class="intro">Thank you for visiting my online portfolio!</p>
+  <p class="intro">Select any of the badges below to be taken to my certificate repository (OneDrive).</p>
 
   <div class="badge-container">
-    <img src="../assets/img/aplus_.png" />
-    <img src="../assets/img/cysa_.png" />
-    <img src="../assets/img/hx.png" />
+    <a href="https://onedrive.live.com/?authkey=%21AHK%2DZQK4gPHTgoo&id=689974887EAECD42%2119468&cid=689974887EAECD42" target="_blank">
+      <img src="../assets/img/aplus_.png" />
+    </a>
+    <a href="https://onedrive.live.com/?authkey=%21AHK%2DZQK4gPHTgoo&id=689974887EAECD42%2119468&cid=689974887EAECD42" target="_blank">
+      <img src="../assets/img/cysa_.png" />
+    </a>
+    <a href="https://onedrive.live.com/?authkey=%21AHK%2DZQK4gPHTgoo&id=689974887EAECD42%2119468&cid=689974887EAECD42" target="_blank">
+      <img src="../assets/img/hx.png" />
+    </a>
   </div>
+  <h3 id="sticky-header" class="section-heading">Projects</h3>
 
   <div class="proj-container" *ngFor="let item of Projects ; index as i ; ">
 
@@ -47,7 +56,7 @@
         <p [innerHTML]="item['link']"></p>
       </div>
       <div class="proj-imgs">
-        <img *ngFor="let im of item['tech']" src="../assets/img/{{im}}.png" />
+        <img *ngFor="let im of item['tech']" alt="tech-icon" src="../assets/img/{{im}}.png" />
       </div>
     </div>
 
@@ -59,7 +68,10 @@
         <img class="proj-logo" src="../assets/img/{{item['logo']}}.png" />
       </div>
     </div>
-
+    <div *ngIf="item['repo']">
+      <a href="{{item['repo']}}" target="_blank">Link to Github</a>
+    </div>
   </div>
+  
 
 </div>

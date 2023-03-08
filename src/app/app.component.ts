@@ -19,7 +19,19 @@ export class AppComponent implements OnInit {
       this.Descriptions = require("./data/Descriptions.json")
       this.Projects = this.Descriptions[0]
       this.Achievements = this.Descriptions[1]
+      window.addEventListener("scroll", function(){
+        if(this.window.scrollY > 137) {
+          if (!this.document.getElementById("sticky-header")!.classList.contains('fix')) {
+            document.getElementById("sticky-header")!.classList.add('fix')
+          }
+        }
+        if(this.window.scrollY < 137) {
+          if (this.document.getElementById("sticky-header")!.classList.contains('fix')) {
+            document.getElementById("sticky-header")!.classList.remove('fix')
+          }
+        }
 
+      })
     }
 
     ngOnInit() {

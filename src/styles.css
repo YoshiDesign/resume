@@ -84,6 +84,26 @@ b {
     display:inline;
     width:85px;
 }
+.intro {
+    background: #444;
+    color: ghostwhite;
+    text-align: center;
+    margin:0;
+    padding:10px 115px;
+}
+.fix {
+    position:fixed;
+    top:0;
+    width: 100%;
+    background: var(--color-fpurple);
+    color:ghostwhite;
+    z-index: 100;
+    margin:0 !important;
+}
+.section-heading {
+    text-align: center;
+    margin: 3px;
+}
 .proj-container {
     padding:5px 100px;
     background: #333;
@@ -104,7 +124,7 @@ b {
     align-items:center;
     justify-content: space-evenly;
 }
-.proj-container div {
+.proj-container > div {
     padding:8px;
 }
 .proj-logo {
