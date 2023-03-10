@@ -52,7 +52,7 @@
 
     <div class="proj-header">
       <div>
-        <p>{{item['title']}}</p>
+        <h2>{{item['title']}}</h2>
         <p [innerHTML]="item['link']"></p>
       </div>
       <div class="proj-imgs">
@@ -62,9 +62,9 @@
 
     <div class="proj-body">
       <div class="proj-description">
-        <p *ngFor="let p of item['projects']" [innerHTML]="p['desc']"></p>
+        <p class="proj-desc-p" *ngFor="let p of item['projects']" [innerHTML]="p['desc']"></p>
       </div>
-      <div *ngIf="item['logo'] != undefined">
+      <div class="proj-logo-container" *ngIf="item['logo'] != undefined">
         <img class="proj-logo" src="../assets/img/{{item['logo']}}.png" />
       </div>
     </div>
