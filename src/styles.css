@@ -45,8 +45,8 @@ a {
 }
 @font-face {
     font-family: 'Inter var';
-    src: url('assets/fonts/Inter.var.woff2');
-    src: local('assets/fonts/Inter.var.woff2');
+    src: url('assets/fonts/Inter.var.woff2') format("woff2");
+
 }
 body {
     margin:0;
