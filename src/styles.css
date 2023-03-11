@@ -44,13 +44,13 @@ a {
     color:var(--color-purple);
 }
 @font-face {
-    font-family: 'Inter var';
+    font-family: 'Inter var Arial';
     src: url('assets/fonts/Inter.var.woff2') format("woff2");
 
 }
 body {
     margin:0;
-    font-family: 'Inter var';
+    font-family: 'Inter var Arial';
     /* background-image:url('assets/img/bg-gry.png'); */
 }
 h2 {color:white;}
