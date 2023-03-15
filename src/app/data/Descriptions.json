@@ -57,7 +57,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. A Python PyGame client accesses the Twitter API using a Flask app on Heroku, conducts sentiment analysis upon fetched tweets to determine the difficulty of the gameplay, and proceeds to turn each tweet into a game of Space invaders; where each tweet can be destroyed character by characters by players. <p><b>This game was never released beyond my own desktop for legal reasons.</b></p>",
+                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. What began as a Python PyGame client has now turned into a React Native mobile app. This app accesses the Twitter API (v2) via AWS Lambda functions provisioned by the AWS Amplify CLI, (previously a Flask app in the cloud, hosted on Heroku. Compared to localized lambda support, this was very over-engineered but also a very basic solution for its time.) Sentiment analysis is then conducted upon the tweets of any valid Twitter handle, which determines the difficulty of the gameplay. The app proceeds to turn each tweet into a game of Space invaders where each tweet can be destroyed character by characters by the player. <p><b></b></p>",
                     "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
                     "media" : ["/assets/previews/dtrmp.png"],
                     "caption" : "Passing judgements upon our former president, programatically, so you don't have to."

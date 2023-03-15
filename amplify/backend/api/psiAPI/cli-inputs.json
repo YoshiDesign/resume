@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/psi/{handle}": {
+      "name": "/psi/{handle}",
+      "lambdaFunction": "twitterAPI",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
