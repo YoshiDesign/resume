@@ -1,0 +1,9 @@
+{
+  "function": {
+    "twitterAPI": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}

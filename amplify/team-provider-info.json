@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify7985473a915b4-staging-122858-authRole",
+      "UnauthRoleArn": "arn:aws:iam::765582468653:role/amplify-amplify7985473a915b4-staging-122858-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::765582468653:role/amplify-amplify7985473a915b4-staging-122858-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplify7985473a915b4-staging-122858-deployment",
+      "UnauthRoleName": "amplify-amplify7985473a915b4-staging-122858-unauthRole",
+      "StackName": "amplify-amplify7985473a915b4-staging-122858",
+      "StackId": "arn:aws:cloudformation:us-east-1:765582468653:stack/amplify-amplify7985473a915b4-staging-122858/f5e275f0-c32c-11ed-af47-0e57099f601b",
+      "AmplifyAppId": "d2bwwo4awvgp8e"
+    },
+    "categories": {
+      "function": {
+        "twitterAPI": {}
+      }
+    }
+  }
+}
