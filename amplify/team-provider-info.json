@@ -13,7 +13,13 @@
     },
     "categories": {
       "function": {
-        "twitterAPI": {}
+        "twitterAPI": {
+          "deploymentBucketName": "amplify-amplify7985473a915b4-staging-122858-deployment",
+          "s3Key": "amplify-builds/twitterAPI-4b4e63314e38344a4c4f-build.zip"
+        }
+      },
+      "api": {
+        "psiAPI": {}
       }
     }
   }

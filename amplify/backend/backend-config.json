@@ -21,5 +21,23 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
+  },
+  "parameters": {
+    "AMPLIFY_function_twitterAPI_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "twitterAPI"
+        }
+      ]
+    },
+    "AMPLIFY_function_twitterAPI_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "twitterAPI"
+        }
+      ]
+    }
   }
 }
