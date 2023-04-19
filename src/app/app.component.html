@@ -52,11 +52,11 @@
 
     <div class="proj-header">
       <div>
-        <h2>{{item['title']}}</h2>
+        <h2 [innerHTML]="item['title']"></h2>
         <p [innerHTML]="item['link']"></p>
       </div>
       <div class="proj-imgs">
-        <img *ngFor="let im of item['tech']" alt="tech-icon" src="../assets/img/{{im}}.png" />
+        <img *ngFor="let im of item['tech']; let i = index" alt="tech-icon" title="{{item['tech_desc'][i]}}" src="../assets/img/{{im}}.png" />
       </div>
     </div>
 
@@ -64,12 +64,15 @@
       <div class="proj-description">
         <p class="proj-desc-p" *ngFor="let p of item['projects']" [innerHTML]="p['desc']"></p>
       </div>
+      <div *ngIf="item['gif'] != undefined" class="proj-logo-container">
+        <img class="proj-logo" src="../assets/img/{{item['gif']}}.gif" />
+      </div>
       <div class="proj-logo-container" *ngIf="item['logo'] != undefined">
         <img class="proj-logo" src="../assets/img/{{item['logo']}}.png" />
       </div>
     </div>
     <div *ngIf="item['repo']">
-      <a href="{{item['repo']}}" target="_blank">Link to Github</a>
+      <a href="{{item['repo']}}" target="_blank">Link to GitHub</a>
     </div>
   </div>
   

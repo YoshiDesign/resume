@@ -8,7 +8,7 @@
     --tert-background:#feedad;
     --hover-dark:rgb(24, 24, 49);
     --color-fpurple:rebeccapurple;
-    --color-purple:rgb(115, 81, 150);
+    --color-purple:#a876db;
     --color-mag: #f844ff;
     --color-lights:ghostwhite;
     --color-alt-text: #86b1ea;
@@ -415,6 +415,7 @@ b {
         height:25px;
     }
     .proj-logo-container {
+        margin-top:8px;
         margin-left:0;
     }
     .intro {

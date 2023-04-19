@@ -2,18 +2,19 @@
     [
         {
             "id" : "ww",
-            "title" : "My World Works",
-            "tech" : ["react","go","rds","mgo", "d3"],
+            "title" : "The World Works",
+            "tech" : ["react","go","rds","mgo", "d3", "aws"],
+            "tech_desc": ["ReactJS", "The Go Programming Language", "Redis", "MongoDB", "D3JS", "Amazon Web Services"],
             "logo" : "worldworks",
             "link" : "<a target='_blank' href='http://myworldworks.com'>MyWorldWorks.com</a>",
             "repo" : "https://github.com/YoshiDesign/ww_sandbox_audit",
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "My World Works is a collection of maps that I've turned into interactive objects for individuals to analyze all kinds of nation-wide economic statistics. The complete scope of this project has proven to be much too large for one developer to manage but it has yielded an amazing foundation to build and maintain my skills in fullstack software and DevOps, as well as information and cyber security, all whilst also creating something with great future potential. In it's entirety, My World Works holds the structural capacity and promotes the architectural designs to store vast amounts of comprehensive, searchable data and create modestly detailed visualizations for over 140 different countries, and for each individual city where data is available. As someone who enjoys being abroad, I would love to be able to analyze a nation's econonomy in great detail, especially if I were to live and work from wherever that might be. In its current state, the app accomplishes just that, but for only 1 country, which I will explain further in just a moment! The inspiration behind this project is multi-faceted: I wanted to assist people who were seeking to optimize their work/life balance by enabling a visually comprehensisve comparison of cost-of-living data alongside very specific workforce statistics at varying levels of detail. Despite the app's pre-alpha state, users based in the USA can already make different discoveries such as where jobs are most available or most popular, and assuming my information from the Bureau of Labor Statistics (and several other sources) is reliable enough, this could improve an individual's sense of job security based on either the density or lack of certain metrics. With enough analysis, user's might be able to make their own inferences from the data. The reliability of the data would certainly improve over time with the right amount of management and marketing, but those ideas remain out of scope for the time being. With the help of Redis, querying large amounts of data remains relatively high-throughput and very performant as I've constructed a custom type-ahead search tree using the data structures and algorithms I learned early in my self-education; though I still have optimizations in mind. I eventually refactored the architecture so the app could bring similarly vast data-sets to all of the countries you'll find in the app. Each country has a complete data-set under the more general Economics feature (courtesy of The World Bank organization), but the USA remains my only complete data-set for even more useful features.<p>At the moment I have no intention to acquire the immeasurable amounts of missing data on my own. The data-sets are complete for the United States, which is a great milestone, and until I endeavor to put another country on the map, I am happy to hack away upon the architecure and systems I currently have in place. The scope is just too large for one developer but the app remains excellent sandbox, if not a potentially useful tool for some.</p><p><b>To fully demonstrate this app, you can choose The United States from the Economics tab, which enables the Work and Life tabs. The USA is the only country that currentlty activates those features, due to the reasons I've described above. Collecting reliable information on several different countries will be a very time consuming process, to say the least!</b></p><p>To prospect a little bit, once I've aggregated the necessary data for other nations, enabling the more highly detailed features boils down to a very simple update, so I am very excited to continue building and collecting data in the future. There are several challenges that reach beyond data collection and storage which one could imagine. The challenges ahead might surely bring this app to its full potential, and the nature those challenges cover a broad range of classifications. There are architectural and systematic designs which will assist in data collection and help to automate the generation and storage of aggregates, as well as researching even more effective means of its use. And there are also the more logistic and even bureaucratic tasks in terms of usage, validation and collection of data. If this app ever were to be used by a large number of users I would like to find a way to administer surveys to willing respondents who can help keep a country's economy as transparent and honest as possible. I truly think that a tool like this could help many people in many ways.</p>",
+                    "desc"  : "The World Works is a collection of interactive SVG  maps of over 140 different nations. The foundational concept is to populate each map with categorized varieties of economic, social, domestic and political data-sets in a level of detail that displays information from a per-region basis, down to a per-city basis. The inspiration to build this came along during covid, when many people's work/life balances became volatile and more unpredictable. An app that could deliver a large amount of data throughput and display it all in a sensible and, even moreso than a digestible format, would present users with a chance to gain a transparent degree of <b>understanding things such as job availability, earnings versus expenses, cost of living analysis (and more) in many different cities</b>, much faster than they could attain this level of insight from similar websites and apps.<p>The full scope of this project became something larger than 1 developer could efficiently support. The World Works has seen approximately 3 years of constant development, in tandem with my professional role at the time. I spent over a year collecting and cleaning data before I created the custom aggregates which would eventually promote the efficacies of the frontend. In addition to data visualization, the data has been used to construct dynamic indexes within my own trie search-trees which allow for a functioning (albeit prototypal) smart querying system without the need for machine learning, <b>although I would like to someday adapt a GPT approach to fetching data based on open ended, natural language queries.</b> I think it would be really amazing to be able to ask questions such as \"Where can I make at least 30,000 dollars a year as a welder, but expect to pay less than 10,000 dollars overall for my cost of living?\"</p><p>At the moment, the full set of features are only available while querying the United States. Locating and collecting socio-economic data for the rest of the world is incredibly time consuming, so I'm content to continue building this application for the USA alone, until I might find a team willing to work on this project with me. <b>Working on this stack has been critically important in sharpening my fullstack developer skills while also practicing my DevOps capabilities.</b> I don't think this app will see complete, up to date data-sets for all 140+ nations in the near-term, but I'm very happy that I've managed to build the framework for doing just that, all while making it quite speedy too!</p><p>The app runs on AWS EC2 free-tier, and being a diverse stack (a Go server running a React frontend, a redis key-store and MongoDB) I've automated the build process and deployments with the help of Ansible and Bash, while I also keep a Terraform manifest at the ready in case I ever need to re-provision a new EC2 instance that is immediately amenable to my needs. Python is used for web-scraping the public domain for all sorts of interesting data and subsequently generating data structures from that data. The validation and reliability of all of this data has been another challenge as well as a learning process. I try to collect data from government websites as much as possible, reputable organizations, and surveys such as the US Census. As an aside, I think that Go is a very strong language, despite being less eloquent and having some garbage collection overhead. It's definitely the language that I enjoy working with the most, with PHP being a very close second.</p>",
                     "link" : "",
                     "media" : "",
-                    "caption" : "Demo for the Y-Combinator Summer 2021 application"
+                    "caption" : ""
                 }    
             ]
         },
@@ -21,45 +22,33 @@
             "id" : "dtb",
             "title" : "The Digital Toolbox",
             "tech" : ["vuejs", "lara", "php", "mysql"],
+            "tech_desc": ["VueJS 2.6 and 3", "Laravel v5.6 to v10","PHP", "MySQL"],
             "logo" : "dlearning",
             "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
             "projects" : [
                 {
                     "alt_title" : "",
-                    "desc"  : "The Digital Toolbox is a learning management platform for k-12 mathematics, and is the epicenter of my longest-running role as a web developer. The app boasts 4 separate account types which can support a variety of users from private educators and homeschoolers to public and charter schools. They can create, manage and monitor virtual classrooms using Demme Learning's curricula. I orchestrated numerous upgrades, including the introduction of VueJS as the frontend framework, and introduced many useful applets including their <a href='https://digital.demmelearning.com/worksheet-generator' target='_blank'>worksheet generator</a>, an open source Angular application that I repurposed to fit their curriculum materials. I also implemented Demme Learning's current Single Sign-On solution, as well as performed numerous Linux Administration tasks to keep their servers hardened and capable of adapting to increased server load and upgraded technologies.<p><b>I began working on this project as the sole developer of their team. Since then I've introduced modernizations to the underlying stack and have worked with outsourced teams of developers from all over the world to keep the Demme Learning domain evolving at a reasonable pace. I also build and maintain their administrative backend (a subdomain of the Digital Toolbox, but within the same Laravel project), which hosts custom tooling built by myself, which primarily supports customer service and accounting in their day to day tasks.</b></p>",
+                    "desc"  : "The Digital Toolbox is a learning management platform for k-12 mathematics, and is the epicenter of my longest-running role as a web developer. The app boasts 4 separate account types which can support a variety of users from private educators and homeschoolers to public and charter schools. Each week of the school year, <b>it averages just over 15,000 unique visitors</b>. Users can create, manage and monitor virtual classrooms using Demme Learning's curricula. I orchestrated numerous modernizations, including the introduction of VueJS as the frontend framework; adding to the pre-existing Laravel application. Before the introduction of Vue, I used Angular to inject useful applets into the app's Blade templates (Laravel's native UI scaffold). This includes their <a href='https://digital.demmelearning.com/worksheet-generator' target='_blank'>worksheet generator</a>, an open source app that I repurposed to let users generate worksheets specific to Demme Learning's Math-U-See&reg; curriculum. I also built an administrative sales reporting tool and a Rackspace Cloud filesystem API interface with Angular for the Digital Toolbox's administrative backend, which I also maintained.<p> <b>In addition to the Digital Toolbox, I also implemented Demme Learning's current Single Sign-On solution</b>, as well as performed numerous Linux Administration tasks to keep their servers hardened and properly configured. I eventually took over the IT manager's server administration tasks in configuring Apache, sshd, public keys, and PHP on our servers when necessary.</p><p><b>I began working on this project as the sole developer of their team</b> after having inherited the app from a contractor who had built the initial public-facing version with many of the basics in place. Since then I've worked independently and have also orchestrated tasks with different development firms who are typically contracted to assist with large infrastructure upgrades and bridge systems between the Digital Toolbox, Demme Learning's e-commerce solutions and Wordpress websites. As one of the primary bridge systems I created <b>the Digital Toolbox's API (via encrypted XML/RPC with cURL) for acquiring data from the e-commerce website, after customers check-out. This subsequently enables the availability of specific content for a user.</b> I also fully administered the MySQL database.</p>",
                     "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
                     "media" : [],
-                    "caption" : "Just a peek at the cloud filesystem tool, built into the Toolbox's admin domain. Developed quite early in my career."
+                    "caption" : ""
                 }
   
             ]
         },
-        {
-            "id" : "resume2",
-            "title" : "This Website!",
-            "tech" : ["ang", "aws", "php", "mysql"],
-            "logo" : "dlearning",
-            "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
-            "projects" : [
-                {
-                    "alt_title" : "",
-                    "desc"  : "The Digital Toolbox is a learning management platform for k-12 mathematics, and is the epicenter of my longest-running role as a web developer. The app boasts 4 separate account types which can support a variety of users from private educators and homeschoolers to public and charter schools. They can create, manage and monitor virtual classrooms using Demme Learning's curricula. I orchestrated numerous upgrades, including the introduction of VueJS as the frontend framework, and introduced many useful applets including their <a href='https://digital.demmelearning.com/worksheet-generator' target='_blank'>worksheet generator</a>, an open source Angular application that I repurposed to fit their curriculum materials. I also implemented Demme Learning's current Single Sign-On solution, as well as performed numerous Linux Administration tasks to keep their servers hardened and capable of adapting to increased server load and upgraded technologies.<p><b>I began working on this project as the sole developer of their team. Since then I've introduced modernizations to the underlying stack and have worked with outsourced teams of developers from all over the world to keep the Demme Learning domain evolving at a reasonable pace. I also build and maintain their administrative backend (a subdomain of the Digital Toolbox, but within the same Laravel project), which hosts custom tooling built by myself, which primarily supports customer service and accounting in their day to day tasks.</b></p>",
-                    "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
-                    "media" : [],
-                    "caption" : "Just a peek at the cloud filesystem tool, built into the Toolbox's admin domain. Developed quite early in my career."
-                }
-  
-            ]
-        },
+    
         {
             "id" : "threed",
             "title" : "3D Graphics Engines",
+            "gif": "3dengine",
+            "logo": "engines",
             "tech" : ["cpp", "vs", "vulkan", "opengl"],
+            "tech_desc": ["C++", "Microsoft Visual Studio", "Vulkan-API v1.3.2", "OpenGL"],
             "repo": "https://github.com/YoshiDesign/VEngine",
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "I've always been interested in 3D graphics, and over the years I've taken a few courses in mathematics to support this interest. I've developed 3 graphics pipelines, each with a different underlying API where I've taken my programming skills to the forefront of game development from scratch. I don't plan on building my own games just yet. For now these rendering engines keep me up to speed with the latest advancements in graphics APIs and allow me to utilize my linear algebra studies in a 3D context.",
+                    "desc"  : "I've always been interested in 3D graphics, and over the years I've taken a few courses in mathematics to support this interest. I've developed 3 graphics pipelines, each with a different underlying API where I've taken my programming skills to the forefront of game development from scratch. I don't plan on building my own games just yet. For now these rendering engines keep me up to speed with the latest advancements in graphics APIs and allow me to utilize my linear algebra studies in a 3D context but most importantly, allow me to understand how to utilize the GPU for more than just rendering.",
                     "link" : "",
                     "media" : "/assets/previews/retrocade.MP4",
                     "caption" : "Part of an arcade series I'm working on."
@@ -68,28 +57,32 @@
         },
         {
             "id" : "psi",
+            "logo": "dtrmp_twit",
             "title" : "Personal Space Invaders - Python Game with Sentiment Analysis",
-            "tech" : ["py","pgame"],
+            "tech" : ["py","pgame", "aws"],
+            "tech_desc": ["Python3", "PyGame", "Amazon Web Services"],
             "repo" : "https://github.com/YoshiDesign/P.S.I.",
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. What began as a Python PyGame client has now turned into a React Native mobile app. This app accesses the Twitter API (v2) via AWS Lambda functions provisioned by the AWS Amplify CLI, (previously a Flask app in the cloud, hosted on Heroku. Compared to localized lambda support, this was very over-engineered but also a very basic solution for its time.) Sentiment analysis is then conducted upon the tweets of any valid Twitter handle, which determines the difficulty of the gameplay. The app proceeds to turn each tweet into a game of Space invaders where each tweet can be destroyed character by characters by the player. <p><b></b></p>",
+                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. What began as a Python PyGame client and a Flask API on Heroku, is now turning into a React Native mobile app which uses AWS Lambda to query Tweets and turn them into a game of Space Invaders. From the initial architecture, the app is being completely rebuilt but the new version is still very much in development and will be for some time. Tweets are given natural language sentiment analysis to determine the difficulty of the gameplay and each unique Twitter handle can prompt a game setting with certain custom elements. Once rendered, each tweet can be destroyed character by characters by the player. <p><b>The Python version can be found from the GitHub link, but you'll need to implement your own API if you'd like to demo.</b></p>",
                     "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
-                    "media" : ["/assets/previews/dtrmp.png"],
+                    "media" : [],
                     "caption" : "Passing judgements upon our former president, programatically, so you don't have to."
                 }    
             ]
         },
         {
             "id" : "ocv",
+            "logo": "robo",
             "title" : "Doublevision: OpenCV & Embedded Systems",
-            "tech" : ["vs","ocv", "cpp"],
+            "tech" : ["vs","ocv", "cpp","c", "cmake"],
+            "tech_desc": ["Microsoft Visual Studio", "OpenCV", "C++", "The C Programming Language", "CMake"],
             "repo" : "https://github.com/YoshiDesign/doublevision",
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "Doublevision is a sandbox for combining the artificial intelligence and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi. I've added the proper CMakeLists.txt in order to build your programs with a simple call to <i>make</i>. Also included is the ASIO header library to add networking to your projects.</p><p>What is most exciting about this project is that it uses a relatively new standard of interacting with the Raspberry Pi's GPIO interface, known as <a target='_blank' href='https://www.youtube.com/watch?v=cdTLewJCL1Y&t=1210s'>libgpio</a>. This new lib deprecated the previous method of GPIO access by a longshot! Development can be done on any Raspberry Pi 3b+ or later.</p>",
+                    "desc"  : "Doublevision is a sandbox for combining the artificial intelligence and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi. This learning endeavor eventually took me to embedded systems operating system development with C (see the next section), electronics engineering, and generally pretending to be a mad engineer who enjoyed soldering laser diodes to programmable machines of my own devise. This also taught me about <a target='_blank' href='https://www.youtube.com/watch?v=cdTLewJCL1Y&t=1210s'>libgpio</a> and how to program the Raspberry Pi with only C and C++. This new lib deprecated the previous method of GPIO access by a longshot! Development can be done on any Raspberry Pi 3b+ or later.</p>",
                     "link" : "<a target='_blank' href='https://github.com/YoshiDesign/doublevision'>Check out the Doublevision repo on GitHub</a>",
                     "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
                     "caption" : ""
@@ -98,15 +91,33 @@
         },
         {
             "id" : "lyros",
-            "title" : "Lyros: An Embedded Systems OS",
+            "title" : "LyrOs: An Embedded Systems OS",
             "tech" : ["iar","c", "cmake", "ln", "arm"],
+            "tech_desc" : ["IAR Embedded Workbench", "The C Programming Language", "CMake", "Linux", "ARM"],
             "repo" : "https://github.com/YoshiDesign/lyros",
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "This project allowed me to deep dive into both operating system design and embedded systems. Lyros is a multithreaded operating system from scratch that specifically targets the Texas-Instrument ARM Cortex-M series of microcontrollers.",
+                    "desc"  : "This project was a deep dive into both operating system design and embedded systems. LyrOs is a multithreaded operating system from scratch that specifically targets the Texas-Instrument ARM Cortex-M series of microcontrollers. In its current state it is a minimum viable OS from the ground up with custom startup code, stack frame swapping, and interrupt routines.",
                     "link" : "",
                     "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
+                    "caption" : ""
+                }    
+            ]
+        },
+        {
+            "id" : "webume",
+            "title" : "<b>Notes About this Website</b>",
+            "logo": "website",
+            "tech" : ["ts", "ang","aws"],
+            "tech_desc" : ["TypeScript", "AngularJS", "Amazon Web Services"],
+            "repo" : "https://github.com/YoshiDesign/resume",
+            "projects" : [
+                {
+                    "alt_title" : 0,
+                    "desc"  : "My personal website/web-app is an Angular application hosted on AWS Amplify. For now it is also the API to the Twitter API calls (under construction) for my Personal Space Invaders project and contains each of the Lambda function definitions. Deployments are automated, all I need to do it make edits and push to Git, Amplify will do the rest. All of the page assets (text, links, icons and images) are rendered from a JSON file so that I can make updates and refactor the frontend very easily.",
+                    "link" : "",
+                    "media" : [],
                     "caption" : ""
                 }    
             ]
