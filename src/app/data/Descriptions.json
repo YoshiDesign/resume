@@ -18,25 +18,7 @@
                 }    
             ]
         },
-        {
-            "id" : "dtb",
-            "title" : "The Digital Toolbox",
-            "tech" : ["vuejs", "lara", "php", "mysql"],
-            "tech_desc": ["VueJS 2.6 and 3", "Laravel v5.6 to v10","PHP", "MySQL"],
-            "logo" : "dlearning",
-            "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
-            "projects" : [
-                {
-                    "alt_title" : "",
-                    "desc"  : "The Digital Toolbox is a learning management platform for k-12 mathematics, and is the epicenter of my longest-running role as a web developer. The app boasts 4 separate account types which can support a variety of users from private educators and homeschoolers to public and charter schools. Each week of the school year, <b>it averages just over 15,000 unique visitors</b>. Users can create, manage and monitor virtual classrooms using Demme Learning's curricula. I orchestrated numerous modernizations, including the introduction of VueJS as the frontend framework; adding to the pre-existing Laravel application. Before the introduction of Vue, I used Angular to inject useful applets into the app's Blade templates (Laravel's native UI scaffold). This includes their <a href='https://digital.demmelearning.com/worksheet-generator' target='_blank'>worksheet generator</a>, an open source app that I repurposed to let users generate worksheets specific to Demme Learning's Math-U-See&reg; curriculum. I also built an administrative sales reporting tool and a Rackspace Cloud filesystem API interface with Angular for the Digital Toolbox's administrative backend, which I also maintained.<p> <b>In addition to the Digital Toolbox, I also implemented Demme Learning's current Single Sign-On solution</b>, as well as performed numerous Linux Administration tasks to keep their servers hardened and properly configured. I eventually took over the IT manager's server administration tasks in configuring Apache, sshd, public keys, and PHP on our servers when necessary.</p><p><b>I began working on this project as the sole developer of their team</b> after having inherited the app from a contractor who had built the initial public-facing version with many of the basics in place. Since then I've worked independently and have also orchestrated tasks with different development firms who are typically contracted to assist with large infrastructure upgrades and bridge systems between the Digital Toolbox, Demme Learning's e-commerce solutions and Wordpress websites. As one of the primary bridge systems I created <b>the Digital Toolbox's API (via encrypted XML/RPC with cURL) for acquiring data from the e-commerce website, after customers check-out. This subsequently enables the availability of specific content for a user.</b> I also assumed the role of database administrator, along with some other intermittent tasks in System administration.</p>",
-                    "link" : "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
-                    "media" : [],
-                    "caption" : ""
-                }
-  
-            ]
-        },
-    
+
         {
             "id" : "threed",
             "title" : "3D Graphics Engines",
