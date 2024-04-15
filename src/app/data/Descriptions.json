@@ -11,14 +11,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "The World Works is a collection of interactive SVG maps, featuring over 140 different nations. 
-                            This web-app is a proof of concept for a large collection of data visualizations, offering users
-                            the ability to gain insights into the work/life balance dictated by regions and their available job markets.
-                            Conceptually, the app provides a high resolution look into localized economic and census statistics within 
-                            the United States of America. The World Works contains interactive SVGs for over 100 different countries, each 
-                            carrying their own datasets from The World Bank Group, which enables about 30% of the feature density. 
-                            <b>For now, the only complete dataset which can be used to demonstrate the app in its entirety is the United States of America.</b>
-                            Without exhaustive datasets, many features are disabled by the UI.",
+                    "desc"  : "The World Works is a collection of interactive SVG maps, featuring over 140 different nations. This web-app is a proof of concept for a large collection of data visualizations, offering usersthe ability to gain insights into the work/life balance dictated by regions and their available job markets. Conceptually, the app provides a high resolution look into localized economic and census statistics within the United States of America. The World Works contains interactive SVGs for over 100 different countries, each hosting their own datasets from a variety of sources. <b>For now, the only complete dataset which can be used to demonstrate the app in its entirety is the United States of America.</b> Without exhaustive datasets, many features are disabled by the UI.<p>My primary reason for building this application is so I have an environment that spans web development and dev-ops, and employs a plethora of technologies and custom algorithms to keep my skills sharp as I venture into its capabilities alongside LLMs.</p>",
                     "link" : "",
                     "media" : "",
                     "caption" : ""
@@ -37,7 +30,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "I've always been interested in 3D graphics, and have undergone some coursework in mathematics during my free time in order to effectively support this area of interest. Commercial engine are fun, but the development of my own custom engines is what comprises this area of my expertise. I'm very fond of Vulkan and OpenGL and the vastness of their disciplines which have taken my programming skills to the molten core of game development, rendering and shading. I don't plan on building my own games quite yet; for now these rendering engines keep me up to speed with the latest advancements in computer graphics while allowing me to practice mathematics and also GLSL.",
+                    "desc"  : "I've always been interested in 3D graphics, and I have undergone some coursework in mathematics during my free time in order to effectively support my capabilities this area of interest. Commercial engine are fun to learn, but my purpose for having now built 3 rendering/game engines from scratch was to be able to continue learning and utilizing C++, shader programming and linear algebra. In the future I might finally dedicate my efforts to producing a commercially viable game, who knows!",
                     "link" : "",
                     "media" : "/assets/previews/retrocade.MP4",
                     "caption" : "Part of an arcade series I'm working on."
@@ -54,10 +47,10 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. What began as a Python PyGame client and a Flask API on Heroku, is now turning into a React Native mobile app which uses AWS Lambda to query Tweets and turn them into a game of Space Invaders. This game is being completely rebuilt and will be in development for some time whilst I tackle other endeavors. In summary, tweets are given a natural language sentiment-analysis to determine the difficulty of the gameplay. Each Twitter handle can invoke custom settings, which I found to be the most alluring element (as did a few hundred Redditors). Once the scene is ready, tweets from any user's timeline are streamed to the player in realtime, and can be destroyed character-by-character. <p><b>The Python version can be found from the GitHub link, however at this time you'll need your own upstream Twitter-API to retrieve any tweets.</b></p>",
+                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. Real-time tweets are streamed into a PyGame client application where they are rendered as sprites, letter by letter, to generate a parody game of Space Invaders, complete with power-ups and a difficulty rating based on tweet sentiment analysis. <p>If you're noticing any pattern to my projects so far, it's that I like to work on projects that combine several unique topics into one project!</p>",
                     "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
                     "media" : [],
-                    "caption" : "Passing judgements upon our former president, programatically, so you don't have to."
+                    "caption" : "Taking an adversarial approach to politics with programming, so you don't have to."
                 }    
             ]
         },
@@ -71,7 +64,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "Doublevision is a sandbox for combining the image processing and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi (and smells a lot like an early build-your-own terminator sandbox). This learning endeavor is what eventually lead me to studying embedded systems and real-time operating systems (RTOS) using C and some x86-ASM (see the next section), with electronics engineering and prototyping as a side-track. For a while I became a practicing electronics engineer who enjoyed soldering laser diodes onto programmable machines for fun. An aspiring Thomas Young at the time! This also introduced me to <a target='_blank' href='https://www.youtube.com/watch?v=cdTLewJCL1Y&t=1210s'>libgpio</a> and how to program a Raspberry-Pi with C and C++, which at the time was not a well documented subject.</p>",
+                    "desc"  : "Doublevision is a sandbox for combining the image processing and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi, all in C++. This learning endeavor is what eventually lead me to studying embedded systems and real-time operating systems (RTOS), along with personal studies in electronics engineering. All in all, for a moment in time I became a budding electronics engineer who enjoyed soldering and programming laser diodes and servos for fun; a momentary aspirant of Thomas Young!",
                     "link" : "<a target='_blank' href='https://github.com/YoshiDesign/doublevision'>Check out the Doublevision repo on GitHub</a>",
                     "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
                     "caption" : ""
@@ -87,7 +80,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "This project was a deep dive into both operating system design and embedded systems. LyrOs is a multithreaded operating system from scratch which targets the Texas-Instrument ARM Cortex-M series of microcontrollers. In its current state it is a minimum viable OS from the ground up with custom startup code, stack frame swapping, and interrupt routines. This OS also safeguards its user from the pitfalls of concurrent programming.",
+                    "desc"  : "This project was a deep dive into both operating system design and embedded systems. LyrOs is a multithreaded operating system from scratch which targets the Texas-Instrument ARM Cortex-M series of microcontrollers. In its current state it is a minimum viable OS from the ground up with custom startup code, stack frame swapping, and interrupt routines. This OS also implements safety measure for its users with custom critical-segment management functions.",
                     "link" : "",
                     "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
                     "caption" : ""
@@ -104,7 +97,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "This site is an Angular application hosted on AWS Amplify. It also contains the AWS Lambda functions that my Personal Space Invaders project will utilize in the future. Thanks to AWS Amplify, deployments are streamed automatically after a simple push to Git.",
+                    "desc"  : "This site is an Angular application hosted on AWS Amplify. It also contains the AWS Lambda functions that my Personal Space Invaders project will utilize in the future.",
                     "link" : "",
                     "media" : [],
                     "caption" : ""
@@ -114,10 +107,18 @@
     ],
     [
         { 
-            "id" : "cs50ai",
-            "title" : "Harvard CS50-AI",
+            "id" : "cs50lead",
+            "title" : "LEAD1x - Exercising Leadership: Foundational Principles",
             "tech" : ["pdf"],
-            "desc"  : "Introduction to Artificial Intelligence with Python. This course taught me the concepts and algorithms at the foundation of modern artificial intelligence. I took my education in AI 1 step further and began using Jupyter Labs as a platform for which to practice ML concepts.",
+            "desc"  : "This was my first class without a direct focus on technology. In LEAD1x I learned how to identify and classify the challenges that growing societies and organizations face. By learning to identify technical and adaptive problems I was able to better understand my own approach to problem solving, while applying principles to my every day life to become a better problem solver while better understanding the roles of leadership and authoriity.",
+            "media" : "",
+            "alt_title" : 0
+        },
+        { 
+            "id" : "cs50ai",
+            "title" : "CS50-AI - Professional Certificate in Artificial Intelligence",
+            "tech" : ["pdf"],
+            "desc"  : "This certificate was granted for completing both CS50 - Intro to Computer Science and CS50-AI. This learning path taught me the fundamental concepts which underly the principles of artificial intelligence from its earliest implementation through its modern approach. This class took my education further by introducing me to Jupyter Labs and R Studio as well, while implementing the latest tools of the time: TensorFlow, Keras, and R, to name a few.",
             "media" : "",
             "alt_title" : 0
         },
@@ -125,7 +126,7 @@
             "id" : "cs50x",
             "title" : "Harvard CS50",
             "tech" : ["pdf"],
-            "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time. I was a very active tutor on the CS50 reddit long after completion which subsequently prompted the creation of my WordPress blog.",
+            "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time in 2019. I was also a very active redditor and tutor on the CS50 Reddit for a brief but memorable time.",
             "media" : "",
             "alt_title" : 0
         },
@@ -133,7 +134,7 @@
             "id" : "cs50b",
             "title" : "Harvard CS50-B",
             "tech" : ["pdf"],
-            "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in your business domain. It covers everything from network architecure to cloud computing and security.",
+            "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in the world of business and administration. It covered topics ranging from network architecure to cloud computing and security.",
             "media" : "",
             "alt_title" : 0
         },
@@ -149,7 +150,7 @@
             "id" : "cysa",
             "title" : "CompTIA CySA+ (2018 - 2021)",
             "tech" : ["pdf"],
-            "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the Ethical Hacker's toolbelt.",
+            "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the ethical hacker's toolbelt, as well as identify threats while monitoring and securing network topology.",
             "media" : "",
             "alt_title" : 0
         }
