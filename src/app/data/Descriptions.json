@@ -97,7 +97,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "This site is an Angular application hosted on AWS Amplify. It also contains the AWS Lambda functions that my Personal Space Invaders project will utilize in the future.",
+                    "desc"  : "This site is an Angular application hosted on AWS Amplify.",
                     "link" : "",
                     "media" : [],
                     "caption" : ""
