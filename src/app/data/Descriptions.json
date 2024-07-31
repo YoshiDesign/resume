@@ -64,7 +64,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "Doublevision is a sandbox for combining the image processing and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi, all in C++. This learning endeavor is what eventually lead me to studying embedded systems and real-time operating systems (RTOS), along with personal studies in electronics engineering. All in all, for a moment in time I became a budding electronics engineer who enjoyed soldering and programming laser diodes and servos for fun; a momentary aspirant of Thomas Young!",
+                    "desc"  : "Doublevision is a sandbox for combining the image processing and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi, all in C++. This learning endeavor is what eventually lead me to studying embedded systems and real-time operating systems (RTOS), along with personal studies in electronics engineering. All thanks to Thomas Young!",
                     "link" : "<a target='_blank' href='https://github.com/YoshiDesign/doublevision'>Check out the Doublevision repo on GitHub</a>",
                     "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
                     "caption" : ""
