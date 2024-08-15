@@ -84,7 +84,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "This project was a deep dive into both operating system design and embedded systems. LyrOs is a multithreaded operating system from scratch which targets the Texas-Instrument ARM Cortex-M series of microcontrollers. In its current state it is a minimum viable OS from the ground up with custom startup code, stack frame swapping, and interrupt routines. This OS also implements safety measure for its users with custom critical-segment management functions.",
+                    "desc"  : "This project was a deep dive into both operating system design and embedded systems. LyrOs is a multithreaded operating system from scratch which targets the Texas-Instrument ARM Cortex-M series of microcontrollers. In its current state it is a minimum viable OS from the ground up with custom startup code, stack frame swapping, and interrupt routines. This OS also implements safety measures for the user, for custom critical-segment management routines. Someone tell Boeing!",
                     "link" : "",
                     "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
                     "caption" : ""
