@@ -34,7 +34,7 @@
                     during my free time in order to effectively exercise upon this area of interest. 
                     Commercial engines are fun to learn, but my purpose for having now built 3 rendering/game engines from 
                     scratch is to be able to continue learning and utilizing C++ because I simply find it fun to program in. 
-                    Shader programming, linear algebra, and C++ where, sometimes, everything goes wrong; what could go wrong?",
+                    Shader programming, linear algebra, and C++ where, sometimes, everything goes wrong. What could go wrong?",
                     "link" : "",
                     "media" : "/assets/previews/retrocade.MP4",
                     "caption" : "Part of an arcade series I'm working on."
@@ -51,7 +51,7 @@
             "projects" : [
                 {
                     "alt_title" : 0,
-                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. Real-time tweets are streamed into a PyGame client application where they are rendered as sprites, letter by letter, to generate a parody game of Space Invaders, complete with power-ups and a difficulty rating based on tweet sentiment analysis. <p>If you're noticing any pattern to my projects so far, it's that I like to work on projects that combine several unique topics into one project!</p>",
+                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. Real-time tweets are streamed into a PyGame client application where they are rendered as sprites, letter by letter, to generate a parody game of Space Invaders, complete with power-ups and a difficulty rating based on tweet sentiment analysis. <p>This was a project of my own design, mostly for the sake of learning Python and how to construct applications that serve as functional networks.</p>",
                     "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
                     "media" : [],
                     "caption" : "Taking an adversarial approach to politics with programming, so you don't have to."
