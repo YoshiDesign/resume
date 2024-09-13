@@ -21,11 +21,10 @@
             "projects": [
                 {
                     "alt_title": 0,
-                    "desc": "I've always been interested in 3D graphics, and have undergone some coursework in mathematics 
-                    during my free time in order to effectively exercise upon this area of interest. 
-                    Commercial engines are fun to learn, but my purpose for having now built 3 rendering/game engines from 
-                    scratch is to be able to continue learning and utilizing C++ because I simply find it fun to program in. 
-                    Shader programming, linear algebra, and C++ where, sometimes, everything goes wrong. What could go wrong?","link": "","media": "/assets/previews/retrocade.MP4","caption": "Part of an arcade series I'm working on."
+                    "desc": "I've always been interested in 3D graphics, and have undergone some coursework in mathematics during my free time in order to effectively exercise upon this area of interest. Commercial engines are fun to learn, but my purpose for having now built 3 rendering/game engines from scratch is to be able to continue learning and utilizing C++ because I simply find it fun to program in. Shader programming, linear algebra, and C++ where, sometimes, everything goes wrong. What could go wrong?",
+                    "link": "",
+                    "media": "/assets/previews/retrocade.MP4",
+                    "caption": "Part of an arcade series I'm working on."
                 }
             ]
         },
