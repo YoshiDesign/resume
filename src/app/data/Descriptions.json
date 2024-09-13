@@ -1,162 +1,242 @@
 [
     [
         {
-            "id" : "ww",
-            "title" : "The World Works",
-            "tech" : ["react","go","rds","mgo", "d3", "aws"],
-            "tech_desc": ["ReactJS", "The Go Programming Language", "Redis", "MongoDB", "D3JS", "Amazon Web Services"],
-            "logo" : "worldworks",
-            "link" : "<a target='_blank' href='http://myworldworks.com'>MyWorldWorks.com</a>",
-            "repo" : "https://github.com/YoshiDesign/ww_sandbox_audit",
-            "projects" : [
-                {
-                    "alt_title" : 0,
-                    "desc"  : "The World Works is a collection of interactive SVG maps, featuring over 140 different nations. This web-app is a proof of concept for a large collection of data visualizations, offering users the ability to gain insights into the work/life balance one might expect to uncover given a specific city or region within their country of choice. Conceptually, the app provides a high resolution look into localized economic and census statistics within the United States of America. The World Works contains interactive SVGs for over 100 different countries, each hosting their own datasets from a variety of sources. <b>For now, the only complete dataset which can be used to demonstrate the app in its entirety is the United States of America.</b> Without exhaustive datasets, many features are disabled by the UI.<p>My primary reason for building this application is so I have an environment that spans web development and dev-ops, while also employing a plethora of technologies and custom algorithms to keep my skills sharp with.</p>",
-                    "link" : "",
-                    "media" : "",
-                    "caption" : ""
-                }    
-            ]
-        },
-
-        {
-            "id" : "threed",
-            "title" : "3D Graphics Engines",
+            "id": "threed",
+            "title": "3D Graphics Engines",
             "gif": "3dengine",
             "logo": "engines",
-            "tech" : ["cpp", "vs", "vulkan", "opengl"],
-            "tech_desc": ["C++", "Microsoft Visual Studio", "Vulkan-API v1.3.2", "OpenGL"],
+            "tech": [
+                "cpp",
+                "vs",
+                "vulkan",
+                "opengl"
+            ],
+            "tech_desc": [
+                "C++",
+                "Microsoft Visual Studio",
+                "Vulkan-API v1.3.2",
+                "OpenGL"
+            ],
             "repo": "https://github.com/YoshiDesign/VEngine",
-            "projects" : [
+            "projects": [
                 {
-                    "alt_title" : 0,
-                    "desc"  : "I've always been interested in 3D graphics, and have undergone some coursework in mathematics 
+                    "alt_title": 0,
+                    "desc": "I've always been interested in 3D graphics, and have undergone some coursework in mathematics 
                     during my free time in order to effectively exercise upon this area of interest. 
                     Commercial engines are fun to learn, but my purpose for having now built 3 rendering/game engines from 
                     scratch is to be able to continue learning and utilizing C++ because I simply find it fun to program in. 
-                    Shader programming, linear algebra, and C++ where, sometimes, everything goes wrong. What could go wrong?",
-                    "link" : "",
-                    "media" : "/assets/previews/retrocade.MP4",
-                    "caption" : "Part of an arcade series I'm working on."
-                }    
+                    Shader programming, linear algebra, and C++ where, sometimes, everything goes wrong. What could go wrong?","link": "","media": "/assets/previews/retrocade.MP4","caption": "Part of an arcade series I'm working on."
+                }
             ]
         },
         {
-            "id" : "psi",
+            "id": "psi",
             "logo": "dtrmp_twit",
-            "title" : "Personal Space Invaders - Python Game with Sentiment Analysis",
-            "tech" : ["py","pgame", "aws"],
-            "tech_desc": ["Python3", "PyGame", "Amazon Web Services"],
-            "repo" : "https://github.com/YoshiDesign/P.S.I.",
-            "projects" : [
+            "title": "Personal Space Invaders - Python Game with Sentiment Analysis",
+            "tech": [
+                "py",
+                "pgame",
+                "aws"
+            ],
+            "tech_desc": [
+                "Python3",
+                "PyGame",
+                "Amazon Web Services"
+            ],
+            "repo": "https://github.com/YoshiDesign/P.S.I.",
+            "projects": [
                 {
-                    "alt_title" : 0,
-                    "desc"  : "Personal space invaders started as a silly idea turned proof-of-concept. Real-time tweets are streamed into a PyGame client application where they are rendered as sprites, letter by letter, to generate a parody game of Space Invaders, complete with power-ups and a difficulty rating based on tweet sentiment analysis. <p>This was a project of my own design, mostly for the sake of learning Python and how to construct applications that serve as functional networks.</p>",
-                    "link" : "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
-                    "media" : [],
-                    "caption" : "Taking an adversarial approach to politics with programming, so you don't have to."
-                }    
+                    "alt_title": 0,
+                    "desc": "Personal space invaders started as a silly idea turned proof-of-concept. Real-time tweets are streamed into a PyGame client application where they are rendered as sprites, letter by letter, to generate a parody game of Space Invaders, complete with power-ups and a difficulty rating based on tweet sentiment analysis. <p>This was a project of my own design, mostly for the sake of learning Python and how to construct applications that serve as functional networks.</p>",
+                    "link": "<a href='https://www.reddit.com/r/gamedev/comments/7z41jr/i_made_a_game_that_lets_you_shoot_at_any_persons/' target='_blank'>Check out the Reddit post</a>",
+                    "media": [],
+                    "caption": "Taking an adversarial approach to politics with programming, so you don't have to."
+                }
             ]
         },
         {
-            "id" : "ocv",
+            "id": "ocv",
             "logo": "robo",
-            "title" : "Doublevision: OpenCV & Embedded Systems",
-            "tech" : ["vs","ocv", "cpp","c", "cmake"],
-            "tech_desc": ["Microsoft Visual Studio", "OpenCV", "C++", "The C Programming Language", "CMake"],
-            "repo" : "https://github.com/YoshiDesign/doublevision",
-            "projects" : [
+            "title": "Doublevision: OpenCV & Embedded Systems",
+            "tech": [
+                "vs",
+                "ocv",
+                "cpp",
+                "c",
+                "cmake"
+            ],
+            "tech_desc": [
+                "Microsoft Visual Studio",
+                "OpenCV",
+                "C++",
+                "The C Programming Language",
+                "CMake"
+            ],
+            "repo": "https://github.com/YoshiDesign/doublevision",
+            "projects": [
                 {
-                    "alt_title" : 0,
-                    "desc"  : "Doublevision is a sandbox for combining the image processing and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi, all in C++. This learning endeavor is what eventually lead me to studying embedded systems and real-time operating systems (RTOS), along with personal studies in electronics engineering. All thanks to Thomas Young!",
-                    "link" : "<a target='_blank' href='https://github.com/YoshiDesign/doublevision'>Check out the Doublevision repo on GitHub</a>",
-                    "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
-                    "caption" : ""
-                }    
+                    "alt_title": 0,
+                    "desc": "Doublevision is a sandbox for combining the image processing and machine learning capabilities of OpenCV, with the GPIO capabilities of Arduino and Raspberry Pi, all in C++. This learning endeavor is what eventually lead me to studying embedded systems and real-time operating systems (RTOS), along with personal studies in electronics engineering. All thanks to Thomas Young!",
+                    "link": "<a target='_blank' href='https://github.com/YoshiDesign/doublevision'>Check out the Doublevision repo on GitHub</a>",
+                    "media": [
+                        "/assets/previews/ocv1.png",
+                        "/assets/previews/ocv2.png",
+                        "/assets/previews/ocv3.png"
+                    ],
+                    "caption": ""
+                }
             ]
         },
         {
-            "id" : "lyros",
-            "title" : "LyrOs: An Embedded Systems OS",
-            "tech" : ["iar","c", "cmake", "ln", "arm"],
-            "tech_desc" : ["IAR Embedded Workbench", "The C Programming Language", "CMake", "Linux", "ARM"],
-            "repo" : "https://github.com/YoshiDesign/lyros",
-            "projects" : [
+            "id": "lyros",
+            "title": "LyrOs: An Embedded Systems OS",
+            "tech": [
+                "iar",
+                "c",
+                "cmake",
+                "ln",
+                "arm"
+            ],
+            "tech_desc": [
+                "IAR Embedded Workbench",
+                "The C Programming Language",
+                "CMake",
+                "Linux",
+                "ARM"
+            ],
+            "repo": "https://github.com/YoshiDesign/lyros",
+            "projects": [
                 {
-                    "alt_title" : 0,
-                    "desc"  : "This project was a deep dive into both operating system design and embedded systems. LyrOs is a multithreaded operating system from scratch which targets the Texas-Instrument ARM Cortex-M series of microcontrollers. In its current state it is a minimum viable OS from the ground up with custom startup code, stack frame swapping, and interrupt routines. This OS also implements safety measures for the user, for custom critical-segment management routines. Someone tell Boeing!",
-                    "link" : "",
-                    "media" : ["/assets/previews/ocv1.png", "/assets/previews/ocv2.png", "/assets/previews/ocv3.png"],
-                    "caption" : ""
-                }    
+                    "alt_title": 0,
+                    "desc": "This project was a deep dive into both operating system design and embedded systems. LyrOs is a multithreaded operating system from scratch which targets the Texas-Instrument ARM Cortex-M series of microcontrollers. In its current state it is a minimum viable OS from the ground up with custom startup code, stack frame swapping, and interrupt routines. This OS also implements safety measures for the user, for custom critical-segment management routines; someone tell Boeing!",
+                    "link": "",
+                    "media": [
+                        "/assets/previews/ocv1.png",
+                        "/assets/previews/ocv2.png",
+                        "/assets/previews/ocv3.png"
+                    ],
+                    "caption": ""
+                }
             ]
         },
         {
-            "id" : "webume",
-            "title" : "<b>Notes About this Website</b>",
+            "id": "webume",
+            "title": "<b>Notes About this Website</b>",
             "logo": "website",
-            "tech" : ["ts", "ang","aws"],
-            "tech_desc" : ["TypeScript", "AngularJS", "Amazon Web Services"],
-            "repo" : "https://github.com/YoshiDesign/resume",
-            "projects" : [
+            "tech": [
+                "ts",
+                "ang",
+                "aws"
+            ],
+            "tech_desc": [
+                "TypeScript",
+                "AngularJS",
+                "Amazon Web Services"
+            ],
+            "repo": "https://github.com/YoshiDesign/resume",
+            "projects": [
                 {
-                    "alt_title" : 0,
-                    "desc"  : "This site is an Angular application hosted on AWS Amplify.",
-                    "link" : "",
-                    "media" : [],
-                    "caption" : ""
-                }    
+                    "alt_title": 0,
+                    "desc": "This site is an Angular application hosted on AWS Amplify.",
+                    "link": "",
+                    "media": [],
+                    "caption": ""
+                }
+            ]
+        },
+        {
+            "id": "ww",
+            "title": "The World Works",
+            "tech": [
+                "react",
+                "go",
+                "rds",
+                "mgo",
+                "d3",
+                "aws"
+            ],
+            "tech_desc": [
+                "ReactJS",
+                "The Go Programming Language",
+                "Redis",
+                "MongoDB",
+                "D3JS",
+                "Amazon Web Services"
+            ],
+            "logo": "worldworks",
+            "link": "<a target='_blank' href='http://myworldworks.com'>MyWorldWorks.com</a>",
+            "repo": "https://github.com/YoshiDesign/ww_sandbox_audit",
+            "projects": [
+                {
+                    "alt_title": 0,
+                    "desc": "The World Works is a collection of interactive SVG maps, featuring over 140 different nations. This web-app is a proof of concept for a large collection of data visualizations, offering users the ability to gain insights into the work/life balance one might expect to uncover given a specific city or region within their country of choice. Conceptually, the app provides a high resolution look into localized economic and census statistics within the United States of America. The World Works contains interactive SVGs for over 100 different countries, each hosting their own datasets from a variety of sources. <b>For now, the only complete dataset which can be used to demonstrate the app in its entirety is the United States of America.</b> Without exhaustive datasets, many features are disabled by the UI.<p>My primary reason for building this application is so I have an environment that spans web development and dev-ops, while also employing a plethora of technologies and custom algorithms to keep my skills sharp with.</p>",
+                    "link": "",
+                    "media": "",
+                    "caption": ""
+                }
             ]
         }
     ],
     [
-        { 
-            "id" : "cs50lead",
-            "title" : "LEAD1x - Exercising Leadership: Foundational Principles",
-            "tech" : ["pdf"],
-            "desc"  : "This was my first class without a direct focus on technology. In LEAD1x I learned how to identify and classify the challenges that growing societies and organizations face. By learning to identify technical and adaptive problems I was able to better understand my own approach to problem solving, while applying principles to my every day life to become a better problem solver while better understanding the roles of leadership and authoriity.",
-            "media" : "",
-            "alt_title" : 0
-        },
-        { 
-            "id" : "cs50ai",
-            "title" : "CS50-AI - Professional Certificate in Artificial Intelligence",
-            "tech" : ["pdf"],
-            "desc"  : "This certificate was granted for completing both CS50 - Intro to Computer Science and CS50-AI. This learning path taught me the fundamental concepts which underly the principles of artificial intelligence from its earliest implementation through its modern approach. This class took my education further by introducing me to Jupyter Labs and R Studio as well, while implementing the latest tools of the time: TensorFlow, Keras, and R, to name a few.",
-            "media" : "",
-            "alt_title" : 0
+        {
+            "id": "cs50lead",
+            "title": "LEAD1x - Exercising Leadership: Foundational Principles",
+            "tech": [
+                "pdf"
+            ],
+            "desc": "This was my first class without a direct focus on technology. In LEAD1x I learned how to identify and classify the challenges that growing societies and organizations face. By learning to identify technical and adaptive problems I was able to better understand my own approach to problem solving, while applying principles to my every day life to become a better problem solver while better understanding the roles of leadership and authoriity.",
+            "media": "",
+            "alt_title": 0
         },
         {
-            "id" : "cs50x",
-            "title" : "Harvard CS50",
-            "tech" : ["pdf"],
-            "desc"  : "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time in 2019. I was also a very active redditor and tutor on the CS50 Reddit for a brief but memorable time.",
-            "media" : "",
-            "alt_title" : 0
-        },
-        { 
-            "id" : "cs50b",
-            "title" : "Harvard CS50-B",
-            "tech" : ["pdf"],
-            "desc"  : "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in the world of business and administration. It covered topics ranging from network architecure to cloud computing and security.",
-            "media" : "",
-            "alt_title" : 0
+            "id": "cs50ai",
+            "title": "CS50-AI - Professional Certificate in Artificial Intelligence",
+            "tech": [
+                "pdf"
+            ],
+            "desc": "This certificate was granted for completing both CS50 - Intro to Computer Science and CS50-AI. This learning path taught me the fundamental concepts which underly the principles of artificial intelligence from its earliest implementation through its modern approach. This class took my education further by introducing me to Jupyter Labs and R Studio as well, while implementing the latest tools of the time: TensorFlow, Keras, and R, to name a few.",
+            "media": "",
+            "alt_title": 0
         },
         {
-            "id" : "aplus",
-            "title" : "CompTIA A+ (2017 - 2021)",
-            "tech" : ["pdf"],
-            "desc"  : "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
-            "media" : "",
-            "alt_title" : 0
+            "id": "cs50x",
+            "title": "Harvard CS50",
+            "tech": [
+                "pdf"
+            ],
+            "desc": "Introduction to Computer Science. Taught by the mighty David Malan, Gordon McKay Professor of the Practice of Computer Science. This course was so amazing that I began taking it a 2nd time in 2019. I was also a very active redditor and tutor on the CS50 Reddit for a brief but memorable time.",
+            "media": "",
+            "alt_title": 0
         },
         {
-            "id" : "cysa",
-            "title" : "CompTIA CySA+ (2018 - 2021)",
-            "tech" : ["pdf"],
-            "desc"  : "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the ethical hacker's toolbelt, as well as identify threats while monitoring and securing network topology.",
-            "media" : "",
-            "alt_title" : 0
+            "id": "cs50b",
+            "title": "Harvard CS50-B",
+            "tech": [
+                "pdf"
+            ],
+            "desc": "Computer Science for Business Professionals. Also taught by David Malan, this class focused more on the abstractions which computer science offers in the world of business and administration. It covered topics ranging from network architecure to cloud computing and security.",
+            "media": "",
+            "alt_title": 0
+        },
+        {
+            "id": "aplus",
+            "title": "CompTIA A+ (2017 - 2021)",
+            "tech": [
+                "pdf"
+            ],
+            "desc": "Certifies general knowledge & practices in hardware, networking and software in the field of Information Technology.",
+            "media": "",
+            "alt_title": 0
+        },
+        {
+            "id": "cysa",
+            "title": "CompTIA CySA+ (2018 - 2021)",
+            "tech": [
+                "pdf"
+            ],
+            "desc": "A much more involved certificate, the CySA+ demonstrates knowledge and practical skills in the fields of Cyber Forensics and Cyber Defense. Through this certification I have learned how to utilize many of the tools available in the ethical hacker's toolbelt, as well as identify threats while monitoring and securing network topology.",
+            "media": "",
+            "alt_title": 0
         }
     ]
 ]
