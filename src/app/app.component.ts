@@ -4,34 +4,33 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
-  })
+})
 export class AppComponent implements OnInit {
     title = 'Anthony Lyristis';
 
-    public switchPos : number = 0
-    public mode : string = ""
-    public Descriptions : Array<Array<Object>>
-    public Projects     : any
-    public Achievements : any
+    public switchPos: number = 0
+    public mode: string = ""
+    public Descriptions: Array<Array<Object>>
+    public Projects: any
+    public Achievements: any
 
-    
-    constructor(){  
-      this.Descriptions = require("./data/Descriptions.json")
-      this.Projects = this.Descriptions[0]
-      this.Achievements = this.Descriptions[1]
-      window.addEventListener("scroll", function(){
-        if(this.window.scrollY > 137) {
-          if (!this.document.getElementById("sticky-header")!.classList.contains('fix')) {
-            document.getElementById("sticky-header")!.classList.add('fix')
-          }
-        }
-        if(this.window.scrollY < 137) {
-          if (this.document.getElementById("sticky-header")!.classList.contains('fix')) {
-            document.getElementById("sticky-header")!.classList.remove('fix')
-          }
-        }
+    constructor() {
+        this.Descriptions = require("./data/Descriptions.json")
+        this.Projects = this.Descriptions[0]
+        this.Achievements = this.Descriptions[1]
+        window.addEventListener("scroll", function () {
+            if (this.window.scrollY > 137) {
+                if (!this.document.getElementById("sticky-header")!.classList.contains('fix')) {
+                    document.getElementById("sticky-header")!.classList.add('fix')
+                }
+            }
+            if (this.window.scrollY < 137) {
+                if (this.document.getElementById("sticky-header")!.classList.contains('fix')) {
+                    document.getElementById("sticky-header")!.classList.remove('fix')
+                }
+            }
 
-      })
+        })
     }
 
     ngOnInit() {
@@ -50,13 +49,13 @@ export class AppComponent implements OnInit {
     }
 
     // Arm the exploding header switch
-    switchLed () : void {
+    switchLed(): void {
 
         if (this.switchPos == 2)
             this.switchPos = 0
         else
             this.switchPos += 1
-        
+
         let nodes = Array.from(document.querySelectorAll('[data-anim]'))
         let modes = Array.from(document.querySelectorAll('[data-mode]'))
         let shows = Array.from(document.querySelectorAll('[data-show]'))
@@ -64,10 +63,10 @@ export class AppComponent implements OnInit {
 
         // Determine the interactive switch's effect
         switch (this.switchPos) {
-            case 0 :
+            case 0:
                 break
-                
-            case 1 :
+
+            case 1:
                 // Blow up the circuit
                 document.getElementById('snode')!.style.left = "32px"
                 modes.forEach(el => {
@@ -101,7 +100,7 @@ export class AppComponent implements OnInit {
                     }
 
                     // Clean up the header
-                    setTimeout(function(){
+                    setTimeout(function () {
 
                         el.classList.add('hide-me')
 

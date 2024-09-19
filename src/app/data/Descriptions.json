@@ -1,6 +1,38 @@
 [
     [
         {
+            "id": "ww",
+            "title": "The World Works",
+            "tech": [
+                "react",
+                "go",
+                "rds",
+                "mgo",
+                "d3",
+                "aws"
+            ],
+            "tech_desc": [
+                "ReactJS",
+                "The Go Programming Language",
+                "Redis",
+                "MongoDB",
+                "D3JS",
+                "Amazon Web Services"
+            ],
+            "logo": "worldworks",
+            "link": "<a target='_blank' href='http://myworldworks.com'>MyWorldWorks.com</a>",
+            "repo": "https://github.com/YoshiDesign/ww_sandbox_audit",
+            "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/wPPaJLVDnPw?si=d2Wqj4JobqnHn_1Z\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+            "projects": [
+                {
+                    "alt_title": 0,
+                    "desc": "The World Works is a collection of interactive SVG maps, featuring over 140 different nations. This web-app is a proof of concept for a large collection of data visualizations, offering users the ability to gain insights into the work/life balance one might expect to uncover given a specific city or region within their country of choice. Conceptually, the app provides a high resolution look into localized economic and census statistics within the United States of America. The World Works contains interactive SVGs for over 100 different countries, each hosting their own datasets from a variety of sources. <b>For now, the only complete dataset which can be used to demonstrate the app in its entirety is the United States of America.</b> Without exhaustive datasets, many features are disabled by the UI.<p>My primary reason for building this application is so I have an environment that spans web development and dev-ops, while also employing a plethora of technologies and custom algorithms to keep my skills sharp with.</p>",
+                    "media": "",
+                    "caption": ""
+                }
+            ]
+        },
+        {
             "id": "threed",
             "title": "3D Graphics Engines",
             "gif": "3dengine",
@@ -139,38 +171,6 @@
                     "desc": "This site is an Angular application hosted on AWS Amplify.",
                     "link": "",
                     "media": [],
-                    "caption": ""
-                }
-            ]
-        },
-        {
-            "id": "ww",
-            "title": "The World Works",
-            "tech": [
-                "react",
-                "go",
-                "rds",
-                "mgo",
-                "d3",
-                "aws"
-            ],
-            "tech_desc": [
-                "ReactJS",
-                "The Go Programming Language",
-                "Redis",
-                "MongoDB",
-                "D3JS",
-                "Amazon Web Services"
-            ],
-            "logo": "worldworks",
-            "link": "<a target='_blank' href='http://myworldworks.com'>MyWorldWorks.com</a>",
-            "repo": "https://github.com/YoshiDesign/ww_sandbox_audit",
-            "projects": [
-                {
-                    "alt_title": 0,
-                    "desc": "The World Works is a collection of interactive SVG maps, featuring over 140 different nations. This web-app is a proof of concept for a large collection of data visualizations, offering users the ability to gain insights into the work/life balance one might expect to uncover given a specific city or region within their country of choice. Conceptually, the app provides a high resolution look into localized economic and census statistics within the United States of America. The World Works contains interactive SVGs for over 100 different countries, each hosting their own datasets from a variety of sources. <b>For now, the only complete dataset which can be used to demonstrate the app in its entirety is the United States of America.</b> Without exhaustive datasets, many features are disabled by the UI.<p>My primary reason for building this application is so I have an environment that spans web development and dev-ops, while also employing a plethora of technologies and custom algorithms to keep my skills sharp with.</p>",
-                    "link": "",
-                    "media": "",
                     "caption": ""
                 }
             ]
