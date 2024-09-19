@@ -369,6 +369,10 @@ b {
     display: none !important;
 }
 
+.tilt {
+    transform: rotate(40deg) translateY(-0.3em);
+}
+
 .l-cog-pl {
     position: relative;
     animation: linear 2s infinite spin;
