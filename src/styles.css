@@ -609,16 +609,24 @@ b {
 }
 
 @media (max-width: 780px) {
-  .proj-body {
+  .proj-space {
     flex-direction: column;
-    flex-wrap: wrap;
+    padding: 10px;
+    align-items: center;
   }
-
+  .proj-header {
+    padding-left: 10px;
+  }
+  .proj-space iframe {
+    width: 300px !important;
+  }
   img {
     margin: auto;
     display: block;
   }
-
+  .proj-body {
+    align-items: center;
+  }
   .proj-imgs {
     display: flex;
     flex-direction: column;
@@ -636,6 +644,13 @@ b {
 
   .intro {
     padding: 10px 30px;
+  }
+  .gh-links {
+    display: flex;
+  }
+  .gh-links a {
+    text-align: center;
+    width: 100%;
   }
 }
 
