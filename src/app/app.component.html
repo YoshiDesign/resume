@@ -136,9 +136,6 @@
         <div *ngIf="item['gif'] != undefined" class="proj-logo-container">
           <img class="proj-logo" src="../assets/img/{{ item['gif'] }}.gif" />
         </div>
-        <div class="proj-logo-container" *ngIf="item['logo'] != undefined">
-          <img class="proj-logo" src="../assets/img/{{ item['logo'] }}.png" />
-        </div>
         <div
           class="proj-logo-container"
           style="display: block"
@@ -154,6 +151,9 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
+        </div>
+        <div class="proj-logo-container" *ngIf="item['logo'] != undefined">
+          <img class="proj-logo" src="../assets/img/{{ item['logo'] }}.png" />
         </div>
       </div>
     </div>
