@@ -3,7 +3,7 @@
     {
       "id": "digital-tool-box",
       "title": "Demme Learning - The Digital Toolbox",
-      "tech": ["laravel", "php", "vuejs", "mysql", "ln", "cpanel"],
+      "tech": ["lara", "php", "vuejs", "mysql", "ln", "cpanel"],
       "tech_desc": [
         "The Laravel Framework",
         "PHP 8.3^",
@@ -15,7 +15,6 @@
       "logo": "dlearning",
       "link": "<a target='_blank' href='https://digital.demmelearning.com'>https://digital.demmelearning.com</a>",
       "repo": "",
-      "embed": "",
       "projects": [
         {
           "alt_title": 0,
