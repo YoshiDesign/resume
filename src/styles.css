@@ -126,6 +126,7 @@ b {
   background: #333;
   color: ghostwhite;
   border-bottom: 1px solid white;
+  min-width: 1200px;
 }
 .proj-space {
   display: flex;
@@ -609,6 +610,9 @@ b {
 }
 
 @media (max-width: 780px) {
+  .proj-container {
+    min-width: unset;
+  }
   .proj-space {
     flex-direction: column;
     padding: 10px;
