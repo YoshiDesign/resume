@@ -137,7 +137,9 @@ b {
   align-items: center;
   justify-content: space-between;
 }
-
+.proj-description {
+  max-width: 60vw;
+}
 .proj-imgs {
 }
 
@@ -592,6 +594,9 @@ b {
 }
 
 @media (max-width: 973px) {
+  .proj-description {
+    max-width: unset;
+  }
   body {
     margin: 0;
   }
